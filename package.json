@@ -1,0 +1,47 @@
+{
+  "name": "issue-tracking-system",
+  "version": "1.0.0",
+  "description": "Sintu Singh",
+  "main": "This project captures the issues which developer face in their daily excercises and how they solves them",
+  "scripts": {
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sintu-patel/angular2.git"
+  },
+  "keywords": [
+    "Angularjs 2",
+    "postcss",
+    "issue tracking system"
+  ],
+  "author": "Sintu Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sintu-patel/angular2/issues"
+  },
+  "homepage": "https://github.com/sintu-patel/angular2",
+  "dependencies": {
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
+    "systemjs": "0.19.27",
+    "core-js": "2.4.1",
+    "reflect-metadata": "0.1.3",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "0.6.23"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/node": "^6.0.41",
+    "concurrently": "2.2.0",
+    "lite-server": "2.2.2",
+    "rimraf": "2.5.4",
+    "typescript": "2.0.2"
+  }
+}
