@@ -11,7 +11,7 @@ var postcssImport = require("postcss-import")
 gulp.task('runPostCss', function () {
 	return gulp.src('app/stylesheet/precss/style.css')
 		.pipe(sourcemaps.init())
-		.pipe(postcss([lost, precss, autoprefixer, postcssImport]))
+		.pipe(postcss([precss, lost, autoprefixer, postcssImport]))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('app/assets/css/'));
 });
