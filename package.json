@@ -39,8 +39,18 @@
   "devDependencies": {
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.41",
+    "autoprefixer": "^6.6.1",
     "concurrently": "2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.3.0",
+    "gulp-sourcemaps": "^2.4.0",
     "lite-server": "2.2.2",
+    "postcss-cli": "^2.6.0",
+    "postcss-import": "^9.1.0",
+    "postcss-mixins": "^5.4.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^3.0.0",
+    "precss": "^1.4.0",
     "rimraf": "2.5.4",
     "typescript": "2.0.2"
   }
