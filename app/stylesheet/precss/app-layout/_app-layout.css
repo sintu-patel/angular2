@@ -1,6 +1,8 @@
 .container {
 	lost-center: 980px;
 	lost-utility: clearfix;
+	background: green;
+	color: gray(10%, 50%);
 }
 
 .column-left {
@@ -8,5 +10,5 @@
 }
 
 .column-right {
-	llost-column: 1/2;
+	lost-column: 1/2;
 }

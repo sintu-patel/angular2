@@ -360,7 +360,9 @@ template {
 .container {
     max-width: 980px;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    background: green;
+    color: gray(10%, 50%)
 }
 .container:before {
     content: '';
@@ -399,6 +401,21 @@ template {
     clear: both
 }
 .column-right {
-    llost-column: 1/2
+    width: calc(99.9% * 1/2 - (30px - 30px * 1/2))
+}
+.column-right:nth-child(1n) {
+    float: left;
+    margin-right: 30px;
+    clear: none
+}
+.column-right:last-child {
+    margin-right: 0
+}
+.column-right:nth-child(2n) {
+    margin-right: 0;
+    float: right
+}
+.column-right:nth-child(2n + 1) {
+    clear: both
 }
 /*# sourceMappingURL=style.css.map */
