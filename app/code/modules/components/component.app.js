@@ -23,7 +23,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
             AppComponent = __decorate([
                 core_1.Component({
                     selector: 'app',
-                    template: '<div>Hello</div>'
+                    templateUrl: './app/code/modules/components/partial.app.html'
                 }), 
                 __metadata('design:paramtypes', [])
             ], AppComponent);

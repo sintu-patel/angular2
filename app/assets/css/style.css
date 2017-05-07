@@ -1,4 +1,14 @@
+.container {
+    lost-center: 980px;
+    lost-utility: clearfix
+}
+.column-left {
+    lost-column: 1/2
+}
+.column-right {
+    llost-column: 1/2
+}
 body {
-	background: green;
+    background: red
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,2 @@
-body {
-	background: green;
-}
+@import 'config/variables';
+@import 'common/reset';
