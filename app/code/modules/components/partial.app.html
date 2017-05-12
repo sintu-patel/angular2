@@ -1,10 +1,9 @@
 <div class="ang-app">
+	<div class="left-panel">
+		<h1>ITS</h1>
+	</div>
 	<div class="container">
-		<div class="column-left">
-		Left
-		</div>
-		<div class="column-right">
-		Right
-		</div>
+		<h1>{{ information }}</h1>
+		<p *ngFor="let item of DATA">{{ item.information }}</p>
 	</div>
 </div>
