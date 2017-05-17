@@ -21,10 +21,9 @@ System.register(['@angular/core', './server/data-main'], function(exports_1, con
                 data_main_1 = data_main_1_1;
             }],
         execute: function() {
-            console.log(data_main_1.DATA);
             AppComponent = class AppComponent {
                 constructor() {
-                    this.information = "faltu";
+                    this.heading = data_main_1.DATA.heading;
                     this.DATA = data_main_1.DATA.data;
                 }
             };

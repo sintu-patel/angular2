@@ -3,7 +3,11 @@
 		<h1>ITS</h1>
 	</div>
 	<div class="container">
-		<h1>{{ information }}</h1>
-		<p *ngFor="let item of DATA">{{ item.information }}</p>
+		<h1>{{ heading }}</h1>
+		<div class="issues" *ngFor="let item of DATA">
+			<h2 class="issue">{{ item.issue }}</h2>
+			<p class="resolution">{{ item.resolution }}</p>
+			<a href="{{ item.readMore }}" >Read More</a>
+		</div>
 	</div>
 </div>

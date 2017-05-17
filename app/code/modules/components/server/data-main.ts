@@ -1,10 +1,15 @@
 export const DATA = {
-	data : [
+	"heading": "Informatin Tracking System",
+	"data" : [
 		{
-			"information": "1 Speaking at the end of the three-day event, Gadkari said there was an urgent need to bring down logistics cost in the country to gl"
+			"issue": "Is Taiwan a country?",
+			"resolution": "The question is really hard to answer because the terms Taiwan and country are somewhat ambiguous.",
+			"readMore": "http://www.google.com"
 		},
 		{
-			"information": "2 Speaking at the end of the three-day event, Gadkari said there was an urgent need to bring down logistics cost in the country to gl"
+			"issue": "Is Taiwan a country?",
+			"resolution": "The question is really hard to answer because the terms Taiwan and country are somewhat ambiguous.",
+			"readMore": "http://www.google.com"
 		}
 	]
 };

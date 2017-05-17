@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { DATA } from './server/data-main';
-console.log(DATA);
 
 @Component({
   selector: 'app',
@@ -8,10 +7,10 @@ console.log(DATA);
 })
 
 export class AppComponent {
-	information: string;
+	heading: string;
 	DATA: any; // use any for complex data type (i.e. json)
 	constructor() {
-		this.information = "faltu";
+		this.heading = DATA.heading;
 		this.DATA = DATA.data;
 	}
 }
