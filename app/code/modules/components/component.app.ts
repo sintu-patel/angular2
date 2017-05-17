@@ -9,7 +9,7 @@ console.log(DATA);
 
 export class AppComponent {
 	information: string;
-	DATA: any;
+	DATA: any; // use any for complex data type (i.e. json)
 	constructor() {
 		this.information = "faltu";
 		this.DATA = DATA.data;
