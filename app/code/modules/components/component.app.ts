@@ -9,7 +9,7 @@ console.log(DATA);
 
 export class AppComponent {
 	information: string;
-	DATA: [];
+	DATA: any;
 	constructor() {
 		this.information = "faltu";
 		this.DATA = DATA.data;
