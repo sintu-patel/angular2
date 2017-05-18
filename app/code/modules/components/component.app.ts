@@ -13,4 +13,7 @@ export class AppComponent {
 		this.heading = DATA.heading;
 		this.DATA = DATA.data;
 	}
+	onClick(e) {
+		alert('faltu');
+	}
 }

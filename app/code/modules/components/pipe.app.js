@@ -1,4 +1,4 @@
-System.register(['@angular/core', './server/data-main'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,35 +10,27 @@ System.register(['@angular/core', './server/data-main'], function(exports_1, con
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, data_main_1;
-    var AppComponent;
+    var core_1;
+    var TrimString;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (data_main_1_1) {
-                data_main_1 = data_main_1_1;
             }],
         execute: function() {
-            AppComponent = class AppComponent {
-                constructor() {
-                    this.heading = data_main_1.DATA.heading;
-                    this.DATA = data_main_1.DATA.data;
-                }
-                onClick(e) {
-                    alert('faltu');
+            TrimString = class TrimString {
+                transform(pipeData) {
+                    return pipeData.substring(0, 50) + '...';
                 }
             };
-            AppComponent = __decorate([
-                core_1.Component({
-                    selector: 'app',
-                    templateUrl: './app/code/modules/components/partial.app.html'
+            TrimString = __decorate([
+                core_1.Pipe({
+                    name: 'trimstring'
                 }), 
                 __metadata('design:paramtypes', [])
-            ], AppComponent);
-            exports_1("AppComponent", AppComponent);
+            ], TrimString);
+            exports_1("TrimString", TrimString);
         }
     }
 });
-//# sourceMappingURL=component.app.js.map
+//# sourceMappingURL=pipe.app.js.map
