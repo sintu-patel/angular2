@@ -1,22 +1,58 @@
-body {
-	font-family: 'verdana'
-}
+
 .container {
 	lost-center: 100%;
 	lost-utility: clearfix;
-	padding: 20px 20px 20px 360px;
+	padding: 20px 20px 20px 20px;
+}
+
+div {
+	font-family: 'Open Sans';
+}
+
+.col-3 {
+	lost-column: 3/12;
+}
+.col-6 {
+	lost-column: 6/12;
+}
+
+.header {
+	background: #3887f0;
+	color: white;
+	font-size: 20px;
+	font-family: arial;
+	padding: 20px;
+
+	h1 {
+		font-family: fantasy;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+}
+
+.tag {
+	width: 50px;
+	height: 50px;
+	background: red;
+	margin: 20px;
+	float: left;
 }
 
 .left-panel {
-	width: 300px;
-	position: fixed;
-	left: 0;
-	top: 0;
-	background: indigo;
-	box-shadow: 0 0 5px black;
-	height: 100%;
-	color: white;
-	font-size: 30px;
-	font-family: arial;
-	padding: 20px;
+	background: linear-gradient(to right,#E96D09 20%,#E96D09 20%,#A62CA2 20%,#A62CA2 40%,#4F0090 40%,#4F0090 60%,#26B4AC 60%,#26B4AC 80%,#7FD759 80%);
+
+	.content {
+		background: #ffffff;
+		padding: 20px 0;
+
+		h2 {
+			font-size: 1.2rem;
+		}
+
+		li {
+			font-size: 0.75rem;
+			line-height: 1.5;
+			margin-top: 5px;
+		}
+	}
 }

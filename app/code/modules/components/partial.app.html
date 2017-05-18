@@ -1,13 +1,32 @@
 <div class="ang-app">
-	<div class="left-panel">
-		<h1>ITS</h1>
+	<div class="header">
+		<h1>{{ heading }}</h1>
 	</div>
 	<div class="container">
-		<h1>{{ heading }}</h1>
-		<div class="issues" *ngFor="let item of DATA">
-			<h2 class="issue">{{ item.issue }}</h2>
-			<p class="resolution">{{ item.resolution }}</p>
-			<a href="{{ item.readMore }}" >Read More</a>
+		<div class="col-3 left-panel">
+			<div class="content">
+				<h2>{{ heading }}</h2>
+				<ul>
+					<li class="issues" *ngFor="let item of DATA">
+						{{ item.issue }}
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-6">
+			<h1>{{ heading }}</h1>
+			<div class="issues" *ngFor="let item of DATA">
+				<h2 class="issue">{{ item.issue }}</h2>
+				<p class="resolution">{{ item.resolution }}</p>
+				<a href="{{ item.readMore }}" >Read More</a>
+			</div>
+		</div>
+		<div class="col-3">
+			<h1>{{ heading }}</h1>
+			<div class="issues" *ngFor="let item of DATA">
+				<div class="tag">
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
