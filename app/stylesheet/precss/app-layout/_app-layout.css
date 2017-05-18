@@ -5,6 +5,10 @@
 	padding: 20px 20px 20px 20px;
 }
 
+body {
+	background: #3887f0;
+}
+
 div {
 	font-family: 'Open Sans';
 }
@@ -17,7 +21,6 @@ div {
 }
 
 .header {
-	background: #3887f0;
 	color: white;
 	font-size: 20px;
 	font-family: arial;
@@ -30,30 +33,81 @@ div {
 	}
 }
 
-.tag {
-	width: 50px;
-	height: 50px;
-	background: red;
-	margin: 20px;
-	float: left;
-}
-
 .left-panel {
 	background: linear-gradient(to right,#E96D09 20%,#E96D09 20%,#A62CA2 20%,#A62CA2 40%,#4F0090 40%,#4F0090 60%,#26B4AC 60%,#26B4AC 80%,#7FD759 80%);
+	padding-top: 10px;
 
 	.content {
 		background: #ffffff;
-		padding: 20px 0;
+		padding: 20px;
 
 		h2 {
 			font-size: 1.2rem;
 		}
 
+		ul {
+			padding: 0;
+			list-style: none;
+		}
+
 		li {
 			font-size: 0.75rem;
 			line-height: 1.5;
-			margin-top: 5px;
+			margin-top: 10px;
 			cursor: pointer;
+			border-bottom: 1px dotted #ccc;
+
+			&:hover {
+				color: navy;
+			}
 		}
+	}
+}
+
+.main-panel {
+	padding: 20px;
+
+	h1 {
+		font-size: 1.5rem;
+	}
+
+	h2 {
+		font-size: 1rem;
+		color: navy;
+	}
+
+	p {
+		font-size: 0.875rem;
+		line-height: 1.2;
+	}
+
+	.search-issue-box {
+		width: 100%;
+		padding: 20px;
+	}
+}
+
+.categories-panel {
+	padding: 20px;
+
+	h2 {
+		font-size: 1rem;
+		color: navy;
+	}
+
+	p {
+		font-size: 0.875rem;
+		line-height: 1.2;
+	}
+
+	.tag {
+		height: 50px;
+		line-height: 50px;
+		vertical-align: center;
+		background: #333;
+		color: #fff;
+		margin: 2px;
+		display: inline-block;
+		padding: 5px;
 	}
 }

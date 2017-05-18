@@ -20,3 +20,6 @@ gulp.task('runPostCss', function () {
 });
 
 gulp.task('default', ['runPostCss']);
+gulp.task('watch', function() {
+  gulp.watch(['app/stylesheet/precss/**/*.css'], ['runPostCss']);
+});

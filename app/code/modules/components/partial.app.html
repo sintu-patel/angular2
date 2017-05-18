@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="col-3 left-panel">
 			<div class="content">
-				<h2>{{ heading }}</h2>
+				<h2>{{ linksHeading }}</h2>
 				<ul>
 					<li (click)="onClick()" class="issues" *ngFor="let item of DATA">
 						{{ item.issue }}
@@ -14,17 +14,26 @@
 			</div>
 		</div>
 		<div class="col-6">
-			<h1>{{ heading }}</h1>
-			<div class="issues" *ngFor="let item of DATA">
-				<h2 class="issue">{{ item.issue }}</h2>
-				<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>
-				<a href="{{ item.readMore }}" >Read More</a>
+			<div class="main-panel">
+				<div class="search-issues">
+					<input class="search-issue-box" [(ngModel)] = "query" placeholder=" type the text" />
+				</div>
+				<div class="issues" *ngFor="let item of (DATA) | find:query">
+					<h2 class="issue">{{ item.issue }}</h2>
+				</div>
+				<h1>{{ heading }}</h1>
+				<div class="issues" *ngFor="let item of DATA">
+					<h2 class="issue">{{ item.issue }}</h2>
+					<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>
+					<a href="{{ item.readMore }}" >Read More</a>
+				</div>
 			</div>
 		</div>
 		<div class="col-3">
-			<h1>{{ heading }}</h1>
-			<div class="issues" *ngFor="let item of DATA">
-				<div class="tag">
+			<div class="categories-panel">
+				<h2>{{ categoriesHeading }}</h2>
+				<div class="tag" *ngFor="let item of CATEGORIES">
+					{{ item.name }}
 				</div>
 			</div>
 		</div>
