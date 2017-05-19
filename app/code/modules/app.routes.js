@@ -22,7 +22,7 @@ System.register(['@angular/router', './pages/home/home.component', './pages/prof
             exports_1("routes", routes = [
                 { path: '', component: home_component_1.Home },
                 { path: 'home', component: home_component_1.Home },
-                { path: 'profile', component: profile_component_1.Profile },
+                { path: 'profile/:id', component: profile_component_1.Profile },
                 { path: 'profile2', component: profile2_component_1.Profile2 }
             ]);
             exports_1("routing", routing = router_1.RouterModule.forRoot(routes));

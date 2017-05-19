@@ -8,7 +8,7 @@ import { Profile2 } from './pages/profile2/profile2.component';
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'home', component: Home },
-  { path: 'profile', component: Profile },
+  { path: 'profile/:id', component: Profile },
   { path: 'profile2', component: Profile2 }
 ];
 

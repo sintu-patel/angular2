@@ -7,8 +7,8 @@
 			<div class="content">
 				<h2>{{ linksHeading }}</h2>
 				<ul>
-					<li class="issues" *ngFor="let item of DATA">
-						<a [routerLink]="['/profile']">{{ item.issue }}</a>
+					<li class="issues" *ngFor="let item of DATA; let i = index" [attr.data-index]="i">
+						<a [routerLink]="['/profile', i]">{{ item.issue }}</a>
 					</li>
 				</ul>
 				<button (click)="onClick()" type="button">Click</button>
