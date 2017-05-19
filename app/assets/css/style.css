@@ -425,6 +425,24 @@ div {
 .col-6:nth-child(12n + 1) {
     clear: both;
 }
+.col-12 {
+    width: calc(99.9% * 12/12 - (30px - 30px * 12/12));
+}
+.col-12:nth-child(1n) {
+    float: left;
+    margin-right: 30px;
+    clear: none;
+}
+.col-12:last-child {
+    margin-right: 0;
+}
+.col-12:nth-child(12n) {
+    margin-right: 0;
+    float: right;
+}
+.col-12:nth-child(12n + 1) {
+    clear: both;
+}
 .header {
     color: white;
     font-size: 20px;

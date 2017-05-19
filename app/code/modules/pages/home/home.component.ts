@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DATA } from './server/data-main';
 
 @Component({
-  templateUrl: './app/code/modules/components/partial.app.html'
+  templateUrl: './app/code/modules/pages/home/partial.app.html'
 })
 
 export class Home {

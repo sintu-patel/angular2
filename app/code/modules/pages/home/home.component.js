@@ -35,7 +35,7 @@ System.register(['@angular/core', './server/data-main'], function(exports_1, con
             };
             Home = __decorate([
                 core_1.Component({
-                    templateUrl: './app/code/modules/components/partial.app.html'
+                    templateUrl: './app/code/modules/pages/home/partial.app.html'
                 }), 
                 __metadata('design:paramtypes', [])
             ], Home);

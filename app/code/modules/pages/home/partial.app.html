@@ -7,10 +7,11 @@
 			<div class="content">
 				<h2>{{ linksHeading }}</h2>
 				<ul>
-					<li (click)="onClick()" class="issues" *ngFor="let item of DATA">
-						{{ item.issue }}
+					<li class="issues" *ngFor="let item of DATA">
+						<a [routerLink]="['/profile']">{{ item.issue }}</a>
 					</li>
 				</ul>
+				<button (click)="onClick()" type="button">Click</button>
 			</div>
 		</div>
 		<div class="col-6">
