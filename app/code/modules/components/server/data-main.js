@@ -7,7 +7,7 @@ System.register([], function(exports_1, context_1) {
         execute: function() {
             exports_1("DATA", DATA = {
                 "linksHeading": "All information",
-                "heading": "Informatin Tracking",
+                "heading": "All Issues",
                 "categoriesHeading": "Information Categories",
                 "data": [
                     {

@@ -1,6 +1,6 @@
 export const DATA = {
 	"linksHeading": "All information",
-	"heading": "Informatin Tracking",
+	"heading": "All Issues",
 	"categoriesHeading": "Information Categories",
 	"data" : [
 		{

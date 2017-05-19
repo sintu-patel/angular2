@@ -16,16 +16,18 @@
 		<div class="col-6">
 			<div class="main-panel">
 				<div class="search-issues">
-					<input class="search-issue-box" [(ngModel)] = "query" placeholder=" type the text" />
+					<input class="search-issue-box" [(ngModel)] = "query" placeholder="Search the text" />
 				</div>
 				<div class="issues" *ngFor="let item of (DATA) | find:query">
-					<h2 class="issue">{{ item.issue }}</h2>
+					<p class="issue-list">{{ item.issue }}</p>
 				</div>
-				<h1>{{ heading }}</h1>
-				<div class="issues" *ngFor="let item of DATA">
-					<h2 class="issue">{{ item.issue }}</h2>
-					<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>
-					<a href="{{ item.readMore }}" >Read More</a>
+				<div class="main-panel-content">
+					<h1>{{ heading }}</h1>
+					<div class="issues" *ngFor="let item of DATA">
+						<h2 class="issue">{{ item.issue }}</h2>
+						<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>
+						<a href="{{ item.readMore }}" >Read More</a>
+					</div>
 				</div>
 			</div>
 		</div>

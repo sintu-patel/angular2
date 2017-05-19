@@ -463,6 +463,7 @@ div {
 }
 .main-panel {
     padding: 20px;
+    background: whitesmoke;
 }
 .main-panel h1 {
     font-size: 1.5rem;
@@ -475,16 +476,27 @@ div {
     font-size: 0.875rem;
     line-height: 1.2;
 }
+.main-panel .issue-list {
+    line-height: 1.5;
+    border-bottom: 1px dotted #ccc;
+    margin-top: 10px;
+}
 .main-panel .search-issue-box {
     width: 100%;
     padding: 20px;
 }
+.main-panel-content {
+    border-top: 1px dashed #ccc;
+    margin-top: 100px;
+}
 .categories-panel {
     padding: 20px;
+    background: cornflowerblue;
 }
 .categories-panel h2 {
     font-size: 1rem;
-    color: navy;
+    color: white;
+    text-transform: uppercase;
 }
 .categories-panel p {
     font-size: 0.875rem;
@@ -498,6 +510,6 @@ div {
     color: #fff;
     margin: 2px;
     display: inline-block;
-    padding: 5px;
+    padding: 5px 10px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -66,6 +66,7 @@ div {
 
 .main-panel {
 	padding: 20px;
+	background: whitesmoke;
 
 	h1 {
 		font-size: 1.5rem;
@@ -81,18 +82,32 @@ div {
 		line-height: 1.2;
 	}
 
+	.issue-list {
+		line-height: 1.5;
+		border-bottom: 1px dotted #ccc;
+		margin-top: 10px;
+	}
+
 	.search-issue-box {
 		width: 100%;
 		padding: 20px;
 	}
 }
 
+
+.main-panel-content {
+	border-top: 1px dashed #ccc;
+	margin-top: 100px;
+}
+
 .categories-panel {
 	padding: 20px;
+	background: cornflowerblue;
 
 	h2 {
 		font-size: 1rem;
-		color: navy;
+		color: white;
+		text-transform: uppercase;
 	}
 
 	p {
@@ -108,6 +123,6 @@ div {
 		color: #fff;
 		margin: 2px;
 		display: inline-block;
-		padding: 5px;
+		padding: 5px 10px;
 	}
 }
