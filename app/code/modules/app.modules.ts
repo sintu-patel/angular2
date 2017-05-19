@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './components/component.app';
 import { TrimString } from './components/pipe.app';
 import { SearchData } from './components/search.app';
+import { Home } from './pages/home/home.component';
 import { Profile } from './pages/profile/profile.component';
 import { Profile2 } from './pages/profile2/profile2.component';
 import { routing } from './app.routes';
@@ -18,6 +19,7 @@ import { routing } from './app.routes';
     AppComponent,
     TrimString,
     SearchData,
+    Home,
     Profile,
     Profile2
   ],

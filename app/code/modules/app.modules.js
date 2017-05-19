@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', './components/component.app', './components/pipe.app', './components/search.app', './pages/profile/profile.component', './pages/profile2/profile2.component', './app.routes'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', './components/component.app', './components/pipe.app', './components/search.app', './pages/home/home.component', './pages/profile/profile.component', './pages/profile2/profile2.component', './app.routes'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, component_app_1, pipe_app_1, search_app_1, profile_component_1, profile2_component_1, app_routes_1;
+    var core_1, platform_browser_1, forms_1, component_app_1, pipe_app_1, search_app_1, home_component_1, profile_component_1, profile2_component_1, app_routes_1;
     var AppModule;
     return {
         setters:[
@@ -31,6 +31,9 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             },
             function (search_app_1_1) {
                 search_app_1 = search_app_1_1;
+            },
+            function (home_component_1_1) {
+                home_component_1 = home_component_1_1;
             },
             function (profile_component_1_1) {
                 profile_component_1 = profile_component_1_1;
@@ -55,6 +58,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                         component_app_1.AppComponent,
                         pipe_app_1.TrimString,
                         search_app_1.SearchData,
+                        home_component_1.Home,
                         profile_component_1.Profile,
                         profile2_component_1.Profile2
                     ],

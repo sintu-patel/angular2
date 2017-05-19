@@ -1,4 +1,4 @@
-System.register(['@angular/core'], function(exports_1, context_1) {
+System.register(['@angular/core', './server/data-main'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,25 +10,37 @@ System.register(['@angular/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var AppComponent;
+    var core_1, data_main_1;
+    var Home;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (data_main_1_1) {
+                data_main_1 = data_main_1_1;
             }],
         execute: function() {
-            AppComponent = class AppComponent {
+            Home = class Home {
+                constructor() {
+                    this.heading = data_main_1.DATA.heading;
+                    this.DATA = data_main_1.DATA.data;
+                    this.linksHeading = data_main_1.DATA.linksHeading;
+                    this.categoriesHeading = data_main_1.DATA.categoriesHeading;
+                    this.CATEGORIES = data_main_1.DATA.categories;
+                }
+                onClick(e) {
+                    alert('faltu');
+                }
             };
-            AppComponent = __decorate([
+            Home = __decorate([
                 core_1.Component({
-                    selector: 'app',
-                    template: '<router-outlet></router-outlet>'
+                    templateUrl: './app/code/modules/components/partial.app.html'
                 }), 
                 __metadata('design:paramtypes', [])
-            ], AppComponent);
-            exports_1("AppComponent", AppComponent);
+            ], Home);
+            exports_1("Home", Home);
         }
     }
 });
-//# sourceMappingURL=component.app.js.map
+//# sourceMappingURL=home.component.js.map
