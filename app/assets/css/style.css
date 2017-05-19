@@ -383,8 +383,22 @@ template {
     display: table;
     clear: both;
 }
+.main-dp-panel {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-dp-panel:before {
+    content: '';
+    display: table;
+}
+.main-dp-panel:after {
+    content: '';
+    display: table;
+    clear: both;
+}
 body {
-    background: #3887f0;
+    background: #f4f6f8;
 }
 div {
     font-family: 'Open Sans';
@@ -407,6 +421,24 @@ div {
 .col-3:nth-child(12n + 1) {
     clear: both;
 }
+.col-4 {
+    width: calc(99.9% * 4/12 - (30px - 30px * 4/12));
+}
+.col-4:nth-child(1n) {
+    float: left;
+    margin-right: 30px;
+    clear: none;
+}
+.col-4:last-child {
+    margin-right: 0;
+}
+.col-4:nth-child(12n) {
+    margin-right: 0;
+    float: right;
+}
+.col-4:nth-child(12n + 1) {
+    clear: both;
+}
 .col-6 {
     width: calc(99.9% * 6/12 - (30px - 30px * 6/12));
 }
@@ -423,6 +455,42 @@ div {
     float: right;
 }
 .col-6:nth-child(12n + 1) {
+    clear: both;
+}
+.col-7 {
+    width: calc(99.9% * 7/12 - (30px - 30px * 7/12));
+}
+.col-7:nth-child(1n) {
+    float: left;
+    margin-right: 30px;
+    clear: none;
+}
+.col-7:last-child {
+    margin-right: 0;
+}
+.col-7:nth-child(12n) {
+    margin-right: 0;
+    float: right;
+}
+.col-7:nth-child(12n + 1) {
+    clear: both;
+}
+.col-8 {
+    width: calc(99.9% * 8/12 - (30px - 30px * 8/12));
+}
+.col-8:nth-child(1n) {
+    float: left;
+    margin-right: 30px;
+    clear: none;
+}
+.col-8:last-child {
+    margin-right: 0;
+}
+.col-8:nth-child(12n) {
+    margin-right: 0;
+    float: right;
+}
+.col-8:nth-child(12n + 1) {
     clear: both;
 }
 .col-12 {
@@ -453,59 +521,102 @@ div {
     font-family: fantasy;
     letter-spacing: 2px;
     text-transform: uppercase;
+    color: #1a222b;
 }
-.left-panel {
-    background: linear-gradient(to right,#E96D09 20%,#E96D09 20%,#A62CA2 20%,#A62CA2 40%,#4F0090 40%,#4F0090 60%,#26B4AC 60%,#26B4AC 80%,#7FD759 80%);
-    padding-top: 10px;
+.navigation nav {
+    display: block;
+}
+.navigation nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+}
+.navigation nav ul li {
+    display: inline-block;
+}
+.navigation nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    font-weight: 800;
+}
+.left-panel h2 {
+    margin-top: 30px;
+    text-transform: uppercase;
 }
 .left-panel .content {
-    background: #ffffff;
-    padding: 20px;
-}
-.left-panel .content h2 {
-    font-size: 1.2rem;
+    padding: 0 20px 20px 20px;
 }
 .left-panel .content ul {
     padding: 0;
     list-style: none;
 }
 .left-panel .content li {
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1.5;
     margin-top: 10px;
     cursor: pointer;
     border-bottom: 1px dotted #ccc;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 30px;
+    padding-bottom: 10px;
 }
-.left-panel .content li:hover {
-    color: navy;
+.left-panel .content li a {
+    text-decoration: none;
+    color: #333;
+}
+.left-panel .content li a:hover {
+    color: #202e78;
+}
+.left-panel .content li::before {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background: #202e78;
+}
+.left-panel .list-content {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .main-panel {
-    padding: 20px;
-    background: whitesmoke;
+    padding: 50px;
+    background: #fff;
+    box-shadow: 0 0 20px #ccc;
+    border: 2px solid #ccc;
 }
 .main-panel h1 {
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 .main-panel h2 {
-    font-size: 1rem;
-    color: navy;
+    font-size: 2rem;
+    color: #202e78;
 }
 .main-panel p {
-    font-size: 0.875rem;
-    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 2;
 }
 .main-panel .issue-list {
     line-height: 1.5;
     border-bottom: 1px dotted #ccc;
     margin-top: 10px;
 }
-.main-panel .search-issue-box {
+.search-issue-box {
     width: 100%;
     padding: 20px;
+    border: 2px solid #ccc;
 }
-.main-panel-content {
-    border-top: 1px dashed #ccc;
-    margin-top: 100px;
+.search-issue-box:focus {
+    border: 2px solid #202e78;
+    outline: none;
 }
 .categories-panel {
     padding: 20px;
@@ -529,5 +640,8 @@ div {
     margin: 2px;
     display: inline-block;
     padding: 5px 10px;
+}
+.footer {
+    height: 100px;
 }
 /*# sourceMappingURL=style.css.map */

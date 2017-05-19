@@ -1,6 +1,6 @@
 export const DATA = {
 	"linksHeading": "All information",
-	"heading": "All Issues",
+	"heading": "Information tracking",
 	"categoriesHeading": "Information Categories",
 	"data" : [
 		{
@@ -35,7 +35,7 @@ export const DATA = {
 		},
 		{
 			"issue": "In what sense can Taiwan be recognized as a country?",
-			"resolution": "Taiwan has its own local ethnic group, they had been settled there long before Zheng conquered Taiwan. So if we dates back to 300 years ago, Taiwan used to be independent, as an island. But that doesn’t make much sense to me. There is no exile goverment for local Taiwanese now. And if Taiwan go independent in this sense, how should we deal with Kinmen and Matsu, aka, the Fujian province in free area?",
+			"resolution": "Taiwan has its own local ethnic group, they had been settled there long before Zheng conquered Taiwan. So if we dates back to 300 years ago, Taiwan used to be independent, as an island. But that doesn’t make much sense to me. There is no exile goverment for local Taiwanese now. And if Taiwan go independent in this sense, how should we deal with Kinmen and Matsu, aka, the Fujian province in free area?Taiwan has its own local ethnic group, they had been settled there long before Zheng conquered Taiwan. So if we dates back to 300 years ago, Taiwan used to be independent, as an island. But that doesn’t make much sense to me. There is no exile goverment for local Taiwanese now. And if Taiwan go independent in this sense, how should we deal with Kinmen and Matsu, aka, the Fujian province in free area?Taiwan has its own local ethnic group, they had been settled there long before Zheng conquered Taiwan. So if we dates back to 300 years ago, Taiwan used to be independent, as an island. But that doesn’t make much sense to me. There is no exile goverment for local Taiwanese now. And if Taiwan go independent in this sense, how should we deal with Kinmen and Matsu, aka, the Fujian province in free area?Taiwan has its own local ethnic group, they had been settled there long before Zheng conquered Taiwan. So if we dates back to 300 years ago, Taiwan used to be independent, as an island. But that doesn’t make much sense to me. There is no exile goverment for local Taiwanese now. And if Taiwan go independent in this sense, how should we deal with Kinmen and Matsu, aka, the Fujian province in free area?Taiwan has its own local ethnic group, they had been settled there long before Zheng conquered Taiwan. So if we dates back to 300 years ago, Taiwan used to be independent, as an island. But that doesn’t make much sense to me. There is no exile goverment for local Taiwanese now. And if Taiwan go independent in this sense, how should we deal with Kinmen and Matsu, aka, the Fujian province in free area?",
 			"readMore": "http://www.google.com"
 		}
 	],

@@ -1,27 +1,52 @@
 <div class="ang-app">
 	<div class="header">
-		<h1>{{ heading }}</h1>
-	</div>
-	<div class="container">
-		<div class="col-3 left-panel">
-			<div class="content">
-				<h2>{{ linksHeading }}</h2>
+		<div class="col-6">
+			<h1>{{ heading }}</h1>
+		</div>
+		<div class="col-6 navigation">
+			<nav>
 				<ul>
-					<li class="issues" *ngFor="let item of DATA; let i = index" [attr.data-index]="i">
-						<a [routerLink]="['/profile', i]">{{ item.issue }}</a>
+					<li>
+						<a href="#">Angularjs 2</a>
+					</li>
+					<li>
+						<a href="#">POST CSS</a>
+					</li>
+					<li>
+						<a href="#">Github</a>
+					</li>
+					<li>
+						<a href="#">Autoprefixer</a>
 					</li>
 				</ul>
-				<button (click)="onClick()" type="button">Click</button>
-			</div>
+			</nav>
 		</div>
-		<div class="col-6">
-			<div class="main-panel">
+	</div>
+	<div class="container">
+		<div class="col-4 left-panel">
+			<div class="content">
 				<div class="search-issues">
 					<input class="search-issue-box" [(ngModel)] = "query" placeholder="Search the text" />
 				</div>
-				<div class="issues" *ngFor="let item of (DATA) | find:query">
-					<p class="issue-list">{{ item.issue }}</p>
+				<div class="list-content">
+					<h2>Search Results</h2>
+					<ul>
+						<li class="issues" *ngFor="let item of DATA | find:query; let i = index" [attr.data-index]="i">
+							<a [routerLink]="['/profile', i]">{{ item.issue }}</a>
+						</li>
+					</ul>
+					<h2>All issues</h2>
+					<ul>
+						<li class="issues" *ngFor="let item of DATA; let i = index" [attr.data-index]="i">
+							<a [routerLink]="['/profile', i]">{{ item.issue }}</a>
+						</li>
+					</ul>
 				</div>
+				<button (click)="onClick()" type="button">Click</button>
+			</div>
+		</div>
+		<div class="col-7">
+			<div class="main-panel">
 				<div class="main-panel-content">
 					<h1>{{ heading }}</h1>
 					<div class="issues" *ngFor="let item of DATA">
@@ -32,13 +57,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-3">
-			<div class="categories-panel">
-				<h2>{{ categoriesHeading }}</h2>
-				<div class="tag" *ngFor="let item of CATEGORIES">
-					{{ item.name }}
-				</div>
-			</div>
-		</div>
+	</div>
+	<div class="footer">
 	</div>
 </div>
