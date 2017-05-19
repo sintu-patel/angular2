@@ -11,6 +11,8 @@
 						{{ item.issue }}
 					</li>
 				</ul>
+				<a [routerLink]="['/profile']">Profile 1</a>
+				<a [routerLink]="['/profile2']">Profile 2</a>
 			</div>
 		</div>
 		<div class="col-6">
@@ -41,3 +43,4 @@
 		</div>
 	</div>
 </div>
+<router-outlet></router-outlet>
