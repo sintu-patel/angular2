@@ -19,10 +19,10 @@ System.register(['@angular/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             SearchData = class SearchData {
-                transform(pipeData) {
-                    const pipeModifier = 'error';
+                transform(pipeData, query) {
+                    query = query || 'error';
                     return pipeData.filter((eachItem => {
-                        return eachItem['issue'].toLowerCase().includes(pipeModifier.toLowerCase());
+                        return eachItem['issue'].toLowerCase().includes(query.toLowerCase());
                     }));
                 }
             };

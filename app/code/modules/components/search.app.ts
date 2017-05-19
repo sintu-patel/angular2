@@ -5,10 +5,10 @@ import { Pipe } from '@angular/core';
 })
 
 export class SearchData {
-	transform(pipeData) {
-		const pipeModifier = 'error';
+	transform(pipeData, query) {
+		query = query || 'error';
 		return pipeData.filter((eachItem => {
-			return eachItem['issue'].toLowerCase().includes(pipeModifier.toLowerCase())
+			return eachItem['issue'].toLowerCase().includes(query.toLowerCase())
 		}))
 	}
 }
