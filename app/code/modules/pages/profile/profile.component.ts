@@ -9,6 +9,11 @@ import { ActivatedRoute } from '@angular/router'; // to get route params
 
 // Component class
 export class Profile {
+	id: number;
+	list: any;
+	heading: string;
+	question: string;
+	answer: string;
 	constructor(private route:ActivatedRoute) {
 		this.id = this.route.snapshot.params['id'];
 		this.list = DATA.data[this.id];
