@@ -15,10 +15,20 @@ export class Profile {
 	question: string;
 	answer: string;
 	constructor(private route:ActivatedRoute) {
-		this.id = this.route.snapshot.params['id'];
+		if(this.id >= 0) {
+			this.setData();
+		}
+	}
+
+	setData() {
 		this.list = DATA.data[this.id];
 		this.heading = DATA.heading;
 		this.question = this.list.issue;
 		this.answer = this.list.resolution;
 	}
+
+	ngOnInit() {
+        this.id = this.route.snapshot.queryParams["p"];
+        this.setData();
+    }
 }

@@ -27,11 +27,19 @@ System.register(['@angular/core', './server/data-main', '@angular/router'], func
             Profile = class Profile {
                 constructor(route) {
                     this.route = route;
-                    this.id = this.route.snapshot.params['id'];
+                    if (this.id >= 0) {
+                        this.setData();
+                    }
+                }
+                setData() {
                     this.list = data_main_1.DATA.data[this.id];
                     this.heading = data_main_1.DATA.heading;
                     this.question = this.list.issue;
                     this.answer = this.list.resolution;
+                }
+                ngOnInit() {
+                    this.id = this.route.snapshot.queryParams["p"];
+                    this.setData();
                 }
             };
             Profile = __decorate([

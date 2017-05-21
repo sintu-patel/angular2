@@ -32,13 +32,13 @@
 					<h2>Search Results</h2>
 					<ul>
 						<li class="issues" *ngFor="let item of DATA | find:query; let i = index" [attr.data-index]="i">
-							<a [routerLink]="['/profile', i]">{{ item.issue }}</a>
+							<a [routerLink]="['/profile']" [queryParams]="{ p: i }">{{ item.issue }}</a>
 						</li>
 					</ul>
 					<h2>All issues</h2>
 					<ul>
 						<li class="issues" *ngFor="let item of DATA; let i = index" [attr.data-index]="i">
-							<a [routerLink]="['/profile', i]">{{ item.issue }}</a>
+							<a [routerLink]="['/profile']" [queryParams]="{ p: i }">{{ item.issue }}</a>
 						</li>
 					</ul>
 				</div>
