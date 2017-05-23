@@ -1,4 +1,4 @@
-System.register(['@angular/core', './server/data-main', '@angular/router'], function(exports_1, context_1) {
+System.register(['@angular/core', '../../app.service', '@angular/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,44 +10,51 @@ System.register(['@angular/core', './server/data-main', '@angular/router'], func
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, data_main_1, router_1;
+    var core_1, app_service_1, router_1;
     var Profile;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (data_main_1_1) {
-                data_main_1 = data_main_1_1;
+            function (app_service_1_1) {
+                app_service_1 = app_service_1_1;
             },
             function (router_1_1) {
                 router_1 = router_1_1;
             }],
         execute: function() {
             Profile = class Profile {
-                constructor(route) {
+                constructor(route, userService) {
                     this.route = route;
+                    this.userService = userService;
                     if (this.id >= 0) {
-                        this.setData();
+                        this.loadUser();
                     }
                 }
-                setData() {
-                    this.list = data_main_1.DATA.data[this.id];
-                    this.heading = data_main_1.DATA.heading;
+                setData(data) {
+                    this.list = data.data[this.id];
+                    this.heading = data.heading;
                     this.question = this.list.issue;
                     this.answer = this.list.resolution;
                 }
                 ngOnInit() {
                     this.id = this.route.snapshot.queryParams["p"];
-                    this.setData();
+                    this.loadUser();
+                }
+                loadUser() {
+                    this.userService.getUser().subscribe(data => {
+                        this.setData(data);
+                    });
                 }
             };
             Profile = __decorate([
                 // to get route params
                 core_1.Component({
-                    templateUrl: './app/code/modules/pages/profile/partial.app.html'
+                    templateUrl: './app/code/modules/pages/profile/partial.app.html',
+                    providers: [app_service_1.UserService]
                 }), 
-                __metadata('design:paramtypes', [router_1.ActivatedRoute])
+                __metadata('design:paramtypes', [router_1.ActivatedRoute, app_service_1.UserService])
             ], Profile);
             exports_1("Profile", Profile);
         }

@@ -1,10 +1,12 @@
 // Import component decorator
 import { Component } from '@angular/core';
 import { DATA } from './server/data-main';
+import { UserService } from '../../app.service';
 import { ActivatedRoute } from '@angular/router'; // to get route params
 
 @Component({
-  templateUrl: './app/code/modules/pages/profile/partial.app.html'
+  templateUrl: './app/code/modules/pages/profile/partial.app.html',
+  providers: [UserService]
 })
 
 // Component class
@@ -14,21 +16,26 @@ export class Profile {
 	heading: string;
 	question: string;
 	answer: string;
-	constructor(private route:ActivatedRoute) {
+	constructor(private route:ActivatedRoute, private userService: UserService) {
 		if(this.id >= 0) {
-			this.setData();
+			this.loadUser();
 		}
 	}
 
-	setData() {
-		this.list = DATA.data[this.id];
-		this.heading = DATA.heading;
+	setData(data) {
+		this.list = data.data[this.id];
+		this.heading = data.heading;
 		this.question = this.list.issue;
 		this.answer = this.list.resolution;
 	}
 
 	ngOnInit() {
         this.id = this.route.snapshot.queryParams["p"];
-        this.setData();
+        this.loadUser();
     }
+    loadUser() {
+		this.userService.getUser().subscribe(data => {
+			this.setData(data);
+		});
+	}
 }

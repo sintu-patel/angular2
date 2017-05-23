@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { DATA } from './server/data-main';
+import { UserService } from '../../app.service';
 
 @Component({
-  templateUrl: './app/code/modules/pages/home/partial.app.html'
+  templateUrl: './app/code/modules/pages/home/partial.app.html',
+  providers: [UserService]
 })
 
 export class Home {
@@ -11,14 +12,28 @@ export class Home {
 	categoriesHeading: string;
 	DATA: any; // use any for complex data type (i.e. json)
 	CATEGORIES: any;
-	constructor() {
-		this.heading = DATA.heading;
-		this.DATA = DATA.data;
-		this.linksHeading = DATA.linksHeading;
-		this.categoriesHeading = DATA.categoriesHeading;
-		this.CATEGORIES = DATA.categories;
+	profile = {};
+	constructor(private userService: UserService) {
+		this.heading = "";
+		this.DATA = [];
+		this.linksHeading = "";
+		this.categoriesHeading = "";
+		this.CATEGORIES = "";
+		this.loadUser();
 	}
 	onClick(e) {
-		alert('faltu');
+		this.loadUser();
+	}
+	setData(data) {
+		this.heading = data.heading;
+		this.DATA = data.data;
+		this.linksHeading = data.linksHeading;
+		this.categoriesHeading = data.categoriesHeading;
+		this.CATEGORIES = data.categories;
+	}
+	loadUser() {
+		this.userService.getUser().subscribe(data => {
+			this.setData(data);
+		});
 	}
 }
