@@ -35,8 +35,8 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                 setData(data) {
                     this.list = data.data[this.id];
                     this.heading = data.heading;
-                    this.question = this.list.issue;
-                    this.answer = this.list.resolution;
+                    this.question = this.list.q;
+                    this.answer = this.list.a;
                 }
                 ngOnInit() {
                     this.id = this.route.snapshot.queryParams["p"];

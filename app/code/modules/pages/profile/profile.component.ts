@@ -1,6 +1,5 @@
 // Import component decorator
 import { Component } from '@angular/core';
-import { DATA } from './server/data-main';
 import { UserService } from '../../app.service';
 import { ActivatedRoute } from '@angular/router'; // to get route params
 
@@ -25,8 +24,8 @@ export class Profile {
 	setData(data) {
 		this.list = data.data[this.id];
 		this.heading = data.heading;
-		this.question = this.list.issue;
-		this.answer = this.list.resolution;
+		this.question = this.list.q;
+		this.answer = this.list.a;
 	}
 
 	ngOnInit() {
