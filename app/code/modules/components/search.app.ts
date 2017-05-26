@@ -8,7 +8,7 @@ export class SearchData {
 	transform(pipeData, query) {
 		query = query || 'error';
 		return pipeData.filter((eachItem => {
-			return eachItem['q'].toLowerCase().includes(query.toLowerCase())
+			return eachItem['issue'].toLowerCase().includes(query.toLowerCase())
 		}))
 	}
 }
