@@ -11,7 +11,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, http_1, Rx_1;
-    var UserService;
+    var DataService;
     return {
         setters:[
             function (core_1_1) {
@@ -26,20 +26,29 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator
             function (_1) {},
             function (_2) {}],
         execute: function() {
-            UserService = class UserService {
+            DataService = class DataService {
                 constructor(http) {
                     this.http = http;
                 }
-                getUser() {
+                getData() {
                     return this.http.get('http://localhost:3100/cms')
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
+                saveData(dataJSON) {
+                    var url = 'http://localhost:3100/savecms';
+                    url += '?issue=';
+                    url += dataJSON.issue;
+                    url += '&resolution=';
+                    url += dataJSON.resolution;
+                    return this.http.get(url);
+                    map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
+                }
             };
-            UserService = __decorate([
+            DataService = __decorate([
                 core_1.Injectable(), 
                 __metadata('design:paramtypes', [http_1.Http])
-            ], UserService);
-            exports_1("UserService", UserService);
+            ], DataService);
+            exports_1("DataService", DataService);
         }
     }
 });

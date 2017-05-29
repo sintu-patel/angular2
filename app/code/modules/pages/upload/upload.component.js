@@ -1,4 +1,4 @@
-System.register(['@angular/core', '../../app.service', '@angular/router'], function(exports_1, context_1) {
+System.register(['@angular/core', '../../app.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, app_service_1, router_1;
-    var Profile;
+    var core_1, app_service_1;
+    var Upload;
     return {
         setters:[
             function (core_1_1) {
@@ -19,45 +19,48 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
             },
             function (app_service_1_1) {
                 app_service_1 = app_service_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             }],
         execute: function() {
-            Profile = class Profile {
-                constructor(route, dataService) {
-                    this.route = route;
+            Upload = class Upload {
+                constructor(dataService) {
                     this.dataService = dataService;
-                    if (this.id >= 0) {
-                        this.loadUser();
-                    }
+                    this.upload = "Upload";
+                    this.issue = null;
+                    this.resolution = null;
                 }
-                setData(data) {
-                    this.list = data.data[this.id];
-                    this.heading = data.heading;
-                    this.question = this.list.issue;
-                    this.answer = this.list.resolution;
+                onClick() {
+                    const dataJSON = {
+                        "issue": this.issue,
+                        "resolution": this.resolution
+                    };
+                    this.sendData(dataJSON);
                 }
-                ngOnInit() {
-                    this.id = this.route.snapshot.queryParams["p"];
-                    this.loadUser();
-                }
-                loadUser() {
-                    this.dataService.getData().subscribe(data => {
-                        this.setData(data);
+                sendData(dataJSON) {
+                    this.dataService.saveData(dataJSON).subscribe(data => {
+                        this.saveStatus = data._body.status;
+                        this.saveCompleted(this.saveStatus);
                     });
                 }
+                saveCompleted(status) {
+                    alert('completed');
+                }
+                uploadFile(event) {
+                    this.fileData = event;
+                }
+                processData() {
+                    console.log(this.fileData);
+                }
             };
-            Profile = __decorate([
+            Upload = __decorate([
                 // to get route params
                 core_1.Component({
-                    templateUrl: './app/code/modules/pages/profile/partial.app.html',
+                    templateUrl: './app/code/modules/pages/upload/partial.app.html',
                     providers: [app_service_1.DataService]
                 }), 
-                __metadata('design:paramtypes', [router_1.ActivatedRoute, app_service_1.DataService])
-            ], Profile);
-            exports_1("Profile", Profile);
+                __metadata('design:paramtypes', [app_service_1.DataService])
+            ], Upload);
+            exports_1("Upload", Upload);
         }
     }
 });
-//# sourceMappingURL=profile.component.js.map
+//# sourceMappingURL=upload.component.js.map

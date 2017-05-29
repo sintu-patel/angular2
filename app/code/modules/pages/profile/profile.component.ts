@@ -1,11 +1,11 @@
 // Import component decorator
 import { Component } from '@angular/core';
-import { UserService } from '../../app.service';
+import { DataService } from '../../app.service';
 import { ActivatedRoute } from '@angular/router'; // to get route params
 
 @Component({
   templateUrl: './app/code/modules/pages/profile/partial.app.html',
-  providers: [UserService]
+  providers: [DataService]
 })
 
 // Component class
@@ -15,7 +15,7 @@ export class Profile {
 	heading: string;
 	question: string;
 	answer: string;
-	constructor(private route:ActivatedRoute, private userService: UserService) {
+	constructor(private route:ActivatedRoute, private dataService: DataService) {
 		if(this.id >= 0) {
 			this.loadUser();
 		}
@@ -33,7 +33,7 @@ export class Profile {
         this.loadUser();
     }
     loadUser() {
-		this.userService.getUser().subscribe(data => {
+		this.dataService.getData().subscribe(data => {
 			this.setData(data);
 		});
 	}

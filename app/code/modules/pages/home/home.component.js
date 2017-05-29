@@ -22,8 +22,8 @@ System.register(['@angular/core', '../../app.service'], function(exports_1, cont
             }],
         execute: function() {
             Home = class Home {
-                constructor(userService) {
-                    this.userService = userService;
+                constructor(dataService) {
+                    this.dataService = dataService;
                     this.profile = {};
                     this.heading = "";
                     this.DATA = [];
@@ -43,7 +43,7 @@ System.register(['@angular/core', '../../app.service'], function(exports_1, cont
                     this.CATEGORIES = data.categories;
                 }
                 loadUser() {
-                    this.userService.getUser().subscribe(data => {
+                    this.dataService.getData().subscribe(data => {
                         this.setData(data);
                     });
                 }
@@ -51,9 +51,9 @@ System.register(['@angular/core', '../../app.service'], function(exports_1, cont
             Home = __decorate([
                 core_1.Component({
                     templateUrl: './app/code/modules/pages/home/partial.app.html',
-                    providers: [app_service_1.UserService]
+                    providers: [app_service_1.DataService]
                 }), 
-                __metadata('design:paramtypes', [app_service_1.UserService])
+                __metadata('design:paramtypes', [app_service_1.DataService])
             ], Home);
             exports_1("Home", Home);
         }

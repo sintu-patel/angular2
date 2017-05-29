@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { UserService } from '../../app.service';
+import { DataService } from '../../app.service';
 
 @Component({
   templateUrl: './app/code/modules/pages/home/partial.app.html',
-  providers: [UserService]
+  providers: [DataService]
 })
 
 export class Home {
@@ -13,7 +13,7 @@ export class Home {
 	DATA: any; // use any for complex data type (i.e. json)
 	CATEGORIES: any;
 	profile = {};
-	constructor(private userService: UserService) {
+	constructor(private dataService: DataService) {
 		this.heading = "";
 		this.DATA = [];
 		this.linksHeading = "";
@@ -32,7 +32,7 @@ export class Home {
 		this.CATEGORIES = data.categories;
 	}
 	loadUser() {
-		this.userService.getUser().subscribe(data => {
+		this.dataService.getData().subscribe(data => {
 			this.setData(data);
 		});
 	}
