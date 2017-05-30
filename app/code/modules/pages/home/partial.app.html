@@ -7,16 +7,10 @@
 			<nav>
 				<ul>
 					<li>
-						<a href="#">Angularjs 2</a>
+						<a href="/upload">Upload</a>
 					</li>
 					<li>
-						<a href="#">POST CSS</a>
-					</li>
-					<li>
-						<a href="#">Github</a>
-					</li>
-					<li>
-						<a href="#">Autoprefixer</a>
+						<a href="https://github.com/sintu-patel/angular2">Github</a>
 					</li>
 				</ul>
 			</nav>
@@ -48,10 +42,10 @@
 			<div class="main-panel">
 				<div class="main-panel-content">
 					<h1>{{ heading }}</h1>
-					<div class="issues" *ngFor="let item of DATA">
+					<div class="issues" *ngFor="let item of DATA;let i = index" [attr.data-index]="i">
 						<h2 class="issue">{{ item.issue }}</h2>
 						<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>
-						<a href="{{ item.readMore }}" >Read More</a>
+						<a [routerLink]="['/profile']" [queryParams]="{ p: i }">View more</a>
 					</div>
 				</div>
 			</div>

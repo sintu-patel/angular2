@@ -22,7 +22,9 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 transform(pipeData, query) {
                     query = query || 'error';
                     return pipeData.filter((eachItem => {
-                        return eachItem['issue'].toLowerCase().includes(query.toLowerCase());
+                        if (eachItem['issue']) {
+                            return eachItem['issue'].toLowerCase().includes(query.toLowerCase());
+                        }
                     }));
                 }
             };

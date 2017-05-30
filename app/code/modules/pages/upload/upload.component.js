@@ -37,7 +37,7 @@ System.register(['@angular/core', '../../app.service'], function(exports_1, cont
                 }
                 sendData(dataJSON) {
                     this.dataService.saveData(dataJSON).subscribe(data => {
-                        this.saveStatus = data._body.status;
+                        this.saveStatus = 'saved';
                         this.saveCompleted(this.saveStatus);
                     });
                 }
@@ -45,10 +45,36 @@ System.register(['@angular/core', '../../app.service'], function(exports_1, cont
                     alert('completed');
                 }
                 uploadFile(event) {
-                    this.fileData = event;
+                    this.filesToUpload = event.target.files;
                 }
                 processData() {
-                    console.log(this.fileData);
+                    const url = "http://localhost:3100/uploadcms";
+                    this.makeFileRequest(url, [], this.filesToUpload).then((result) => {
+                        console.log(result);
+                    }, (error) => {
+                        console.error(error);
+                    });
+                }
+                makeFileRequest(url, params, files) {
+                    return new Promise((resolve, reject) => {
+                        var formData = new FormData();
+                        var xhr = new XMLHttpRequest();
+                        for (var i = 0; i < files.length; i++) {
+                            formData.append("uploads[]", files[i], files[i].name);
+                        }
+                        xhr.onreadystatechange = function () {
+                            if (xhr.readyState == 4) {
+                                if (xhr.status == 200) {
+                                    resolve(JSON.parse(xhr.response));
+                                }
+                                else {
+                                    reject(xhr.response);
+                                }
+                            }
+                        };
+                        xhr.open("POST", url, true);
+                        xhr.send(formData);
+                    });
                 }
             };
             Upload = __decorate([

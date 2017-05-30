@@ -20,6 +20,9 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             TrimString = class TrimString {
                 transform(pipeData) {
+                    if (!pipeData) {
+                        return 'No data';
+                    }
                     return pipeData.substring(0, 50) + '...';
                 }
             };

@@ -6,6 +6,9 @@ import { Pipe } from '@angular/core';
 
 export class TrimString {
 	transform(pipeData) {
+        if (!pipeData) {
+            return 'No data';
+        }
 		return pipeData.substring(0, 50) + '...';
 	}
 }
