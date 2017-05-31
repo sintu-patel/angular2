@@ -651,4 +651,7 @@ div {
     margin-bottom: 10px;
     display: block;
 }
+.form-panel .input[type="file"] {
+    padding-left: 0;
+}
 /*# sourceMappingURL=style.css.map */

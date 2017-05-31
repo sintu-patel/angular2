@@ -1,13 +1,16 @@
 <div class="ang-app">
 	<div class="header">
 		<div class="col-6">
-			<h1>{{ heading }}</h1>
+			<h1>Data transformation</h1>
 		</div>
 		<div class="col-6 navigation">
 			<nav>
 				<ul>
 					<li>
-						<a href="/upload">Upload</a>
+						<a [routerLink]="['/home']">Home</a>
+					</li>
+					<li>
+						<a [routerLink]="['/upload']">Upload</a>
 					</li>
 					<li>
 						<a href="https://github.com/sintu-patel/angular2">Github</a>
