@@ -4,6 +4,7 @@ import { Home } from './pages/home/home.component';
 import { Profile } from './pages/profile/profile.component';
 import { Upload } from './pages/upload/upload.component';
 import { FineList } from './pages/finelist/finelist.component';
+import { CorrectFile } from './pages/correctfile/correctfile.component';
 
 // Route Configuration
 export const routes: Routes = [
@@ -11,7 +12,8 @@ export const routes: Routes = [
   { path: 'home', component: Home },
   { path: 'profile', component: Profile},
   { path: 'upload', component: Upload},
-  { path: 'finelist', component: FineList}
+  { path: 'finelist', component: FineList},
+  { path: 'correctfile', component: CorrectFile}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

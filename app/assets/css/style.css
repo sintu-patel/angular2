@@ -653,5 +653,32 @@ div {
 }
 .form-panel .input[type="file"] {
     padding-left: 0;
+    background: darkslateblue;
+    padding: 10px;
+    width: 120px;
+    cursor: pointer;
+}
+.form-panel button {
+    background: darkslateblue;
+    padding: 5px 10px;
+    width: 120px;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th, table td {
+    text-align: left;
+    padding: 5px 10px;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+table th {
+    background: darkslateblue;
+    color: white;
 }
 /*# sourceMappingURL=style.css.map */

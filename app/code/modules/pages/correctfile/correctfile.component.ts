@@ -4,12 +4,12 @@ import { DataService } from '../../app.service';
 import { ActivatedRoute } from '@angular/router'; // to get route params
 
 @Component({
-  templateUrl: './app/code/modules/pages/finelist/partial.app.html',
+  templateUrl: './app/code/modules/pages/correctfile/partial.app.html',
   providers: [DataService]
 })
 
 // Component class
-export class FineList {
+export class CorrectFile {
     fileData: any;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
         this.fileData = [];

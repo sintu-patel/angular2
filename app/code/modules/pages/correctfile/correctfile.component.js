@@ -11,7 +11,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, app_service_1, router_1;
-    var FineList;
+    var CorrectFile;
     return {
         setters:[
             function (core_1_1) {
@@ -24,7 +24,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                 router_1 = router_1_1;
             }],
         execute: function() {
-            FineList = class FineList {
+            CorrectFile = class CorrectFile {
                 constructor(route, dataService) {
                     this.route = route;
                     this.dataService = dataService;
@@ -40,16 +40,16 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     });
                 }
             };
-            FineList = __decorate([
+            CorrectFile = __decorate([
                 // to get route params
                 core_1.Component({
-                    templateUrl: './app/code/modules/pages/finelist/partial.app.html',
+                    templateUrl: './app/code/modules/pages/correctfile/partial.app.html',
                     providers: [app_service_1.DataService]
                 }), 
                 __metadata('design:paramtypes', [router_1.ActivatedRoute, app_service_1.DataService])
-            ], FineList);
-            exports_1("FineList", FineList);
+            ], CorrectFile);
+            exports_1("CorrectFile", CorrectFile);
         }
     }
 });
-//# sourceMappingURL=finelist.component.js.map
+//# sourceMappingURL=correctfile.component.js.map

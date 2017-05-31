@@ -24,23 +24,14 @@ System.register(['@angular/core', '../../app.service'], function(exports_1, cont
             Home = class Home {
                 constructor(dataService) {
                     this.dataService = dataService;
-                    this.profile = {};
-                    this.heading = "";
                     this.DATA = [];
-                    this.linksHeading = "";
-                    this.categoriesHeading = "";
-                    this.CATEGORIES = "";
                     this.loadUser();
                 }
                 onClick(e) {
                     this.loadUser();
                 }
                 setData(data) {
-                    this.heading = data.heading;
                     this.DATA = data.data;
-                    this.linksHeading = data.linksHeading;
-                    this.categoriesHeading = data.categoriesHeading;
-                    this.CATEGORIES = data.categories;
                 }
                 loadUser() {
                     this.dataService.getData().subscribe(data => {

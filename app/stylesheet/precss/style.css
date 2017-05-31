@@ -2,3 +2,4 @@
 @import 'config/variables';
 @import 'common/reset';
 @import 'app-layout/app-layout';
+@import 'tables/app-table';

@@ -1,62 +1,36 @@
-<div class="ang-app">
-	<div class="header">
-		<div class="col-6">
-			<h1>Data transformation</h1>
-		</div>
-		<div class="col-6 navigation">
-			<nav>
+
+<div class="container">
+	<div class="col-4 left-panel">
+		<div class="content">
+			<div class="search-issues">
+				<input class="search-issue-box" [(ngModel)] = "query" placeholder="Search the text" />
+			</div>
+			<div class="list-content">
+				<h2>Search Results</h2>
 				<ul>
-					<li>
-						<a [routerLink]="['/home']">Home</a>
-					</li>
-					<li>
-						<a [routerLink]="['/upload']">Upload</a>
-					</li>
-					<li>
-						<a [routerLink]="['/finelist']">Fine List</a>
-					</li>
-					<li>
-						<a href="https://github.com/sintu-patel/angular2">Github</a>
+					<li class="issues" *ngFor="let item of DATA | find:query; let i = index" [attr.data-index]="i">
+						<a [routerLink]="['/profile']" [queryParams]="{ p: i }">{{ item.issue }}</a>
 					</li>
 				</ul>
-			</nav>
-		</div>
-	</div>
-	<div class="container">
-		<div class="col-4 left-panel">
-			<div class="content">
-				<div class="search-issues">
-					<input class="search-issue-box" [(ngModel)] = "query" placeholder="Search the text" />
-				</div>
-				<div class="list-content">
-					<h2>Search Results</h2>
-					<ul>
-						<li class="issues" *ngFor="let item of DATA | find:query; let i = index" [attr.data-index]="i">
-							<a [routerLink]="['/profile']" [queryParams]="{ p: i }">{{ item.issue }}</a>
-						</li>
-					</ul>
-					<h2>All issues</h2>
-					<ul>
-						<li class="issues" *ngFor="let item of DATA; let i = index" [attr.data-index]="i">
-							<a [routerLink]="['/profile']" [queryParams]="{ p: i }">{{ item.issue }}</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-7">
-			<div class="main-panel">
-				<div class="main-panel-content">
-					<h1>{{ heading }}</h1>
-					<div class="issues" *ngFor="let item of DATA;let i = index" [attr.data-index]="i">
-						<h2 class="issue">{{ item.issue }}</h2>
-						<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>
-						<a [routerLink]="['/profile']" [queryParams]="{ p: i }">View more</a>
-					</div>
-				</div>
+				<h2>All issues</h2>
+				<ul>
+					<li class="issues" *ngFor="let item of DATA; let i = index" [attr.data-index]="i">
+						<a [routerLink]="['/profile']" [queryParams]="{ p: i }">{{ item.issue }}</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="footer">
+	<div class="col-7">
+		<div class="main-panel">
+			<div class="main-panel-content">
+				<h1>Data transformation</h1>
+				<div class="issues" *ngFor="let item of DATA;let i = index" [attr.data-index]="i">
+					<h2 class="issue">{{ item.issue }}</h2>
+					<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>
+					<a [routerLink]="['/profile']" [queryParams]="{ p: i }">View more</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

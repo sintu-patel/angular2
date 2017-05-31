@@ -22,6 +22,10 @@ export class Upload {
      this.resolution = null;
     }
     onClick() {
+      if (!this.issue || !this.resolution) {
+        alert('Please enter the data');
+        return;
+      }
       const dataJSON = {
         "issue": this.issue,
         "resolution": this.resolution

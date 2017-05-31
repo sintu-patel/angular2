@@ -10,6 +10,7 @@ import { Home } from './pages/home/home.component';
 import { Profile } from './pages/profile/profile.component';
 import { Upload } from './pages/upload/upload.component';
 import { FineList } from './pages/finelist/finelist.component';
+import { CorrectFile } from './pages/correctfile/correctfile.component';
 import { routing } from './app.routes';
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { routing } from './app.routes';
     Home,
     Profile,
     Upload,
-    FineList
+    FineList,
+    CorrectFile
   ],
   bootstrap: [
     AppComponent
