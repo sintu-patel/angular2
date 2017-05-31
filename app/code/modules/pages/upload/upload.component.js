@@ -49,31 +49,10 @@ System.register(['@angular/core', '../../app.service'], function(exports_1, cont
                 }
                 processData() {
                     const url = "http://localhost:3100/uploadcms";
-                    this.makeFileRequest(url, [], this.filesToUpload).then((result) => {
+                    this.dataService.makeFileUploadRequest(url, [], this.filesToUpload).then((result) => {
                         console.log(result);
                     }, (error) => {
                         console.error(error);
-                    });
-                }
-                makeFileRequest(url, params, files) {
-                    return new Promise((resolve, reject) => {
-                        var formData = new FormData();
-                        var xhr = new XMLHttpRequest();
-                        for (var i = 0; i < files.length; i++) {
-                            formData.append("uploads[]", files[i], files[i].name);
-                        }
-                        xhr.onreadystatechange = function () {
-                            if (xhr.readyState == 4) {
-                                if (xhr.status == 200) {
-                                    resolve(JSON.parse(xhr.response));
-                                }
-                                else {
-                                    reject(xhr.response);
-                                }
-                            }
-                        };
-                        xhr.open("POST", url, true);
-                        xhr.send(formData);
                     });
                 }
             };
