@@ -9,6 +9,7 @@ import { SearchData } from './components/search.app';
 import { Home } from './pages/home/home.component';
 import { Profile } from './pages/profile/profile.component';
 import { Upload } from './pages/upload/upload.component';
+import { FineList } from './pages/finelist/finelist.component';
 import { routing } from './app.routes';
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { routing } from './app.routes';
     SearchData,
     Home,
     Profile,
-    Upload
+    Upload,
+    FineList
   ],
   bootstrap: [
     AppComponent

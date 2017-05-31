@@ -34,6 +34,10 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator
                     return this.http.get('http://localhost:3100/cms')
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
+                getFineData() {
+                    return this.http.get('http://localhost:3100/cmsfinelist')
+                        .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
+                }
                 saveData(dataJSON) {
                     var url = 'http://localhost:3100/savecms';
                     let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
