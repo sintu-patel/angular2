@@ -9,17 +9,26 @@
 						<th>name</th>
 						<th>fine</th>
 						<th>currency</th>
-						<th>collection</th>
+						<th>collectedfine</th>
 					</thead>
 					<tbody>
-						<tr *ngFor="let item of fileData;">
-							<td>{{ item.name }}</td>
-							<td>{{ item.fine }}</td>
-							<td>{{ item.currency }}</td>
-							<td>{{ item.collection }}</td>
+						<tr *ngFor="let item of fileData;let i = index" [attr.data-index]="i">
+							<td>
+								<input (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" [value]="item.name" />
+							</td>
+							<td>
+								<input (change)="updateData($event)" [attr.data-rowno]="i" class="fine-input" type="text" name="fine" [value]="item.fine" />
+							</td>
+							<td>
+								<input (change)="updateData($event)" [attr.data-rowno]="i" class="currency-input" type="text" name="currency" [value]="item.currency" />
+							</td>
+							<td>
+								<input (change)="updateData($event)" [attr.data-rowno]="i" class="collectedfine-input" type="text" name="collectedfine" [value]="item.collectedfine" />
+							</td>
 						<tr>
 					</tbody>
 				</table>
+				<button (click)="saveData($event)" type="button">Submit</button>
 			</div>
 		</div>
 	</div>

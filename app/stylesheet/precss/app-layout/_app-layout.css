@@ -6,7 +6,7 @@
 }
 
 .main-dp-panel {
-	lost-center: 50%;
+	lost-center: 80%;
 }
 
 body {
@@ -204,28 +204,27 @@ div {
 	height: 100px;
 }
 
-.form-panel {
-	.input {
-		width: 100%;
-		padding: 10px;
-		margin-bottom: 10px;
-		display: block;
-	}
-	.input[type="file"] {
-		padding-left: 0;
-		background: darkslateblue;
-		padding: 10px;
-		width: 120px;
-		cursor: pointer;
-	}
+.input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	display: block;
+}
+.input[type="file"] {
+	padding-left: 0;
+	background: darkslateblue;
+	padding: 10px;
+	width: 120px;
+	cursor: pointer;
+}
 
-	button {
-		background: darkslateblue;
-		padding: 5px 10px;
-		width: 120px;
-		color: white;
-		text-transform: uppercase;
-		border: none;
-		cursor: pointer;
-	}
+button {
+	background: darkslateblue;
+	padding: 5px 10px;
+	width: 120px;
+	color: white;
+	text-transform: uppercase;
+	border: none;
+	cursor: pointer;
+	margin-top: 10px;
 }

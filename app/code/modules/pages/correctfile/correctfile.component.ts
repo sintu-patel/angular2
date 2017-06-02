@@ -25,4 +25,35 @@ export class CorrectFile {
 			this.setData(data);
 		});
 	}
+
+    updateData(event) {
+      let $input = event.target;
+      let $inputValue = $input.value;
+      let $colName = $input.name;
+      let $rowNo = $input.getAttribute('data-rowno');
+      $rowNo = parseInt($rowNo, 10);
+      switch ($colName) {
+        case "name":
+          this.fileData[$rowNo].name = $inputValue;
+          break;
+        case "fine":
+          this.fileData[$rowNo].fine = $inputValue;
+          break;
+       case "currency":
+        this.fileData[$rowNo].currency = $inputValue;
+        break;
+        case "collectedfine":
+        this.fileData[$rowNo].collectedfine = $inputValue;
+        break;
+        default:
+          break;
+      }
+    }
+
+    saveData(event) {
+      const fileData = this.fileData;
+      this.dataService.saveFileData(fileData).subscribe(data => {
+          alert('file-saved');
+      });
+    }
 }

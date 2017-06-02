@@ -384,7 +384,7 @@ template {
     clear: both;
 }
 .main-dp-panel {
-    max-width: 50%;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -645,20 +645,20 @@ div {
 .footer {
     height: 100px;
 }
-.form-panel .input {
+.input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     display: block;
 }
-.form-panel .input[type="file"] {
+.input[type="file"] {
     padding-left: 0;
     background: darkslateblue;
     padding: 10px;
     width: 120px;
     cursor: pointer;
 }
-.form-panel button {
+button {
     background: darkslateblue;
     padding: 5px 10px;
     width: 120px;
@@ -666,6 +666,7 @@ div {
     text-transform: uppercase;
     border: none;
     cursor: pointer;
+    margin-top: 10px;
 }
 table {
     width: 100%;

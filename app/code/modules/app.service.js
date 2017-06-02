@@ -38,8 +38,19 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator
                     return this.http.get('http://localhost:3100/cmsfinelist')
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
+                getFineDataFromFile() {
+                    return this.http.get('http://localhost:3100/cmscorrectfinelist')
+                        .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
+                }
                 saveData(dataJSON) {
                     var url = 'http://localhost:3100/savecms';
+                    let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+                    let options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.post(url, dataJSON, options)
+                        .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
+                }
+                saveFileData(dataJSON) {
+                    var url = 'http://localhost:3100/savefiledata';
                     let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
                     let options = new http_1.RequestOptions({ headers: headers });
                     return this.http.post(url, dataJSON, options)
