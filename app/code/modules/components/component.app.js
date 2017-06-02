@@ -1,4 +1,4 @@
-System.register(['@angular/core'], function(exports_1, context_1) {
+System.register(['@angular/core', '../../config/app.labels'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,22 @@ System.register(['@angular/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, app_labels_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (app_labels_1_1) {
+                app_labels_1 = app_labels_1_1;
             }],
         execute: function() {
             AppComponent = class AppComponent {
+                constructor() {
+                    this.navData = app_labels_1.labelConfig.navigation;
+                    this.commonLabels = app_labels_1.labelConfig.common;
+                }
             };
             AppComponent = __decorate([
                 core_1.Component({

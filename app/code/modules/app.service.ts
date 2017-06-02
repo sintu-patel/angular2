@@ -1,39 +1,40 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { apiConfig } from '../config/app.config';
 
 @Injectable()
 export class DataService {
   constructor (private http: Http) {}
 
   getData() : Observable<Comment[]> {
-    return this.http.get('http://localhost:3100/cms')
+    return this.http.get(apiConfig.apiServer.cmsUrl)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   getFineData() : Observable<Comment[]> {
-    return this.http.get('http://localhost:3100/cmsfinelist')
+    return this.http.get(apiConfig.apiServer.cmsfinelistUrl)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   getFineDataFromFile() : Observable<Comment[]> {
-    return this.http.get('http://localhost:3100/cmscorrectfinelist')
+    return this.http.get(apiConfig.apiServer.cmscorrectfinelistUrl)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   saveData(dataJSON) : Observable<Comment[]> {
-   var url = 'http://localhost:3100/savecms';
-   let headers = new Headers({ 'Content-Type': 'application/json' });
+   var url = apiConfig.apiServer.savecmsUrl;
+   let headers = new Headers(apiConfig.contentTypeJson);
    let options = new RequestOptions({ headers: headers });
     return this.http.post(url, dataJSON, options)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
   saveFileData(dataJSON) : Observable<Comment[]> {
-   var url = 'http://localhost:3100/savefiledata';
-   let headers = new Headers({ 'Content-Type': 'application/json' });
+   var url = apiConfig.apiServer.savefiledataUrl;
+   let headers = new Headers(apiConfig.contentTypeJson);
    let options = new RequestOptions({ headers: headers });
     return this.http.post(url, dataJSON, options)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));

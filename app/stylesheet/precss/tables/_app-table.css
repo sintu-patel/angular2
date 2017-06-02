@@ -14,4 +14,12 @@ table {
 		background: darkslateblue;
 		color: white;
 	}
+
+	tr[data-deleted="deleted"] {
+		opacity: 0.5;
+
+		input {
+			pointer-events: none;
+		}
+	}
 }

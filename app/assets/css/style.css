@@ -682,4 +682,10 @@ table th {
     background: darkslateblue;
     color: white;
 }
+table tr[data-deleted="deleted"] {
+    opacity: 0.5;
+}
+table tr[data-deleted="deleted"] input {
+    pointer-events: none;
+}
 /*# sourceMappingURL=style.css.map */

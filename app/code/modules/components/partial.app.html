@@ -1,22 +1,13 @@
 <div class="ang-app">
 	<div class="header">
 		<div class="col-6">
-			<h1>Data transformation</h1>
+			<h1>{{commonLabels.title}}</h1>
 		</div>
 		<div class="col-6 navigation">
 			<nav>
 				<ul>
-					<li>
-						<a [routerLink]="['/home']">Home</a>
-					</li>
-					<li>
-						<a [routerLink]="['/upload']">Upload</a>
-					</li>
-					<li>
-						<a [routerLink]="['/finelist']">Fine List</a>
-					</li>
-					<li>
-						<a [routerLink]="['/correctfile']">Correct Fine List</a>
+					<li *ngFor="let item of navData">
+						<a [routerLink]="[item.url]">{{ item.label }}</a>
 					</li>
 					<li>
 						<a href="https://github.com/sintu-patel/angular2">Github</a>

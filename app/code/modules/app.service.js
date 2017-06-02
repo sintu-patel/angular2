@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator/map', 'rxjs/add/operator/catch'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator/map', 'rxjs/add/operator/catch', '../config/app.config'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, Rx_1;
+    var core_1, http_1, Rx_1, app_config_1;
     var DataService;
     return {
         setters:[
@@ -24,34 +24,37 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator
                 Rx_1 = Rx_1_1;
             },
             function (_1) {},
-            function (_2) {}],
+            function (_2) {},
+            function (app_config_1_1) {
+                app_config_1 = app_config_1_1;
+            }],
         execute: function() {
             DataService = class DataService {
                 constructor(http) {
                     this.http = http;
                 }
                 getData() {
-                    return this.http.get('http://localhost:3100/cms')
+                    return this.http.get(app_config_1.apiConfig.apiServer.cmsUrl)
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
                 getFineData() {
-                    return this.http.get('http://localhost:3100/cmsfinelist')
+                    return this.http.get(app_config_1.apiConfig.apiServer.cmsfinelistUrl)
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
                 getFineDataFromFile() {
-                    return this.http.get('http://localhost:3100/cmscorrectfinelist')
+                    return this.http.get(app_config_1.apiConfig.apiServer.cmscorrectfinelistUrl)
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
                 saveData(dataJSON) {
-                    var url = 'http://localhost:3100/savecms';
-                    let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+                    var url = app_config_1.apiConfig.apiServer.savecmsUrl;
+                    let headers = new http_1.Headers(app_config_1.apiConfig.contentTypeJson);
                     let options = new http_1.RequestOptions({ headers: headers });
                     return this.http.post(url, dataJSON, options)
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
                 saveFileData(dataJSON) {
-                    var url = 'http://localhost:3100/savefiledata';
-                    let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+                    var url = app_config_1.apiConfig.apiServer.savefiledataUrl;
+                    let headers = new http_1.Headers(app_config_1.apiConfig.contentTypeJson);
                     let options = new http_1.RequestOptions({ headers: headers });
                     return this.http.post(url, dataJSON, options)
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));

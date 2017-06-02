@@ -20,7 +20,7 @@ export class CorrectFile {
 		this.fileData = data.fileData;
 	}
 
-    loadFineList() {
+   loadFineList() {
 		this.dataService.getFineData().subscribe(data => {
 			this.setData(data);
 		});
@@ -48,6 +48,13 @@ export class CorrectFile {
         default:
           break;
       }
+    }
+
+    deleteRow(event) {
+      let $button = event.target;
+      let $rowNo = $button.getAttribute('data-rowno');
+      $rowNo = parseInt($rowNo, 10);
+      this.fileData[$rowNo].isDeleted = 'deleted';
     }
 
     saveData(event) {
