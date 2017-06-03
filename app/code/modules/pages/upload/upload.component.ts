@@ -45,8 +45,7 @@ export class Upload {
       this.filesToUpload = <Array<File>> event.target.files;
     }
     processData() {
-      const url = "http://localhost:3100/uploadcms";
-      this.dataService.makeFileUploadRequest(url, [], this.filesToUpload).then((result) => {
+      this.dataService.makeFileUploadRequest([], this.filesToUpload).then((result) => {
             console.log(result);
         }, (error) => {
             console.error(error);

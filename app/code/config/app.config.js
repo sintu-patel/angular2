@@ -15,7 +15,8 @@ System.register([], function(exports_1, context_1) {
                     savecmsUrl: host + 'savecms',
                     savefiledataUrl: host + 'savefiledata',
                     savellpdataUrl: host + 'savellp',
-                    getllpdataUrl: host + 'getllpdata'
+                    getllpdataUrl: host + 'getllpdata',
+                    uploadcmsUrl: host + 'uploadcms'
                 },
                 contentTypeJson: {
                     'Content-Type': 'application/json'

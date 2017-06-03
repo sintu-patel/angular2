@@ -40,7 +40,8 @@ export class DataService {
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
-  makeFileUploadRequest(url: string, params: Array<string>, files: Array<File>) {
+  makeFileUploadRequest(params: Array<string>, files: Array<File>) {
+    const url = apiConfig.apiServer.uploadcmsUrl;
     return new Promise((resolve, reject) => {
         var formData: any = new FormData();
         var xhr = new XMLHttpRequest();

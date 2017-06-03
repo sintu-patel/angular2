@@ -59,7 +59,8 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator
                     return this.http.post(url, dataJSON, options)
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
-                makeFileUploadRequest(url, params, files) {
+                makeFileUploadRequest(params, files) {
+                    const url = app_config_1.apiConfig.apiServer.uploadcmsUrl;
                     return new Promise((resolve, reject) => {
                         var formData = new FormData();
                         var xhr = new XMLHttpRequest();
