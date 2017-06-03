@@ -36,6 +36,9 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         currency: 'initial',
                         collectedfine: 'initial'
                     };
+                    // error model
+                    this.modelData = null;
+                    this.isModelOpen = false;
                     this.loadFineList();
                 }
                 setData(data) {
@@ -83,16 +86,39 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                 saveData(event) {
                     const fileData = this.fileData;
                     this.dataService.saveFileData(fileData).subscribe(data => {
-                        alert('file-saved');
+                        this.fileSaved();
                     });
+                }
+                dataNotSaved() {
+                    let modelData = {
+                        showCloseButton: true,
+                        heading: 'Error',
+                        description: 'Data not saved'
+                    };
+                    this.openModel(modelData);
+                }
+                fileSaved() {
+                    let modelData = {
+                        showCloseButton: true,
+                        heading: 'File saved',
+                        description: 'Data saved successfully. Please click on correct errors'
+                    };
+                    this.openModel(modelData);
                 }
                 addRow() {
                     var fileLength = this.fileData.length;
                     this.fileData.push(this.initialData);
                 }
+                openModel(data) {
+                    this.modelData = data;
+                    this.isModelOpen = true;
+                }
+                closeModel() {
+                    this.modelData = null;
+                    this.isModelOpen = false;
+                }
             };
             CorrectFile = __decorate([
-                // to get route params
                 core_1.Component({
                     templateUrl: './app/code/modules/pages/correctfile/partial.app.html',
                     providers: [app_service_1.DataService]

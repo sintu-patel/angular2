@@ -12,6 +12,9 @@ import { ActivatedRoute } from '@angular/router'; // to get route params
 export class UpdateLLP {
     fileData: any;
     initialData: any;
+    // error model
+    modelData: any;
+    isModelOpen: any;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
     this.fileData = [];
     this.initialData = {
@@ -23,6 +26,9 @@ export class UpdateLLP {
       thursday: 'initial',
       friday: 'initial'
     };
+    // error model
+    this.modelData =  null;
+    this.isModelOpen = false;
 		this.loadLLP();
 	}
 
@@ -86,7 +92,31 @@ export class UpdateLLP {
     saveData(event) {
       const fileData = this.fileData;
       this.dataService.saveLLPData(fileData).subscribe(data => {
-          alert('file-saved');
+          this.fileSaved();
       });
     }
+  dataNotSaved() {
+    let modelData = {
+      showCloseButton: true,
+      heading: 'Error',
+      description: 'Data not saved'
+    };
+    this.openModel(modelData);
+  }
+  fileSaved() {
+    let modelData = {
+      showCloseButton: true,
+      heading: 'File saved',
+      description: 'Data saved successfully. Please click on correct errors'
+    };
+    this.openModel(modelData);
+  }
+  openModel(data) {
+    this.modelData = data;
+    this.isModelOpen = true;
+  }
+  closeModel() {
+    this.modelData = null;
+    this.isModelOpen = false;
+  }
 }

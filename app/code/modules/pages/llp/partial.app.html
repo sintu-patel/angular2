@@ -46,3 +46,15 @@
 		</div>
 	</div>
 </div>
+<div class="global-model" *ngIf="isModelOpen">
+	<div class="model-container">
+		<div *ngIf="modelData.showCloseButton">
+			<button type="button" (click)="closeModel()">Close</button>
+		</div>
+		<h2>{{ modelData.heading }}</h2>
+		<p>{{ modelData.description }}</p>
+		<div *ngIf="modelData.showRedirectLink">
+			<a [routerLink]="[modelData.redirectUrl]">{{ modelData.redirectLabel }}</a>
+		</div>
+	</div>
+</div>

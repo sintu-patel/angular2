@@ -2,28 +2,45 @@
 <div class="container">
 	<div class="col-12">
 		<div class="main-panel main-dp-panel form-panel">
-			<h2>Enter the issues and resolutions</h2>
-			<form>
-				<div class="input-container">
-					<input class="input" name="issue" [(ngModel)]="issue" type="text" placeholder="Enter the issue" />
-				</div>
-				<div class="input-container">
-					<input class="input" name="resolution" [(ngModel)]="resolution" type="text" placeholder="Enter the resolution" />
-				</div>
-				<div class="input-container">
-					<button (click)="onClick()" type="button">Submit</button>
-				</div>
-			</form>
+			<div class="issue-form-container">
+				<h2>Enter the issues and resolutions</h2>
+				<form>
+					<div class="input-container">
+						<input class="input" name="issue" [(ngModel)]="issue" type="text" placeholder="Enter the issue" />
+					</div>
+					<div class="input-container">
+						<input class="input" name="resolution" [(ngModel)]="resolution" type="text" placeholder="Enter the resolution" />
+					</div>
+					<div class="input-container">
+						<button (click)="onClick()" type="button">Submit</button>
+					</div>
+				</form>
+			</div>
 
-			<h2>Upload a file containing the fine</h2>
-			<form>
-				<div class="input-container">
-					<input (change)="uploadFile($event)" class="input" name="file" [(ngModel)]="xfile" type="file" />
-				</div>
-				<div class="input-container">
-					<button (click)="processData()" type="button">Submit</button>
-				</div>
-			</form>
+			<div class="upload-file-container">
+				<h2>Upload a file containing the fine</h2>
+				<form>
+					<div class="input-container">
+						<input (change)="uploadFile($event)" class="input" name="file" [(ngModel)]="xfile" type="file" />
+					</div>
+					<div class="input-container">
+						<button (click)="processData()" type="button">Submit</button>
+					</div>
+					<p>Note: Only xls files are allowed to upload</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="global-model" *ngIf="isModelOpen">
+	<div class="model-container">
+		<div *ngIf="modelData.showCloseButton">
+			<button type="button" (click)="closeModel()">Close</button>
+		</div>
+		<h2>{{ modelData.heading }}</h2>
+		<p>{{ modelData.description }}</p>
+		<div *ngIf="modelData.showRedirectLink">
+			<a [routerLink]="[modelData.redirectUrl]">{{ modelData.redirectLabel }}</a>
 		</div>
 	</div>
 </div>
