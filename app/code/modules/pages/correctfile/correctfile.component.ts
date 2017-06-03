@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router'; // to get route params
 export class CorrectFile {
     fileData: any;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
-        this.fileData = [];
+    this.fileData = [];
 		this.loadFineList();
 	}
 
