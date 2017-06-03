@@ -11,7 +11,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, app_service_1, router_1;
-    var CorrectFile;
+    var UpdateLLP;
     return {
         setters:[
             function (core_1_1) {
@@ -24,7 +24,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                 router_1 = router_1_1;
             }],
         execute: function() {
-            CorrectFile = class CorrectFile {
+            UpdateLLP = class UpdateLLP {
                 constructor(route, dataService) {
                     this.route = route;
                     this.dataService = dataService;
@@ -32,11 +32,13 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     this.initialData = {
                         empid: 'initial',
                         name: 'initial',
-                        fine: 'initial',
-                        currency: 'initial',
-                        collectedfine: 'initial'
+                        monday: 'initial',
+                        tuesday: 'initial',
+                        wednesday: 'initial',
+                        thursday: 'initial',
+                        friday: 'initial'
                     };
-                    this.loadFineList();
+                    this.loadLLP();
                 }
                 setData(data) {
                     if (data.fileData && data.fileData.length) {
@@ -46,8 +48,8 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         this.fileData.push(this.initialData);
                     }
                 }
-                loadFineList() {
-                    this.dataService.getFineData().subscribe(data => {
+                loadLLP() {
+                    this.dataService.getLLPData().subscribe(data => {
                         this.setData(data);
                     });
                 }
@@ -61,14 +63,20 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         case "name":
                             this.fileData[$rowNo].name = $inputValue;
                             break;
-                        case "fine":
-                            this.fileData[$rowNo].fine = $inputValue;
+                        case "monday":
+                            this.fileData[$rowNo].monday = $inputValue;
                             break;
-                        case "currency":
-                            this.fileData[$rowNo].currency = $inputValue;
+                        case "tuesday":
+                            this.fileData[$rowNo].tuesday = $inputValue;
                             break;
-                        case "collectedfine":
-                            this.fileData[$rowNo].collectedfine = $inputValue;
+                        case "wednesday":
+                            this.fileData[$rowNo].wednesday = $inputValue;
+                            break;
+                        case "thursday":
+                            this.fileData[$rowNo].thursday = $inputValue;
+                            break;
+                        case "friday":
+                            this.fileData[$rowNo].friday = $inputValue;
                             break;
                         default:
                             break;
@@ -80,27 +88,27 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     $rowNo = parseInt($rowNo, 10);
                     this.fileData[$rowNo].isDeleted = 'deleted';
                 }
-                saveData(event) {
-                    const fileData = this.fileData;
-                    this.dataService.saveFileData(fileData).subscribe(data => {
-                        alert('file-saved');
-                    });
-                }
                 addRow() {
                     var fileLength = this.fileData.length;
                     this.fileData.push(this.initialData);
                 }
+                saveData(event) {
+                    const fileData = this.fileData;
+                    this.dataService.saveLLPData(fileData).subscribe(data => {
+                        alert('file-saved');
+                    });
+                }
             };
-            CorrectFile = __decorate([
+            UpdateLLP = __decorate([
                 // to get route params
                 core_1.Component({
-                    templateUrl: './app/code/modules/pages/correctfile/partial.app.html',
+                    templateUrl: './app/code/modules/pages/llp/partial.app.html',
                     providers: [app_service_1.DataService]
                 }), 
                 __metadata('design:paramtypes', [router_1.ActivatedRoute, app_service_1.DataService])
-            ], CorrectFile);
-            exports_1("CorrectFile", CorrectFile);
+            ], UpdateLLP);
+            exports_1("UpdateLLP", UpdateLLP);
         }
     }
 });
-//# sourceMappingURL=correctfile.component.js.map
+//# sourceMappingURL=updatellp.component.js.map

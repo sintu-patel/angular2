@@ -22,4 +22,7 @@ table {
 			pointer-events: none;
 		}
 	}
+	input {
+		width: 100%;
+	}
 }

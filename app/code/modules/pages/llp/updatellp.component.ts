@@ -4,28 +4,30 @@ import { DataService } from '../../app.service';
 import { ActivatedRoute } from '@angular/router'; // to get route params
 
 @Component({
-  templateUrl: './app/code/modules/pages/correctfile/partial.app.html',
+  templateUrl: './app/code/modules/pages/llp/partial.app.html',
   providers: [DataService]
 })
 
 // Component class
-export class CorrectFile {
-  fileData: any;
-  initialData: any;
+export class UpdateLLP {
+    fileData: any;
+    initialData: any;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
     this.fileData = [];
     this.initialData = {
       empid: 'initial',
       name: 'initial',
-      fine: 'initial',
-      currency: 'initial',
-      collectedfine: 'initial'
+      monday: 'initial',
+      tuesday: 'initial',
+      wednesday: 'initial',
+      thursday: 'initial',
+      friday: 'initial'
     };
-		this.loadFineList();
+		this.loadLLP();
 	}
 
 	setData(data) {
-		if (data.fileData && data.fileData.length) {
+    if (data.fileData && data.fileData.length) {
       this.fileData = data.fileData;
     }
     if (!data.fileData || !data.fileData.length) {
@@ -33,8 +35,8 @@ export class CorrectFile {
     }
 	}
 
-   loadFineList() {
-		this.dataService.getFineData().subscribe(data => {
+   loadLLP() {
+		this.dataService.getLLPData().subscribe(data => {
 			this.setData(data);
 		});
 	}
@@ -49,15 +51,21 @@ export class CorrectFile {
         case "name":
           this.fileData[$rowNo].name = $inputValue;
           break;
-        case "fine":
-          this.fileData[$rowNo].fine = $inputValue;
+        case "monday":
+          this.fileData[$rowNo].monday = $inputValue;
           break;
-       case "currency":
-        this.fileData[$rowNo].currency = $inputValue;
-        break;
-        case "collectedfine":
-        this.fileData[$rowNo].collectedfine = $inputValue;
-        break;
+        case "tuesday":
+          this.fileData[$rowNo].tuesday = $inputValue;
+          break;
+        case "wednesday":
+          this.fileData[$rowNo].wednesday = $inputValue;
+          break;
+        case "thursday":
+          this.fileData[$rowNo].thursday = $inputValue;
+          break;
+        case "friday":
+          this.fileData[$rowNo].friday = $inputValue;
+          break;
         default:
           break;
       }
@@ -70,14 +78,15 @@ export class CorrectFile {
       this.fileData[$rowNo].isDeleted = 'deleted';
     }
 
-    saveData(event) {
-      const fileData = this.fileData;
-      this.dataService.saveFileData(fileData).subscribe(data => {
-          alert('file-saved');
-      });
-    }
     addRow() {
       var fileLength = this.fileData.length;
       this.fileData.push(this.initialData);
+    }
+
+    saveData(event) {
+      const fileData = this.fileData;
+      this.dataService.saveLLPData(fileData).subscribe(data => {
+          alert('file-saved');
+      });
     }
 }

@@ -6,7 +6,7 @@
 }
 
 .main-dp-panel {
-	lost-center: 80%;
+	margin: 0 20px;
 }
 
 body {
@@ -69,7 +69,6 @@ div {
 					color: #333;
 					text-decoration: none;
 					font-size: 0.8rem;
-					text-transform: uppercase;
 					font-weight: bold;
 					padding: 10px;
 					font-weight: 800;
@@ -220,8 +219,7 @@ div {
 
 button {
 	background: darkslateblue;
-	padding: 5px 10px;
-	width: 120px;
+	padding: 10px 15px;
 	color: white;
 	text-transform: uppercase;
 	border: none;

@@ -7,7 +7,7 @@ System.register([], function(exports_1, context_1) {
         execute: function() {
             exports_1("labelConfig", labelConfig = {
                 common: {
-                    title: 'Data Transformation',
+                    title: 'Digital LLP',
                     searchResultHeading: 'Search Results',
                     navHeading: 'All issues',
                     searchPlaceHolder: 'Search the issues',
@@ -29,6 +29,10 @@ System.register([], function(exports_1, context_1) {
                     {
                         label: 'Correct Fine List',
                         url: '/correctfile'
+                    },
+                    {
+                        label: 'LLP',
+                        url: '/llp'
                     }
                 ]
             });

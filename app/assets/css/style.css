@@ -384,18 +384,7 @@ template {
     clear: both;
 }
 .main-dp-panel {
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.main-dp-panel:before {
-    content: '';
-    display: table;
-}
-.main-dp-panel:after {
-    content: '';
-    display: table;
-    clear: both;
+    margin: 0 20px;
 }
 body {
     background: #f4f6f8;
@@ -538,7 +527,6 @@ div {
     color: #333;
     text-decoration: none;
     font-size: 0.8rem;
-    text-transform: uppercase;
     font-weight: bold;
     padding: 10px;
     font-weight: 800;
@@ -660,8 +648,7 @@ div {
 }
 button {
     background: darkslateblue;
-    padding: 5px 10px;
-    width: 120px;
+    padding: 10px 15px;
     color: white;
     text-transform: uppercase;
     border: none;
@@ -687,5 +674,8 @@ table tr[data-deleted="deleted"] {
 }
 table tr[data-deleted="deleted"] input {
     pointer-events: none;
+}
+table input {
+    width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

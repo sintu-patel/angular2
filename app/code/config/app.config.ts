@@ -6,7 +6,9 @@ export const apiConfig = {
     cmsfinelistUrl: host + 'cmsfinelist',
     cmscorrectfinelistUrl: host + 'cmscorrectfinelist',
     savecmsUrl: host + 'savecms',
-    savefiledataUrl: host + 'savefiledata'
+    savefiledataUrl: host + 'savefiledata',
+    savellpdataUrl: host + 'savellp',
+    getllpdataUrl: host + 'getllpdata'
   },
   contentTypeJson: {
     'Content-Type': 'application/json'

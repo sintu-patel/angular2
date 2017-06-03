@@ -60,4 +60,17 @@ export class DataService {
         xhr.send(formData);
     });
   }
+
+  saveLLPData(dataJSON) : Observable<Comment[]> {
+   var url = apiConfig.apiServer.savellpdataUrl;
+   let headers = new Headers(apiConfig.contentTypeJson);
+   let options = new RequestOptions({ headers: headers });
+    return this.http.post(url, dataJSON, options)
+    .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  getLLPData() : Observable<Comment[]> {
+    return this.http.get(apiConfig.apiServer.getllpdataUrl)
+    .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
 }

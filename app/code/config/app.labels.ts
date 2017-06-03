@@ -1,6 +1,6 @@
 export const labelConfig = {
   common: {
-    title: 'Data Transformation',
+    title: 'Digital LLP',
     searchResultHeading: 'Search Results',
     navHeading: 'All issues',
     searchPlaceHolder: 'Search the issues',
@@ -22,6 +22,10 @@ export const labelConfig = {
     {
       label: 'Correct Fine List',
       url: '/correctfile'
+    },
+    {
+      label: 'LLP',
+      url: '/llp'
     }
   ]
 };

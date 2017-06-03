@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="col-12">
 		<div class="main-panel main-dp-panel form-panel">
-			<h2>{{ upload }}</h2>
+			<h2>Enter the issues and resolutions</h2>
 			<form>
 				<div class="input-container">
 					<input class="input" name="issue" [(ngModel)]="issue" type="text" placeholder="Enter the issue" />
@@ -15,7 +15,7 @@
 				</div>
 			</form>
 
-			<h2>Upload file</h2>
+			<h2>Upload a file containing the fine</h2>
 			<form>
 				<div class="input-container">
 					<input (change)="uploadFile($event)" class="input" name="file" [(ngModel)]="xfile" type="file" />
