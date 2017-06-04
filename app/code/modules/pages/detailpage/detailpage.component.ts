@@ -4,12 +4,12 @@ import { DataService } from '../../app.service';
 import { ActivatedRoute } from '@angular/router'; // to get route params
 
 @Component({
-  templateUrl: './app/code/modules/pages/profile/partial.app.html',
+  templateUrl: './app/code/modules/pages/detailpage/partial.app.html',
   providers: [DataService]
 })
 
 // Component class
-export class Profile {
+export class DetailPage {
 	id: number;
 	list: any;
 	heading: string;

@@ -99,6 +99,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     const fileData = this.fileData;
                     this.dataService.saveLLPData(fileData).subscribe(data => {
                         this.fileSaved();
+                        this.loadLLP();
                     });
                 }
                 dataNotSaved() {

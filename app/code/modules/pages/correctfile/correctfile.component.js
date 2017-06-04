@@ -104,6 +104,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         description: 'Data saved successfully. Please click on correct errors'
                     };
                     this.openModel(modelData);
+                    this.loadFineList();
                 }
                 addRow() {
                     var fileLength = this.fileData.length;

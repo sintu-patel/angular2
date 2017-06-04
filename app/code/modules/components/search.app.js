@@ -20,7 +20,9 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             SearchData = class SearchData {
                 transform(pipeData, query) {
-                    query = query || 'error';
+                    if (!query) {
+                        return null;
+                    }
                     return pipeData.filter((eachItem => {
                         if (eachItem['issue']) {
                             return eachItem['issue'].toLowerCase().includes(query.toLowerCase());

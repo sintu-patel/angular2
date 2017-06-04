@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './components/component.app', './components/pipe.app', './components/search.app', './pages/home/home.component', './pages/profile/profile.component', './pages/upload/upload.component', './pages/finelist/finelist.component', './pages/correctfile/correctfile.component', './pages/llp/updatellp.component', './app.routes'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './components/component.app', './components/pipe.app', './components/search.app', './pages/home/home.component', './pages/detailpage/detailpage.component', './pages/upload/upload.component', './pages/finelist/finelist.component', './pages/correctfile/correctfile.component', './pages/llp/updatellp.component', './app.routes'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, http_1, component_app_1, pipe_app_1, search_app_1, home_component_1, profile_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1, app_routes_1;
+    var core_1, platform_browser_1, forms_1, http_1, component_app_1, pipe_app_1, search_app_1, home_component_1, detailpage_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1, app_routes_1;
     var AppModule;
     return {
         setters:[
@@ -38,8 +38,8 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             function (home_component_1_1) {
                 home_component_1 = home_component_1_1;
             },
-            function (profile_component_1_1) {
-                profile_component_1 = profile_component_1_1;
+            function (detailpage_component_1_1) {
+                detailpage_component_1 = detailpage_component_1_1;
             },
             function (upload_component_1_1) {
                 upload_component_1 = upload_component_1_1;
@@ -72,7 +72,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                         pipe_app_1.TrimString,
                         search_app_1.SearchData,
                         home_component_1.Home,
-                        profile_component_1.Profile,
+                        detailpage_component_1.DetailPage,
                         upload_component_1.Upload,
                         finelist_component_1.FineList,
                         correctfile_component_1.CorrectFile,

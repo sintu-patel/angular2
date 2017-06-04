@@ -111,7 +111,7 @@ div {
 	border: 2px solid #ccc;
 
 	&:focus {
-		border: 2px solid #202e78;
-		outline: none;
+		border: 2px solid mediumvioletred;
+		outline-color: mediumvioletred;
 	}
 }

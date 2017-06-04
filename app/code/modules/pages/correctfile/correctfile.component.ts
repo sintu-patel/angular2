@@ -98,6 +98,7 @@ export class CorrectFile {
       description: 'Data saved successfully. Please click on correct errors'
     };
     this.openModel(modelData);
+    this.loadFineList();
   }
   addRow() {
     var fileLength = this.fileData.length;

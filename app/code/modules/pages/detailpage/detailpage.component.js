@@ -11,7 +11,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, app_service_1, router_1;
-    var Profile;
+    var DetailPage;
     return {
         setters:[
             function (core_1_1) {
@@ -24,7 +24,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                 router_1 = router_1_1;
             }],
         execute: function() {
-            Profile = class Profile {
+            DetailPage = class DetailPage {
                 constructor(route, dataService) {
                     this.route = route;
                     this.dataService = dataService;
@@ -48,16 +48,16 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     });
                 }
             };
-            Profile = __decorate([
+            DetailPage = __decorate([
                 // to get route params
                 core_1.Component({
-                    templateUrl: './app/code/modules/pages/profile/partial.app.html',
+                    templateUrl: './app/code/modules/pages/detailpage/partial.app.html',
                     providers: [app_service_1.DataService]
                 }), 
                 __metadata('design:paramtypes', [router_1.ActivatedRoute, app_service_1.DataService])
-            ], Profile);
-            exports_1("Profile", Profile);
+            ], DetailPage);
+            exports_1("DetailPage", DetailPage);
         }
     }
 });
-//# sourceMappingURL=profile.component.js.map
+//# sourceMappingURL=detailpage.component.js.map

@@ -20,7 +20,7 @@ export const labelConfig = {
       url: '/finelist'
     },
     {
-      label: 'Correct Fine List',
+      label: 'Update Fine List',
       url: '/correctfile'
     },
     {

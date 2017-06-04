@@ -27,7 +27,7 @@ System.register([], function(exports_1, context_1) {
                         url: '/finelist'
                     },
                     {
-                        label: 'Correct Fine List',
+                        label: 'Update Fine List',
                         url: '/correctfile'
                     },
                     {

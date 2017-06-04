@@ -3,7 +3,7 @@
 	<div class="col-12">
 		<div class="main-panel main-dp-panel">
 			<h2>Daily LLP Board</h2>
-			<div class="form-container">
+			<div class="form-container llp-form">
 				<table>
 					<thead>
 						<th>name</th>
@@ -17,22 +17,22 @@
 					<tbody>
 						<tr [attr.data-deleted]="item.isDeleted" *ngFor="let item of fileData;let i = index" [attr.data-index]="i" >
 							<td>
-								<input (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" [value]="item.name" />
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" >{{ item.name }}</textarea>
 							</td>
 							<td>
-								<input (change)="updateData($event)" [attr.data-rowno]="i" class="monday-input" type="text" name="monday" [value]="item.monday" />
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="monday-input" type="text" name="monday" > {{ item.monday }}</textarea>
 							</td>
 							<td>
-								<input (change)="updateData($event)" [attr.data-rowno]="i" class="tuesday-input" type="text" name="tuesday" [value]="item.tuesday" />
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="tuesday-input" type="text" name="tuesday" > {{ item.tuesday }}</textarea>
 							</td>
 							<td>
-								<input (change)="updateData($event)" [attr.data-rowno]="i" class="wednesday-input" type="text" name="wednesday" [value]="item.wednesday" />
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="wednesday-input" type="text" name="wednesday" > {{ item.wednesday }}</textarea>
 							</td>
 							<td>
-								<input (change)="updateData($event)" [attr.data-rowno]="i" class="thursday-input" type="text" name="thursday" [value]="item.thursday" />
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="thursday-input" type="text" name="thursday" > {{ item.thursday }}</textarea>
 							</td>
 							<td>
-								<input (change)="updateData($event)" [attr.data-rowno]="i" class="friday-input" type="text" name="friday" [value]="item.friday" />
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="friday-input" type="text" name="friday" > {{ item.friday }}</textarea>
 							</td>
 							<td>
 								<button type="button" [attr.data-rowno]="i" (click)="deleteRow($event)">Delete</button>
@@ -48,13 +48,13 @@
 </div>
 <div class="global-model" *ngIf="isModelOpen">
 	<div class="model-container">
-		<div *ngIf="modelData.showCloseButton">
-			<button type="button" (click)="closeModel()">Close</button>
-		</div>
 		<h2>{{ modelData.heading }}</h2>
 		<p>{{ modelData.description }}</p>
 		<div *ngIf="modelData.showRedirectLink">
 			<a [routerLink]="[modelData.redirectUrl]">{{ modelData.redirectLabel }}</a>
+		</div>
+		<div *ngIf="modelData.showCloseButton">
+			<button type="button" (click)="closeModel()">Close</button>
 		</div>
 	</div>
 </div>

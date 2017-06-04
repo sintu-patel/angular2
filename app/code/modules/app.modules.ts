@@ -7,7 +7,7 @@ import { AppComponent } from './components/component.app';
 import { TrimString } from './components/pipe.app';
 import { SearchData } from './components/search.app';
 import { Home } from './pages/home/home.component';
-import { Profile } from './pages/profile/profile.component';
+import { DetailPage } from './pages/detailpage/detailpage.component';
 import { Upload } from './pages/upload/upload.component';
 import { FineList } from './pages/finelist/finelist.component';
 import { CorrectFile } from './pages/correctfile/correctfile.component';
@@ -25,7 +25,7 @@ import { routing } from './app.routes';
     TrimString,
     SearchData,
     Home,
-    Profile,
+    DetailPage,
     Upload,
     FineList,
     CorrectFile,
