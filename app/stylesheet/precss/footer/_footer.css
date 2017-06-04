@@ -1,0 +1,17 @@
+
+.footer {
+    padding: 30px 0;
+    ul {
+        text-align: center;
+        li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        a {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+}

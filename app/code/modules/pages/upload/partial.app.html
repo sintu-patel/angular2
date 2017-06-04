@@ -5,11 +5,13 @@
 			<div class="issue-form-container">
 				<h2>Enter the issues and resolutions</h2>
 				<form>
-					<div class="input-container">
-						<input class="input" name="issue" [(ngModel)]="issue" type="text" placeholder="Enter the issue" />
+					<div class="input-container issue-box">
+						<label>Please enter the issue</label>
+						<textarea class="textarea" name="issue" [(ngModel)]="issue"></textarea>
 					</div>
-					<div class="input-container">
-						<input class="input" name="resolution" [(ngModel)]="resolution" type="text" placeholder="Enter the resolution" />
+					<div class="input-container resolutin-box">
+						<label>Please enter the resolution</label>
+						<textarea class="textarea" name="resolution" [(ngModel)]="resolution"></textarea>
 					</div>
 					<div class="input-container">
 						<button (click)="onClick()" type="button">Submit</button>

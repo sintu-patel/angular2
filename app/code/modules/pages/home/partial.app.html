@@ -21,10 +21,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-7">
+	<div class="col-8">
 		<div class="main-panel">
 			<div class="main-panel-content">
-				<h1>Data transformation</h1>
+				<h1>Updates</h1>
 				<div class="issues" *ngFor="let item of DATA;let i = index" [attr.data-index]="i">
 					<h2 class="issue">{{ item.issue }}</h2>
 					<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>

@@ -1,0 +1,22 @@
+/* Create model */
+
+.issue-form-container {
+    border-left: 1px solid mediumvioletred;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-shadow: 6px 6px 0px mediumvioletred;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.upload-file-container {
+    border-left: 1px solid mediumvioletred;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-shadow: 6px 6px 0px mediumvioletred;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}

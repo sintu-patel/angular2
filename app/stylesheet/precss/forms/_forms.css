@@ -1,0 +1,70 @@
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+button,
+.input[type="file"] {
+    background: mediumvioletred;
+    padding: 15px 25px;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    outline: none;
+    box-shadow: 4px 4px 2px #ccc;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.5s;
+
+    &:hover,
+    &:focus {
+        background: #5c0a3e;
+    }
+}
+
+textarea {
+    width: 50%;
+    height: 150px;
+    box-shadow: 4px 4px 2px #ccc;
+    outline-color: mediumvioletred;
+}
+
+.input[type="file"] {
+    width: 300px;
+}
+
+.issue-box {
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    textarea {
+        display: block;
+        margin-top: 10px;
+        border-radius: 3px;
+        resize: none;
+    }
+}
+
+.resolutin-box {
+    label {
+        display: block;
+        margin-top: 20px;
+    }
+
+    textarea {
+        display: block;
+        margin-top: 10px;
+        border-radius: 3px;
+        resize: none;
+    }
+}

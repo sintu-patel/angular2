@@ -1,0 +1,25 @@
+.navigation {
+    nav {
+        display: block;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: right;
+
+            li {
+                display: inline-block;
+
+                a {
+                    color: #333;
+                    text-decoration: none;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    padding: 10px;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

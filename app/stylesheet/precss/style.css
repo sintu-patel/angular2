@@ -1,5 +1,12 @@
 @import '../vendor/normalize';
 @import 'config/variables';
+@import 'grid/grid';
 @import 'common/reset';
 @import 'app-layout/app-layout';
-@import 'tables/app-table';
+@import 'tables/table';
+@import 'forms/forms';
+@import 'home-page/home-page';
+@import 'nav/nav';
+@import 'model/model';
+@import 'upload/upload';
+@import 'footer/footer';
