@@ -18,13 +18,13 @@ export class UpdateLLP {
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
     this.fileData = [];
     this.initialData = {
-      empid: 'initial',
-      name: 'initial',
-      monday: 'initial',
-      tuesday: 'initial',
-      wednesday: 'initial',
-      thursday: 'initial',
-      friday: 'initial'
+      empid: 'TBD',
+      name: 'TBD',
+      monday: 'TBD',
+      tuesday: 'TBD',
+      wednesday: 'TBD',
+      thursday: 'TBD',
+      friday: 'TBD'
     };
     // error model
     this.modelData =  null;
@@ -86,7 +86,16 @@ export class UpdateLLP {
 
   addRow() {
     var fileLength = this.fileData.length;
-    this.fileData.push(this.initialData);
+    if (this.fileData[fileLength - 1].name !== 'TBD') {
+      this.fileData.push(this.initialData);
+    } else {
+      let modelData = {
+        showCloseButton: true,
+        heading: 'Error1',
+        description: 'Please save data to the last row first'
+      };
+      this.openModel(modelData);
+    }
   }
 
   saveData(event) {

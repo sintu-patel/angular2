@@ -52,10 +52,11 @@ div {
 				position: absolute;
 				left: 0;
 				top: 4px;
-				width: 15px;
-				height: 15px;
+				width: 10px;
+				height: 10px;
 				content: "";
-				background: #202e78;
+				background: mediumvioletred;
+				box-shadow: 10px 10px 0px darkmagenta;
 			}
 
 			a {

@@ -2,10 +2,12 @@
 table {
 	width: 100%;
 	border-collapse: collapse;
+	border-left: 4px solid darkmagenta;
+	box-shadow: 3px 2px 2px #ccc;
 
 	th, td {
 		text-align: left;
-		padding: 5px 10px;
+		padding: 10px;
 		border-collapse: collapse;
 		border: 1px solid #ccc;
 	}
@@ -13,6 +15,13 @@ table {
 	th {
 		background: darkmagenta;
 		color: white;
+		text-transform: capitalize;
+	}
+
+	tbody {
+		tr:nth-child(2n+2) {
+			background: #fafafa;
+		}
 	}
 
 	tr[data-deleted="deleted"] {

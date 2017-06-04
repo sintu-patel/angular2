@@ -672,10 +672,11 @@ div {
     position: absolute;
     left: 0;
     top: 4px;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     content: "";
-    background: #202e78;
+    background: mediumvioletred;
+    box-shadow: 10px 10px 0px darkmagenta;
 }
 .left-panel .list-content {
     max-height: 400px;
@@ -718,16 +719,22 @@ div {
 table {
     width: 100%;
     border-collapse: collapse;
+    border-left: 4px solid darkmagenta;
+    box-shadow: 3px 2px 2px #ccc;
 }
 table th, table td {
     text-align: left;
-    padding: 5px 10px;
+    padding: 10px;
     border-collapse: collapse;
     border: 1px solid #ccc;
 }
 table th {
     background: darkmagenta;
     color: white;
+    text-transform: capitalize;
+}
+table tbody tr:nth-child(2n+2) {
+    background: #fafafa;
 }
 table tr[data-deleted="deleted"] {
     opacity: 0.5;
@@ -783,6 +790,8 @@ textarea {
     resize: none;
     width: 50%;
     height: 150px;
+    border-left: 5px solid mediumvioletred;
+    box-shadow: 3px 2px 2px #ccc;
 }
 .resolutin-box label {
     display: block;
@@ -795,6 +804,8 @@ textarea {
     resize: none;
     width: 50%;
     height: 150px;
+    border-left: 5px solid mediumvioletred;
+    box-shadow: 3px 2px 2px #ccc;
 }
 .update-error-form textarea {
     width: 100%;
@@ -802,7 +813,11 @@ textarea {
 }
 .llp-form textarea {
     width: 100%;
-    height: 50px;
+    height: 100px;
+}
+.llp-form .updated-box {
+    background: green;
+    color: #fff;
 }
 .navigation nav {
     display: block;
@@ -871,6 +886,9 @@ textarea {
     padding: 20px;
     border-radius: 5px;
     margin-top: 20px;
+}
+.red {
+    color: red;
 }
 .footer {
     padding: 30px 0;

@@ -19,11 +19,11 @@ export class CorrectFile {
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
     this.fileData = [];
     this.initialData = {
-      empid: 'initial',
-      name: 'initial',
-      fine: 'initial',
-      currency: 'initial',
-      collectedfine: 'initial'
+      empid: 'TBD',
+      name: 'TBD',
+      fine: 'TBD',
+      currency: 'TBD',
+      collectedfine: 'TBD'
     };
     // error model
     this.modelData =  null;
@@ -100,9 +100,18 @@ export class CorrectFile {
     this.openModel(modelData);
     this.loadFineList();
   }
-  addRow() {
+   addRow() {
     var fileLength = this.fileData.length;
-    this.fileData.push(this.initialData);
+    if (this.fileData[fileLength - 1].name !== 'TBD') {
+      this.fileData.push(this.initialData);
+    } else {
+      let modelData = {
+        showCloseButton: true,
+        heading: 'Error1',
+        description: 'Please save data to the last row first'
+      };
+      this.openModel(modelData);
+    }
   }
   openModel(data) {
     this.modelData = data;
