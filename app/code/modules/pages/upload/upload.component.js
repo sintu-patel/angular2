@@ -1,4 +1,4 @@
-System.register(['@angular/core', '../../app.service', '../../../config/app.labels'], function(exports_1, context_1) {
+System.register(['@angular/core', '../../app.service', '../../../config/app.labels', '../../../config/app.config'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '../../app.service', '../../../config/app.labe
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, app_service_1, app_labels_1;
+    var core_1, app_service_1, app_labels_1, app_config_1;
     var Upload;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['@angular/core', '../../app.service', '../../../config/app.labe
             },
             function (app_labels_1_1) {
                 app_labels_1 = app_labels_1_1;
+            },
+            function (app_config_1_1) {
+                app_config_1 = app_config_1_1;
             }],
         execute: function() {
             Upload = class Upload {
@@ -33,6 +36,7 @@ System.register(['@angular/core', '../../app.service', '../../../config/app.labe
                     // error model
                     this.modelData = null;
                     this.isModelOpen = false;
+                    this.loggedIn = app_config_1.apiConfig.isloggedIn;
                 }
                 onClick() {
                     if (!this.issue || !this.resolution) {

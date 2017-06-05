@@ -174,7 +174,7 @@ System.register("config/app.config", [], function(exports_5, context_5) {
                     dataFetchFromdbError: 'unable-to-get-data-from-db',
                     serverStarted: 'server-started'
                 },
-                isloggedIn: false
+                isloggedIn: true
             });
         }
     }
@@ -398,8 +398,7 @@ System.register("modules/pages/upload/upload.component", ['@angular/core', "modu
                     // error model
                     this.modelData = null;
                     this.isModelOpen = false;
-                    this.loggedIn;
-                    app_config_2.apiConfig.isloggedIn;
+                    this.loggedIn = app_config_2.apiConfig.isloggedIn;
                 }
                 onClick() {
                     if (!this.issue || !this.resolution) {
@@ -583,8 +582,7 @@ System.register("modules/pages/correctfile/correctfile.component", ['@angular/co
                     // error model
                     this.modelData = null;
                     this.isModelOpen = false;
-                    this.loggedIn;
-                    app_config_3.apiConfig.isloggedIn;
+                    this.loggedIn = app_config_3.apiConfig.isloggedIn;
                     this.loadFineList();
                 }
                 setData(data) {
@@ -732,8 +730,7 @@ System.register("modules/pages/llp/updatellp.component", ['@angular/core', "modu
                     // error model
                     this.modelData = null;
                     this.isModelOpen = false;
-                    this.loggedIn;
-                    app_config_4.apiConfig.isloggedIn;
+                    this.loggedIn = app_config_4.apiConfig.isloggedIn;
                     this.loadLLP();
                 }
                 setData(data) {

@@ -30,7 +30,7 @@ export class Upload {
      // error model
      this.modelData =  null;
      this.isModelOpen = false;
-     this.loggedIn: apiConfig.isloggedIn;
+     this.loggedIn = apiConfig.isloggedIn;
     }
     onClick() {
       if (!this.issue || !this.resolution) {

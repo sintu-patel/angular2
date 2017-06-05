@@ -30,7 +30,8 @@ System.register([], function(exports_1, context_1) {
                     dataFetchedFromdb: 'data-fetched-from-db',
                     dataFetchFromdbError: 'unable-to-get-data-from-db',
                     serverStarted: 'server-started'
-                }
+                },
+                isloggedIn: false
             });
         }
     }

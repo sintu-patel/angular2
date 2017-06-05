@@ -1,4 +1,4 @@
-System.register(['@angular/core', '../../app.service', '@angular/router'], function(exports_1, context_1) {
+System.register(['@angular/core', '../../app.service', '@angular/router', '../../../config/app.config'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, app_service_1, router_1;
+    var core_1, app_service_1, router_1, app_config_1;
     var CorrectFile;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (app_config_1_1) {
+                app_config_1 = app_config_1_1;
             }],
         execute: function() {
             CorrectFile = class CorrectFile {
@@ -39,6 +42,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     // error model
                     this.modelData = null;
                     this.isModelOpen = false;
+                    this.loggedIn = app_config_1.apiConfig.isloggedIn;
                     this.loadFineList();
                 }
                 setData(data) {
