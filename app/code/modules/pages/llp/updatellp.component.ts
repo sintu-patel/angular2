@@ -127,7 +127,7 @@ export class UpdateLLP {
     let modelData = {
       showCloseButton: true,
       heading: 'File saved',
-      description: 'Data saved successfully. Please click on correct errors'
+      description: 'Data saved successfully.'
     };
     this.openModel(modelData);
   }

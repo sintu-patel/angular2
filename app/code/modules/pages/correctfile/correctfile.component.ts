@@ -105,7 +105,7 @@ export class CorrectFile {
     let modelData = {
       showCloseButton: true,
       heading: 'File saved',
-      description: 'Data saved successfully. Please click on correct errors'
+      description: 'Data saved successfully.'
     };
     this.openModel(modelData);
     this.loadFineList();
