@@ -45,6 +45,8 @@ System.register(['@angular/core', '../../app.service', '@angular/router', '../..
                     this.modelData = null;
                     this.isModelOpen = false;
                     this.loggedIn = app_config_1.apiConfig.isloggedIn;
+                    const date = new Date();
+                    this.today = date.getDay();
                     this.loadLLP();
                 }
                 setData(data) {
@@ -148,6 +150,15 @@ System.register(['@angular/core', '../../app.service', '@angular/router', '../..
                 closeModel() {
                     this.modelData = null;
                     this.isModelOpen = false;
+                }
+                getTodayClass(dayName) {
+                    const dayArray = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+                    if (dayArray[this.today] === dayName) {
+                        return 'today';
+                    }
+                    else {
+                        return 'not-today';
+                    }
                 }
             };
             UpdateLLP = __decorate([

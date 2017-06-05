@@ -7,11 +7,11 @@
 				<table>
 					<thead>
 						<th>name</th>
-						<th>monday</th>
-						<th>tuesday</th>
-						<th>wednesday</th>
-						<th>thursday</th>
-						<th>friday</th>
+						<th [attr.class]="getTodayClass('monday')">monday</th>
+						<th [attr.class]="getTodayClass('tuesday')">tuesday</th>
+						<th [attr.class]="getTodayClass('wednesday')">wednesday</th>
+						<th [attr.class]="getTodayClass('thursday')">thursday</th>
+						<th [attr.class]="getTodayClass('friday')">friday</th>
 						<th *ngIf="loggedIn">action</th>
 					</thead>
 					<tbody>
@@ -19,19 +19,19 @@
 							<td>
 								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" >{{ item.name }}</textarea>
 							</td>
-							<td>
+							<td [attr.class]="getTodayClass('monday')">
 								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="monday-input" type="text" name="monday" > {{ item.monday }}</textarea>
 							</td>
-							<td>
+							<td [attr.class]="getTodayClass('tuesday')">
 								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="tuesday-input" type="text" name="tuesday" > {{ item.tuesday }}</textarea>
 							</td>
-							<td>
+							<td [attr.class]="getTodayClass('wednesday')">
 								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="wednesday-input" type="text" name="wednesday" > {{ item.wednesday }}</textarea>
 							</td>
-							<td>
+							<td [attr.class]="getTodayClass('thursday')">
 								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="thursday-input" type="text" name="thursday" > {{ item.thursday }}</textarea>
 							</td>
-							<td>
+							<td [attr.class]="getTodayClass('friday')">
 								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="friday-input" type="text" name="friday" > {{ item.friday }}</textarea>
 							</td>
 							<td *ngIf="loggedIn">

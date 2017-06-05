@@ -21,6 +21,11 @@ div {
 		letter-spacing: 2px;
 		text-transform: uppercase;
 		color: #333;
+		text-align: center;
+
+		@media all and (min-width: 768px) {
+			text-align: left;
+		}
 	}
 }
 

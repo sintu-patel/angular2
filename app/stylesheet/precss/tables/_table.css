@@ -35,3 +35,27 @@ table {
 		width: 100%;
 	}
 }
+
+.llp-form {
+	.today textarea {
+		background: aliceblue;
+	}
+}
+
+@media all and (max-width: 767px) {
+	.llp-form {
+		tr {
+			position: relative;
+			display: block;
+		}
+
+		td,
+		th {
+			display: block;
+		}
+
+		.not-today{
+			display: none;
+		}
+	}
+}

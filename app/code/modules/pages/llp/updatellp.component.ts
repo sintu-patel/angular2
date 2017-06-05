@@ -17,6 +17,7 @@ export class UpdateLLP {
     modelData: any;
     isModelOpen: any;
     loggedIn: boolean;
+    today: number;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
     this.fileData = [];
     this.initialData = {
@@ -32,6 +33,8 @@ export class UpdateLLP {
     this.modelData =  null;
     this.isModelOpen = false;
     this.loggedIn = apiConfig.isloggedIn;
+    const date = new Date();
+    this.today = date.getDay();
 		this.loadLLP();
 	}
 
@@ -141,5 +144,13 @@ export class UpdateLLP {
   closeModel() {
     this.modelData = null;
     this.isModelOpen = false;
+  }
+  getTodayClass(dayName) {
+    const dayArray = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    if (dayArray[this.today] === dayName) {
+      return 'today';
+    } else {
+      return 'not-today';
+    }
   }
 }
