@@ -23,5 +23,6 @@ export const apiConfig = {
     dataFetchedFromdb: 'data-fetched-from-db',
     dataFetchFromdbError: 'unable-to-get-data-from-db',
     serverStarted: 'server-started'
-  }
+  },
+  isloggedIn: false
 };

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../../app.service';
 import { ActivatedRoute } from '@angular/router'; // to get route params
 import { labelConfig } from '../../../config/app.labels';
+import { apiConfig } from '../../../config/app.config';
 
 @Component({
   templateUrl: './app/code/modules/pages/correctfile/partial.app.html',
@@ -16,6 +17,7 @@ export class CorrectFile {
  // error model
   modelData: any;
   isModelOpen: any;
+  loggedIn: boolean;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
     this.fileData = [];
     this.initialData = {
@@ -28,6 +30,7 @@ export class CorrectFile {
     // error model
     this.modelData =  null;
     this.isModelOpen = false;
+    this.loggedIn: apiConfig.isloggedIn;
 		this.loadFineList();
 	}
 

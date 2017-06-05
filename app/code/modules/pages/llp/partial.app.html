@@ -12,7 +12,7 @@
 						<th>wednesday</th>
 						<th>thursday</th>
 						<th>friday</th>
-						<th>action</th>
+						<th *ngIf="loggedIn">action</th>
 					</thead>
 					<tbody>
 						<tr [attr.data-deleted]="item.isDeleted" *ngFor="let item of fileData;let i = index" [attr.data-index]="i" >
@@ -34,14 +34,14 @@
 							<td>
 								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="friday-input" type="text" name="friday" > {{ item.friday }}</textarea>
 							</td>
-							<td>
+							<td *ngIf="loggedIn">
 								<button type="button" [attr.data-rowno]="i" (click)="deleteRow($event)">Delete</button>
 							</td>
 						<tr>
 					</tbody>
 				</table>
-				<button (click)="saveData($event)" type="button">Submit</button>
-				<button (click)="addRow()" type="button">Add new row</button>
+				<button (click)="saveData($event)" type="button" *ngIf="loggedIn">Submit</button>
+				<button (click)="addRow()" type="button"  *ngIf="loggedIn" >Add new row</button>
 			</div>
 		</div>
 	</div>

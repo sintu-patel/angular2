@@ -5,29 +5,31 @@
 			<div class="issue-form-container">
 				<h2>Enter the issues and resolutions</h2>
 				<p class="red">Note: Your data is public. Upload your content responsively</p>
+				<p *ngIf="!loggedIn">Note: Only available for loggedin users</p>
 				<form>
 					<div class="input-container issue-box">
 						<label>Please enter the issue</label>
-						<textarea class="textarea" name="issue" [(ngModel)]="issue"></textarea>
+						<textarea [disabled]="!loggedIn" class="textarea" name="issue" [(ngModel)]="issue"></textarea>
 					</div>
 					<div class="input-container resolutin-box">
 						<label>Please enter the resolution</label>
-						<textarea class="textarea" name="resolution" [(ngModel)]="resolution"></textarea>
+						<textarea [disabled]="!loggedIn" class="textarea" name="resolution" [(ngModel)]="resolution"></textarea>
 					</div>
 					<div class="input-container">
-						<button (click)="onClick()" type="button">Submit</button>
+						<button [disabled]="!loggedIn" (click)="onClick()" type="button">Submit</button>
 					</div>
 				</form>
 			</div>
 
 			<div class="upload-file-container">
 				<h2>Upload a file containing the fine</h2>
+				<p *ngIf="!loggedIn">Note: Only available for loggedin users</p>
 				<form>
 					<div class="input-container">
-						<input (change)="uploadFile($event)" class="input" name="file" [(ngModel)]="xfile" type="file" />
+						<input [disabled]="!loggedIn" (change)="uploadFile($event)" class="input" name="file" [(ngModel)]="xfile" type="file" />
 					</div>
 					<div class="input-container">
-						<button (click)="processData()" type="button">Submit</button>
+						<button [disabled]="!loggedIn" (click)="processData()" type="button">Submit</button>
 					</div>
 					<p>Note: Only xls files are allowed to upload</p>
 				</form>

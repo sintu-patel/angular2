@@ -3,6 +3,7 @@
 	<div class="col-12">
 		<div class="main-panel main-dp-panel">
 			<h2>Fine List</h2>
+			<p *ngIf="!loggedIn">Note: Only available for loggedin users</p>
 			<div class="form-container update-error-form">
 				<table>
 					<thead>
@@ -10,30 +11,30 @@
 						<th>fine</th>
 						<th>currency</th>
 						<th>collected fine</th>
-						<th>Action</th>
+						<th>action</th>
 					</thead>
 					<tbody>
 						<tr [attr.data-deleted]="item.isDeleted" *ngFor="let item of fileData;let i = index" [attr.data-index]="i" >
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name">{{ item.name }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" [disabled]="!loggedIn">{{ item.name }}</textarea>
 							</td>
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="fine-input" type="text" name="fine" >{{ item.fine }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="fine-input" type="text" name="fine" [disabled]="!loggedIn">{{ item.fine }}</textarea>
 							</td>
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="currency-input" type="text" name="currency" >{{ item.currency }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="currency-input" type="text" name="currency" [disabled]="!loggedIn">{{ item.currency }}</textarea>
 							</td>
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="collectedfine-input" type="text" name="collectedfine" >{{ item.collectedfine }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="collectedfine-input" type="text" name="collectedfine" [disabled]="!loggedIn">{{ item.collectedfine }}</textarea>
 							</td>
 							<td>
-								<button type="button" [attr.data-rowno]="i" (click)="deleteRow($event)">Delete</button>
+								<button type="button" [attr.data-rowno]="i" (click)="deleteRow($event)" [disabled]="!loggedIn">Delete</button>
 							</td>
 						<tr>
 					</tbody>
 				</table>
-				<button (click)="saveData($event)" type="button">Submit</button>
-				<button (click)="addRow()" type="button">Add new row</button>
+				<button (click)="saveData($event)" type="button" [disabled]="!loggedIn">Submit</button>
+				<button (click)="addRow()" type="button" [disabled]="!loggedIn">Add new row</button>
 			</div>
 		</div>
 	</div>

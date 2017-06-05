@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../../app.service';
 import { ActivatedRoute } from '@angular/router'; // to get route params
 import { labelConfig } from '../../../config/app.labels';
+import { apiConfig } from '../../../config/app.config';
 
 @Component({
   templateUrl: './app/code/modules/pages/upload/partial.app.html',
@@ -20,6 +21,7 @@ export class Upload {
     // error model
     modelData: any;
     isModelOpen: any;
+    loggedIn: boolean;
     constructor(private dataService: DataService) {
 	   this.upload = "Upload";
      this.issue = null;
@@ -28,6 +30,7 @@ export class Upload {
      // error model
      this.modelData =  null;
      this.isModelOpen = false;
+     this.loggedIn: apiConfig.isloggedIn;
     }
     onClick() {
       if (!this.issue || !this.resolution) {

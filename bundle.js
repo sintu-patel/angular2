@@ -173,7 +173,8 @@ System.register("config/app.config", [], function(exports_5, context_5) {
                     dataFetchedFromdb: 'data-fetched-from-db',
                     dataFetchFromdbError: 'unable-to-get-data-from-db',
                     serverStarted: 'server-started'
-                }
+                },
+                isloggedIn: false
             });
         }
     }
@@ -368,10 +369,10 @@ System.register("modules/pages/detailpage/detailpage.component", ['@angular/core
         }
     }
 });
-System.register("modules/pages/upload/upload.component", ['@angular/core', "modules/app.service", "config/app.labels"], function(exports_9, context_9) {
+System.register("modules/pages/upload/upload.component", ['@angular/core', "modules/app.service", "config/app.labels", "config/app.config"], function(exports_9, context_9) {
     "use strict";
     var __moduleName = context_9 && context_9.id;
-    var core_7, app_service_3, app_labels_2;
+    var core_7, app_service_3, app_labels_2, app_config_2;
     var Upload;
     return {
         setters:[
@@ -383,6 +384,9 @@ System.register("modules/pages/upload/upload.component", ['@angular/core', "modu
             },
             function (app_labels_2_1) {
                 app_labels_2 = app_labels_2_1;
+            },
+            function (app_config_2_1) {
+                app_config_2 = app_config_2_1;
             }],
         execute: function() {
             Upload = class Upload {
@@ -394,6 +398,8 @@ System.register("modules/pages/upload/upload.component", ['@angular/core', "modu
                     // error model
                     this.modelData = null;
                     this.isModelOpen = false;
+                    this.loggedIn;
+                    app_config_2.apiConfig.isloggedIn;
                 }
                 onClick() {
                     if (!this.issue || !this.resolution) {
@@ -542,10 +548,10 @@ System.register("modules/pages/finelist/finelist.component", ['@angular/core', "
         }
     }
 });
-System.register("modules/pages/correctfile/correctfile.component", ['@angular/core', "modules/app.service", '@angular/router'], function(exports_11, context_11) {
+System.register("modules/pages/correctfile/correctfile.component", ['@angular/core', "modules/app.service", '@angular/router', "config/app.config"], function(exports_11, context_11) {
     "use strict";
     var __moduleName = context_11 && context_11.id;
-    var core_9, app_service_5, router_3;
+    var core_9, app_service_5, router_3, app_config_3;
     var CorrectFile;
     return {
         setters:[
@@ -557,6 +563,9 @@ System.register("modules/pages/correctfile/correctfile.component", ['@angular/co
             },
             function (router_3_1) {
                 router_3 = router_3_1;
+            },
+            function (app_config_3_1) {
+                app_config_3 = app_config_3_1;
             }],
         execute: function() {
             CorrectFile = class CorrectFile {
@@ -574,6 +583,8 @@ System.register("modules/pages/correctfile/correctfile.component", ['@angular/co
                     // error model
                     this.modelData = null;
                     this.isModelOpen = false;
+                    this.loggedIn;
+                    app_config_3.apiConfig.isloggedIn;
                     this.loadFineList();
                 }
                 setData(data) {
@@ -684,10 +695,10 @@ System.register("modules/pages/correctfile/correctfile.component", ['@angular/co
         }
     }
 });
-System.register("modules/pages/llp/updatellp.component", ['@angular/core', "modules/app.service", '@angular/router'], function(exports_12, context_12) {
+System.register("modules/pages/llp/updatellp.component", ['@angular/core', "modules/app.service", '@angular/router', "config/app.config"], function(exports_12, context_12) {
     "use strict";
     var __moduleName = context_12 && context_12.id;
-    var core_10, app_service_6, router_4;
+    var core_10, app_service_6, router_4, app_config_4;
     var UpdateLLP;
     return {
         setters:[
@@ -699,6 +710,9 @@ System.register("modules/pages/llp/updatellp.component", ['@angular/core', "modu
             },
             function (router_4_1) {
                 router_4 = router_4_1;
+            },
+            function (app_config_4_1) {
+                app_config_4 = app_config_4_1;
             }],
         execute: function() {
             UpdateLLP = class UpdateLLP {
@@ -718,6 +732,8 @@ System.register("modules/pages/llp/updatellp.component", ['@angular/core', "modu
                     // error model
                     this.modelData = null;
                     this.isModelOpen = false;
+                    this.loggedIn;
+                    app_config_4.apiConfig.isloggedIn;
                     this.loadLLP();
                 }
                 setData(data) {
@@ -824,7 +840,6 @@ System.register("modules/pages/llp/updatellp.component", ['@angular/core', "modu
                 }
             };
             UpdateLLP = __decorate([
-                // to get route params
                 core_10.Component({
                     templateUrl: './app/code/modules/pages/llp/partial.app.html',
                     providers: [app_service_6.DataService]

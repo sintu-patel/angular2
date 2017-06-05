@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../app.service';
 import { ActivatedRoute } from '@angular/router'; // to get route params
+import { apiConfig } from '../../../config/app.config';
 
 @Component({
   templateUrl: './app/code/modules/pages/llp/partial.app.html',
@@ -15,6 +16,7 @@ export class UpdateLLP {
     // error model
     modelData: any;
     isModelOpen: any;
+    loggedIn: boolean;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
     this.fileData = [];
     this.initialData = {
@@ -29,6 +31,7 @@ export class UpdateLLP {
     // error model
     this.modelData =  null;
     this.isModelOpen = false;
+    this.loggedIn: apiConfig.isloggedIn;
 		this.loadLLP();
 	}
 
