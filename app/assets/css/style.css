@@ -603,6 +603,9 @@ template {
 .col-12:nth-child(12n + 1) {
     clear: both;
 }
+.hide {
+    display: none;
+}
 body {
     background: #f4f6f8;
 }
