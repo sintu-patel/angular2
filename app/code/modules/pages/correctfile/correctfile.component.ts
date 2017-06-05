@@ -68,7 +68,16 @@ export class CorrectFile {
       default:
         break;
     }
-    this.saveData();
+    this.saveDataForOneRow(this.fileData[$rowNo]);
+  }
+
+  saveDataForOneRow(fileData) {
+    var fileArray = [];
+    fileArray.push(fileData);
+    this.dataService.saveLLPData(fileArray).subscribe(data => {
+        this.fileSaved();
+        this.loadLLP();
+    });
   }
 
   deleteRow(event) {
