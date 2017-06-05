@@ -81,9 +81,9 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                 saveDataForOneRow(fileData) {
                     var fileArray = [];
                     fileArray.push(fileData);
-                    this.dataService.saveLLPData(fileArray).subscribe(data => {
+                    this.dataService.saveFileData(fileArray).subscribe(data => {
                         this.fileSaved();
-                        this.loadLLP();
+                        this.loadFineList();
                     });
                 }
                 deleteRow(event) {
