@@ -75,6 +75,7 @@ export class UpdateLLP {
       default:
         break;
     }
+    this.saveData();
   }
 
   deleteRow(event) {
@@ -98,7 +99,7 @@ export class UpdateLLP {
     }
   }
 
-  saveData(event) {
+  saveData() {
     const fileData = this.fileData;
     this.dataService.saveLLPData(fileData).subscribe(data => {
         this.fileSaved();

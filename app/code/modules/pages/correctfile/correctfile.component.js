@@ -76,6 +76,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         default:
                             break;
                     }
+                    this.saveData();
                 }
                 deleteRow(event) {
                     let $button = event.target;
@@ -83,7 +84,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     $rowNo = parseInt($rowNo, 10);
                     this.fileData[$rowNo].isDeleted = 'deleted';
                 }
-                saveData(event) {
+                saveData() {
                     const fileData = this.fileData;
                     this.dataService.saveFileData(fileData).subscribe(data => {
                         this.fileSaved();

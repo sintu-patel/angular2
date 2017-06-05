@@ -68,6 +68,7 @@ export class CorrectFile {
       default:
         break;
     }
+    this.saveData();
   }
 
   deleteRow(event) {
@@ -77,7 +78,7 @@ export class CorrectFile {
     this.fileData[$rowNo].isDeleted = 'deleted';
   }
 
-  saveData(event) {
+  saveData() {
     const fileData = this.fileData;
     this.dataService.saveFileData(fileData).subscribe(data => {
        this.fileSaved();

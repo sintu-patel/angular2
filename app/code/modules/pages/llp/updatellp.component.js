@@ -84,6 +84,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         default:
                             break;
                     }
+                    this.saveData();
                 }
                 deleteRow(event) {
                     let $button = event.target;
@@ -105,7 +106,7 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         this.openModel(modelData);
                     }
                 }
-                saveData(event) {
+                saveData() {
                     const fileData = this.fileData;
                     this.dataService.saveLLPData(fileData).subscribe(data => {
                         this.fileSaved();
