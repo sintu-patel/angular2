@@ -1,5 +1,5 @@
 // Host Configuration
-const host = 'http://localhost:3100/';
+const host = 'http://10.203.62.36:3100/';
 export const apiConfig = {
   apiServer: {
     cmsUrl: host + 'cms',

@@ -12,36 +12,40 @@
 						<th [attr.class]="getTodayClass('wednesday')">wednesday</th>
 						<th [attr.class]="getTodayClass('thursday')">thursday</th>
 						<th [attr.class]="getTodayClass('friday')">friday</th>
-						<th *ngIf="loggedIn">action</th>
+						<th>action</th>
 					</thead>
 					<tbody>
 						<tr [attr.data-deleted]="item.isDeleted" *ngFor="let item of fileData;let i = index" [attr.data-index]="i" >
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" >{{ item.name }}</textarea>
+								<span *ngIf="!loggedIn">{{ item.name }}</span>
+								<textarea *ngIf="loggedIn" (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" >{{ item.name }}</textarea>
 							</td>
 							<td [attr.class]="getTodayClass('monday')">
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="monday-input" type="text" name="monday" > {{ item.monday }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="monday-input" type="text" name="monday" >{{ item.monday }}</textarea>
 							</td>
 							<td [attr.class]="getTodayClass('tuesday')">
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="tuesday-input" type="text" name="tuesday" > {{ item.tuesday }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="tuesday-input" type="text" name="tuesday" >{{ item.tuesday }}</textarea>
 							</td>
 							<td [attr.class]="getTodayClass('wednesday')">
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="wednesday-input" type="text" name="wednesday" > {{ item.wednesday }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="wednesday-input" type="text" name="wednesday" >{{ item.wednesday }}</textarea>
 							</td>
 							<td [attr.class]="getTodayClass('thursday')">
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="thursday-input" type="text" name="thursday" > {{ item.thursday }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="thursday-input" type="text" name="thursday" >{{ item.thursday }}</textarea>
 							</td>
 							<td [attr.class]="getTodayClass('friday')">
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="friday-input" type="text" name="friday" > {{ item.friday }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="friday-input" type="text" name="friday" >{{ item.friday }}</textarea>
 							</td>
 							<td *ngIf="loggedIn">
 								<button type="button" [attr.data-rowno]="i" (click)="deleteRow($event)">Delete</button>
+							</td>
+							<td>
+								<button type="button">Save</button>
 							</td>
 						<tr>
 					</tbody>
 				</table>
 				<button (click)="saveData($event)" type="button" *ngIf="loggedIn">Submit</button>
-				<button (click)="addRow()" type="button"  *ngIf="loggedIn" >Add new row</button>
+				<button (click)="addRow()" type="button" *ngIf="loggedIn" >Add new row</button>
 			</div>
 		</div>
 	</div>

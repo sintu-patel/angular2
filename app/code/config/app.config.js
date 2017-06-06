@@ -6,7 +6,7 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             // Host Configuration
-            host = 'http://localhost:3100/';
+            host = 'http://10.203.62.36:3100/';
             exports_1("apiConfig", apiConfig = {
                 apiServer: {
                     cmsUrl: host + 'cms',
