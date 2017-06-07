@@ -1,12 +1,14 @@
 System.register([], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var host, apiConfig;
+    var serverURL, hostUrl, host, apiConfig;
     return {
         setters:[],
         execute: function() {
             // Host Configuration
-            host = 'http://10.203.62.36:3100/';
+            serverURL = window.location;
+            hostUrl = serverURL.hostname;
+            host = 'http://' + hostUrl + ':3100/';
             exports_1("apiConfig", apiConfig = {
                 apiServer: {
                     cmsUrl: host + 'cms',
