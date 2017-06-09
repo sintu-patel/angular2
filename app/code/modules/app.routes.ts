@@ -6,6 +6,7 @@ import { Upload } from './pages/upload/upload.component';
 import { FineList } from './pages/finelist/finelist.component';
 import { CorrectFile } from './pages/correctfile/correctfile.component';
 import { UpdateLLP } from './pages/llp/updatellp.component';
+import { Token } from './pages/token/token.component';
 
 // Route Configuration
 export const routes: Routes = [
@@ -15,7 +16,8 @@ export const routes: Routes = [
   { path: 'upload', component: Upload},
   { path: 'finelist', component: FineList},
   { path: 'correctfile', component: CorrectFile},
-  { path: 'llp', component: UpdateLLP}
+  { path: 'llp', component: UpdateLLP},
+  { path: 'token', component: Token}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

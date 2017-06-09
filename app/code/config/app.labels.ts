@@ -26,6 +26,10 @@ export const labelConfig = {
     {
       label: 'LLP',
       url: '/llp'
+    },
+    {
+      label: 'Token',
+      url: '/token'
     }
   ]
 };

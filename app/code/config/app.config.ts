@@ -26,5 +26,5 @@ export const apiConfig = {
     dataFetchFromdbError: 'unable-to-get-data-from-db',
     serverStarted: 'server-started'
   },
-  isloggedIn: false
+  validToken: '9910712381'
 };

@@ -1,7 +1,7 @@
-System.register(['@angular/router', './pages/home/home.component', './pages/detailpage/detailpage.component', './pages/upload/upload.component', './pages/finelist/finelist.component', './pages/correctfile/correctfile.component', './pages/llp/updatellp.component'], function(exports_1, context_1) {
+System.register(['@angular/router', './pages/home/home.component', './pages/detailpage/detailpage.component', './pages/upload/upload.component', './pages/finelist/finelist.component', './pages/correctfile/correctfile.component', './pages/llp/updatellp.component', './pages/token/token.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var router_1, home_component_1, detailpage_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1;
+    var router_1, home_component_1, detailpage_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1, token_component_1;
     var routes, routing;
     return {
         setters:[
@@ -25,6 +25,9 @@ System.register(['@angular/router', './pages/home/home.component', './pages/deta
             },
             function (updatellp_component_1_1) {
                 updatellp_component_1 = updatellp_component_1_1;
+            },
+            function (token_component_1_1) {
+                token_component_1 = token_component_1_1;
             }],
         execute: function() {
             // Route Configuration
@@ -35,7 +38,8 @@ System.register(['@angular/router', './pages/home/home.component', './pages/deta
                 { path: 'upload', component: upload_component_1.Upload },
                 { path: 'finelist', component: finelist_component_1.FineList },
                 { path: 'correctfile', component: correctfile_component_1.CorrectFile },
-                { path: 'llp', component: updatellp_component_1.UpdateLLP }
+                { path: 'llp', component: updatellp_component_1.UpdateLLP },
+                { path: 'token', component: token_component_1.Token }
             ]);
             exports_1("routing", routing = router_1.RouterModule.forRoot(routes));
         }

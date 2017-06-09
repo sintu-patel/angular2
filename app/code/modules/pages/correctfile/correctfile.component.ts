@@ -30,7 +30,7 @@ export class CorrectFile {
     // error model
     this.modelData =  null;
     this.isModelOpen = false;
-    this.loggedIn = apiConfig.isloggedIn;
+    this.loggedIn = sessionStorage['token'] && sessionStorage['token'] === '9910712381';
 		this.loadFineList();
 	}
 

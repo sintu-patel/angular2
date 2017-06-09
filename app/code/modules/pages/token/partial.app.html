@@ -1,0 +1,33 @@
+
+<div class="container">
+	<div class="col-12">
+		<div class="main-panel main-dp-panel form-panel">
+			<div class="issue-form-container">
+				<h2 *ngIf="!loggedIn">Enter the login token</h2>
+				<h2 *ngIf="loggedIn">Logout</h2>
+				<form>
+					<div *ngIf="!loggedIn" class="input-container issue-box">
+						<label>Please enter the issue</label>
+						<input type="text" class="input" name="issue" [(ngModel)]="token" />
+					</div>
+					<div class="input-container">
+						<button *ngIf="!loggedIn" (click)="login()" type="button">Login</button>
+						<button *ngIf="loggedIn" (click)="logout()" type="button">Logout</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="global-model" *ngIf="isModelOpen">
+	<div class="model-container">
+		<h2>{{ modelData.heading }}</h2>
+		<p>{{ modelData.description }}</p>
+		<div *ngIf="modelData.showRedirectLink">
+			<a [routerLink]="[modelData.redirectUrl]">{{ modelData.redirectLabel }}</a>
+		</div>
+		<div *ngIf="modelData.showCloseButton">
+			<button type="button" (click)="closeModel()">Close</button>
+		</div>
+	</div>
+</div>
