@@ -16,6 +16,8 @@ export class CorrectFile {
   initialData: any;
   files: any;
   latestFile: any;
+  displayFileNumber: number;
+  totalFiles: number;
  // error model
   modelData: any;
   isModelOpen: any;
@@ -41,14 +43,19 @@ export class CorrectFile {
 
 	setData(data) {
     this.files = data.files;
-    const fileCount = this.files && this.files.length;
-    this.latestFileNumber = fileCount - 1;
+    this.totalFiles = this.files && this.files.length;
+    this.latestFileNumber = this.totalFiles - 1;
+    this.displayFileNumber = this.latestFileNumber;
     this.latestFile = this.files[this.latestFileNumber];
     this.fileData = this.latestFile.fileData;
     if (!this.fileData || !this.fileData.length) {
       this.fileData.push(this.initialData);
     }
 	}
+
+  displayPage() {
+      this.fileData = this.files[this.displayFileNumber].fileData;
+  }
 
    loadFineList() {
 		this.dataService.getFineData().subscribe(data => {
@@ -78,12 +85,16 @@ export class CorrectFile {
       default:
         break;
     }
+    let dbAction = 'update-row';
+    if (!this.fileData[$rowNo]._id) {
+      dbAction = 'add-row';
+    }
     const singleRowUpdateinFile = {
-      fileId: this.latestFile._id,
-      fileNumber: this.latestFileNumber,
+      fileId: this.files[this.displayFileNumber]._id,
+      fileNumber: this.displayFileNumber,
       rowData: this.fileData[$rowNo],
       rowNumber: $rowNo,
-      dataType: 'single-row-in-file'
+      dbAction: dbAction
     }
     this.saveDataForOneRow(singleRowUpdateinFile);
   }
@@ -91,7 +102,6 @@ export class CorrectFile {
   saveDataForOneRow(singleRowUpdateinFile) {
     this.dataService.saveFileData(singleRowUpdateinFile).subscribe(data => {
         this.fileSaved();
-        this.loadFineList();
     });
   }
 
@@ -100,13 +110,7 @@ export class CorrectFile {
     let $rowNo = $button.getAttribute('data-rowno');
     $rowNo = parseInt($rowNo, 10);
     this.fileData[$rowNo].isDeleted = 'deleted';
-  }
-
-  saveData() {
-    const fileData = this.fileData;
-    this.dataService.saveFileData(fileData).subscribe(data => {
-       this.fileSaved();
-    });
+    this.updateData(event);
   }
   dataNotSaved() {
     let modelData = {
@@ -123,7 +127,6 @@ export class CorrectFile {
       description: 'Data saved successfully.'
     };
     this.openModel(modelData);
-    this.loadFineList();
   }
    addRow() {
     var fileLength = this.fileData.length;
@@ -145,5 +148,23 @@ export class CorrectFile {
   closeModel() {
     this.modelData = null;
     this.isModelOpen = false;
+  }
+  prevFine() {
+    if (this.displayFileNumber > 0) {
+        this.displayFileNumber = this.displayFileNumber - 1;
+        this.displayPage();
+    }
+  }
+
+  nextFine() {
+      if (this.displayFileNumber < this.latestFileNumber) {
+          this.displayFileNumber = this.displayFileNumber + 1;
+          this.displayPage();
+      }
+  }
+
+  currentFine() {
+      this.displayFileNumber = this.latestFileNumber;
+      this.displayPage();
   }
 }

@@ -4,6 +4,11 @@
 		<div class="main-panel main-dp-panel">
 			<h2>Samosa section</h2>
 			<p *ngIf="!loggedIn">Note: Only available for loggedin users</p>
+			<div class="pagination-button">
+				<button [disabled]="this.displayFileNumber < 1" type="button" (click)="prevFine()">Prev LLP fine</button>
+				<button type="button" (click)="currentFine()">Current LLP fine</button>
+				<button [disabled]="this.displayFileNumber >= latestFileNumber" type="button" (click)="nextFine()">Next LLP fine</button>
+			</div>
 			<div class="form-container update-error-form">
 				<table>
 					<thead>
@@ -14,7 +19,7 @@
 						<th>action</th>
 					</thead>
 					<tbody>
-						<tr [attr.data-deleted]="item.isDeleted" *ngFor="let item of fileData;let i = index" [attr.data-index]="i" >
+						<tr [attr.data-deleted]="item.isDeleted" *ngFor="let item of fileData;let i = index" [attr.data-index]="i">
 							<td>
 								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" [disabled]="!loggedIn">{{ item.name }}</textarea>
 							</td>
@@ -33,7 +38,6 @@
 						<tr>
 					</tbody>
 				</table>
-				<button (click)="saveData($event)" type="button" [disabled]="!loggedIn">Submit</button>
 				<button (click)="addRow()" type="button" [disabled]="!loggedIn">Add new row</button>
 			</div>
 		</div>

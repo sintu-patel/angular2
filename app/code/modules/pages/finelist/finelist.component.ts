@@ -13,6 +13,9 @@ export class FineList {
     fileData: any;
     files: any;
     latestFile: any;
+    totalFiles: number;
+    latestFileNumber: number;
+    displayFileNumber: number;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
         this.fileData = [];
         this.files = [];
@@ -22,15 +25,39 @@ export class FineList {
 
 	setData(data) {
         this.files = data.files;
-        const fileCount = this.files && this.files.length;
-        const latestFileNumber = fileCount - 1;
-		this.latestFile = this.files[latestFileNumber];
+        this.totalFiles = this.files && this.files.length;
+        this.latestFileNumber = this.totalFiles - 1;
+        this.displayFileNumber = this.latestFileNumber;
+		this.latestFile = this.files[this.latestFileNumber];
         this.fileData = this.latestFile.fileData;
 	}
+
+    displayPage() {
+        this.fileData = this.files[this.displayFileNumber].fileData;
+    }
 
     loadFineList() {
 		this.dataService.getFineData().subscribe(data => {
 			this.setData(data);
 		});
 	}
+
+    prevFine() {
+        if (this.displayFileNumber > 0) {
+            this.displayFileNumber = this.displayFileNumber - 1;
+            this.displayPage();
+        }
+    }
+
+    nextFine() {
+        if (this.displayFileNumber < this.latestFileNumber) {
+            this.displayFileNumber = this.displayFileNumber + 1;
+            this.displayPage();
+        }
+    }
+
+    currentFine() {
+        this.displayFileNumber = this.latestFileNumber;
+        this.displayPage();
+    }
 }
