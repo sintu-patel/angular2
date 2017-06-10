@@ -39,14 +39,18 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     // error model
                     this.modelData = null;
                     this.isModelOpen = false;
+                    this.files = [];
+                    this.latestFile = [];
                     this.loggedIn = sessionStorage['token'] && sessionStorage['token'] === '9910712381';
                     this.loadFineList();
                 }
                 setData(data) {
-                    if (data.fileData && data.fileData.length) {
-                        this.fileData = data.fileData;
-                    }
-                    if (!data.fileData || !data.fileData.length) {
+                    this.files = data.files;
+                    const fileCount = this.files && this.files.length;
+                    this.latestFileNumber = fileCount - 1;
+                    this.latestFile = this.files[this.latestFileNumber];
+                    this.fileData = this.latestFile.fileData;
+                    if (!this.fileData || !this.fileData.length) {
                         this.fileData.push(this.initialData);
                     }
                 }
@@ -77,12 +81,17 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         default:
                             break;
                     }
-                    this.saveDataForOneRow(this.fileData[$rowNo]);
+                    const singleRowUpdateinFile = {
+                        fileId: this.latestFile._id,
+                        fileNumber: this.latestFileNumber,
+                        rowData: this.fileData[$rowNo],
+                        rowNumber: $rowNo,
+                        dataType: 'single-row-in-file'
+                    };
+                    this.saveDataForOneRow(singleRowUpdateinFile);
                 }
-                saveDataForOneRow(fileData) {
-                    var fileArray = [];
-                    fileArray.push(fileData);
-                    this.dataService.saveFileData(fileArray).subscribe(data => {
+                saveDataForOneRow(singleRowUpdateinFile) {
+                    this.dataService.saveFileData(singleRowUpdateinFile).subscribe(data => {
                         this.fileSaved();
                         this.loadFineList();
                     });

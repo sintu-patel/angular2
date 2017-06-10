@@ -11,13 +11,21 @@ import { ActivatedRoute } from '@angular/router'; // to get route params
 // Component class
 export class FineList {
     fileData: any;
+    files: any;
+    latestFile: any;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
         this.fileData = [];
+        this.files = [];
+        this.latestFile = [];
 		this.loadFineList();
 	}
 
 	setData(data) {
-		this.fileData = data.fileData;
+        this.files = data.files;
+        const fileCount = this.files && this.files.length;
+        const latestFileNumber = fileCount - 1;
+		this.latestFile = this.files[latestFileNumber];
+        this.fileData = this.latestFile.fileData;
 	}
 
     loadFineList() {

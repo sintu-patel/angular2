@@ -29,10 +29,16 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     this.route = route;
                     this.dataService = dataService;
                     this.fileData = [];
+                    this.files = [];
+                    this.latestFile = [];
                     this.loadFineList();
                 }
                 setData(data) {
-                    this.fileData = data.fileData;
+                    this.files = data.files;
+                    const fileCount = this.files && this.files.length;
+                    const latestFileNumber = fileCount - 1;
+                    this.latestFile = this.files[latestFileNumber];
+                    this.fileData = this.latestFile.fileData;
                 }
                 loadFineList() {
                     this.dataService.getFineData().subscribe(data => {
