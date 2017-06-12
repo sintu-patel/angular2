@@ -26,10 +26,7 @@ table {
 
 	tr[data-deleted="deleted"] {
 		opacity: 0.5;
-
-		input {
-			pointer-events: none;
-		}
+		pointer-events: none;
 	}
 	input {
 		width: 100%;

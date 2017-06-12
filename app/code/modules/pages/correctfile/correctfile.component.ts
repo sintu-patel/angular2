@@ -163,6 +163,12 @@ export class CorrectFile {
       }
   }
 
+  isFieldInputDisabled(isDeleted) {
+    if(!this.loggedIn) {
+      return true;
+    }
+  }
+
   currentFine() {
       this.displayFileNumber = this.latestFileNumber;
       this.displayPage();

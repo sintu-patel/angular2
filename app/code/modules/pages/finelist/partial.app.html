@@ -4,9 +4,9 @@
 		<div class="main-panel main-dp-panel">
 			<h2>Samosa section</h2>
 			<div class="pagination-button">
-				<button [disabled]="this.displayFileNumber < 1" type="button" (click)="prevFine()">Prev LLP fine</button>
+				<button *ngIf="this.displayFileNumber > 0" type="button" (click)="prevFine()">Prev LLP fine</button>
 				<button type="button" (click)="currentFine()">Current LLP fine</button>
-				<button [disabled]="this.displayFileNumber >= latestFileNumber" type="button" (click)="nextFine()">Next LLP fine</button>
+				<button *ngIf="this.displayFileNumber < latestFileNumber" type="button" (click)="nextFine()">Next LLP fine</button>
 			</div>
 			<div class="form-container">
 				<table>

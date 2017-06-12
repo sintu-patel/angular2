@@ -767,8 +767,6 @@ table tbody tr:nth-child(2n+2) {
 }
 table tr[data-deleted="deleted"] {
     opacity: 0.5;
-}
-table tr[data-deleted="deleted"] input {
     pointer-events: none;
 }
 table input {

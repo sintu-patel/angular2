@@ -160,6 +160,11 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         this.displayPage();
                     }
                 }
+                isFieldInputDisabled(isDeleted) {
+                    if (!this.loggedIn) {
+                        return true;
+                    }
+                }
                 currentFine() {
                     this.displayFileNumber = this.latestFileNumber;
                     this.displayPage();

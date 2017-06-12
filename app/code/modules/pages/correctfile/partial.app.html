@@ -5,9 +5,9 @@
 			<h2>Samosa section</h2>
 			<p *ngIf="!loggedIn">Note: Only available for loggedin users</p>
 			<div class="pagination-button">
-				<button [disabled]="this.displayFileNumber < 1" type="button" (click)="prevFine()">Prev LLP fine</button>
+				<button *ngIf="this.displayFileNumber > 0" type="button" (click)="prevFine()">Prev LLP fine</button>
 				<button type="button" (click)="currentFine()">Current LLP fine</button>
-				<button [disabled]="this.displayFileNumber >= latestFileNumber" type="button" (click)="nextFine()">Next LLP fine</button>
+				<button *ngIf="this.displayFileNumber < latestFileNumber" type="button" (click)="nextFine()">Next LLP fine</button>
 			</div>
 			<div class="form-container update-error-form">
 				<table>
@@ -21,16 +21,16 @@
 					<tbody>
 						<tr [attr.data-deleted]="item.isDeleted" *ngFor="let item of fileData;let i = index" [attr.data-index]="i">
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" [disabled]="!loggedIn">{{ item.name }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" [disabled]="isFieldInputDisabled()">{{ item.name }}</textarea>
 							</td>
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="fine-input" type="text" name="fine" [disabled]="!loggedIn">{{ item.fine }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="fine-input" type="text" name="fine" [disabled]="isFieldInputDisabled()">{{ item.fine }}</textarea>
 							</td>
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="currency-input" type="text" name="currency" [disabled]="!loggedIn">{{ item.currency }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="currency-input" type="text" name="currency" [disabled]="isFieldInputDisabled()">{{ item.currency }}</textarea>
 							</td>
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="collectedfine-input" type="text" name="collectedfine" [disabled]="!loggedIn">{{ item.collectedfine }}</textarea>
+								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="collectedfine-input" type="text" name="collectedfine" [disabled]="isFieldInputDisabled()">{{ item.collectedfine }}</textarea>
 							</td>
 							<td>
 								<button type="button" [attr.data-rowno]="i" (click)="deleteRow($event)" [disabled]="!loggedIn">Delete</button>
