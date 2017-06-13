@@ -3,27 +3,39 @@
 	<div class="col-12">
 		<div class="main-panel main-dp-panel">
 			<h2>Samosa section</h2>
+			<p>The fine was captured on: {{ llpCloseDate }}</p>
 			<div class="pagination-button">
-				<button *ngIf="this.displayFileNumber > 0" type="button" (click)="prevFine()">Prev LLP fine</button>
-				<button type="button" (click)="currentFine()">Current LLP fine</button>
-				<button *ngIf="this.displayFileNumber < latestFileNumber" type="button" (click)="nextFine()">Next LLP fine</button>
+				<button
+					*ngIf="this.displayFileNumber > 0"
+					(click)="prevFine()"
+					type="button">Prev LLP fine</button>
+				<button
+					(click)="currentFine()"
+					type="button">Current LLP fine</button>
+				<button
+					*ngIf="this.displayFileNumber < latestFileNumber"
+					(click)="nextFine()"
+					type="button">Next LLP fine</button>
 			</div>
-			<div class="form-container">
+			<div class="form-container top-margin-20">
 				<table>
 					<thead>
 						<th>name</th>
 						<th>fine</th>
 						<th>currency</th>
 						<th>collection</th>
-						<th>Due</th>
+						<th>Current LLP Due</th>
+						<th class="total-due">Total Due</th>
 					</thead>
 					<tbody>
-						<tr *ngFor="let item of fileData;">
+						<tr
+							*ngFor="let item of fileData;">
 							<td>{{ item.name }}</td>
 							<td>{{ item.fine }}</td>
 							<td>{{ item.currency }}</td>
 							<td>{{ item.collectedfine }}</td>
 							<td>{{ item.fine - item.collectedfine }}</td>
+							<td class="total-due">{{ processHistoryData(item.empid) }}</td>
 						<tr>
 					</tbody>
 				</table>

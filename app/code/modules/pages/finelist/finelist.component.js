@@ -40,9 +40,11 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                     this.displayFileNumber = this.latestFileNumber;
                     this.latestFile = this.files[this.latestFileNumber];
                     this.fileData = this.latestFile.fileData;
+                    this.llpCloseDate = this.latestFile.llpCloseDate;
                 }
                 displayPage() {
                     this.fileData = this.files[this.displayFileNumber].fileData;
+                    this.llpCloseDate = this.files[this.displayFileNumber].llpCloseDate;
                 }
                 loadFineList() {
                     this.dataService.getFineData().subscribe(data => {
@@ -60,6 +62,37 @@ System.register(['@angular/core', '../../app.service', '@angular/router'], funct
                         this.displayFileNumber = this.displayFileNumber + 1;
                         this.displayPage();
                     }
+                }
+                processHistoryData(empid) {
+                    let individualUserHistory = [];
+                    let files = this.files;
+                    let fileData;
+                    let totalDue = 0;
+                    let dueArray = [];
+                    for (let i = 0; i < files.length; i++) {
+                        fileData = files[i].fileData;
+                        for (let j = 0; j < fileData.length; j++) {
+                            if (fileData[j] && fileData[j].empid && fileData[j].empid === empid) {
+                                let fine = fileData[j].fine;
+                                if (fine) {
+                                    fine = parseInt(fine, 10);
+                                    let collectedfine = fileData[j].collectedfine;
+                                    if (!collectedfine) {
+                                        collectedfine = 0;
+                                    }
+                                    collectedfine = parseInt(collectedfine, 10);
+                                    let due = fine - collectedfine;
+                                    dueArray.push(due);
+                                }
+                            }
+                        }
+                    }
+                    if (dueArray.length > 0) {
+                        for (let i = 0; i < dueArray.length; i++) {
+                            totalDue += dueArray[i];
+                        }
+                    }
+                    return totalDue;
                 }
                 currentFine() {
                     this.displayFileNumber = this.latestFileNumber;

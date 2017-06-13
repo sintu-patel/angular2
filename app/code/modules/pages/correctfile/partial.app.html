@@ -3,13 +3,23 @@
 	<div class="col-12">
 		<div class="main-panel main-dp-panel">
 			<h2>Samosa section</h2>
-			<p *ngIf="!loggedIn">Note: Only available for loggedin users</p>
+			<p
+				*ngIf="!loggedIn">Note: Only available for loggedin users</p>
+			<p>The fine was captured on: {{ llpCloseDate }}</p>
 			<div class="pagination-button">
-				<button *ngIf="this.displayFileNumber > 0" type="button" (click)="prevFine()">Prev LLP fine</button>
-				<button type="button" (click)="currentFine()">Current LLP fine</button>
-				<button *ngIf="this.displayFileNumber < latestFileNumber" type="button" (click)="nextFine()">Next LLP fine</button>
+				<button
+					*ngIf="this.displayFileNumber > 0"
+					(click)="prevFine()"
+					type="button">Prev LLP fine</button>
+				<button
+					(click)="currentFine()"
+					type="button">Current LLP fine</button>
+				<button
+					*ngIf="this.displayFileNumber < latestFileNumber"
+					(click)="nextFine()"
+					type="button">Next LLP fine</button>
 			</div>
-			<div class="form-container update-error-form">
+			<div class="form-container update-error-form top-margin-20">
 				<table>
 					<thead>
 						<th>name</th>
@@ -19,40 +29,80 @@
 						<th>action</th>
 					</thead>
 					<tbody>
-						<tr [attr.data-deleted]="item.isDeleted" *ngFor="let item of fileData;let i = index" [attr.data-index]="i">
+						<tr
+							[attr.data-deleted]="item.isDeleted"
+							*ngFor="let item of fileData;let i = index" [attr.data-index]="i">
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="name-input" type="text" name="name" [disabled]="isFieldInputDisabled()">{{ item.name }}</textarea>
+								<textarea
+									(change)="updateData($event)"
+									[attr.data-rowno]="i"
+									[disabled]="isFieldInputDisabled()"
+									class="name-input"
+									type="text"
+									name="name">{{ item.name }}</textarea>
 							</td>
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="fine-input" type="text" name="fine" [disabled]="isFieldInputDisabled()">{{ item.fine }}</textarea>
+								<textarea
+									(change)="updateData($event)"
+									[attr.data-rowno]="i"
+									[disabled]="isFieldInputDisabled()"
+									class="fine-input"
+									type="text"
+									name="fine">{{ item.fine }}</textarea>
 							</td>
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="currency-input" type="text" name="currency" [disabled]="isFieldInputDisabled()">{{ item.currency }}</textarea>
+								<textarea
+									(change)="updateData($event)"
+									[attr.data-rowno]="i"
+									[disabled]="isFieldInputDisabled()"
+									class="currency-input"
+									type="text"
+									name="currency">{{ item.currency }}</textarea>
 							</td>
 							<td>
-								<textarea (change)="updateData($event)" [attr.data-rowno]="i" class="collectedfine-input" type="text" name="collectedfine" [disabled]="isFieldInputDisabled()">{{ item.collectedfine }}</textarea>
+								<textarea
+									(change)="updateData($event)"
+									[attr.data-rowno]="i"
+									[disabled]="isFieldInputDisabled()"
+									class="collectedfine-input"
+									type="text"
+									name="collectedfine">{{ item.collectedfine }}</textarea>
 							</td>
 							<td>
-								<button type="button" [attr.data-rowno]="i" (click)="deleteRow($event)" [disabled]="!loggedIn">Delete</button>
+								<button
+									[attr.data-rowno]="i"
+									(click)="deleteRow($event)"
+									[disabled]="!loggedIn"
+									type="button">Delete</button>
 							</td>
 						<tr>
 					</tbody>
 				</table>
-				<button (click)="addRow()" type="button" [disabled]="!loggedIn">Add new row</button>
+				<button
+					(click)="addRow()"
+					[disabled]="!loggedIn"
+					type="button">Add new row</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="global-model" *ngIf="isModelOpen">
+<div
+	*ngIf="isModelOpen"
+	class="global-model">
 	<div class="model-container">
 		<h2>{{ modelData.heading }}</h2>
 		<p>{{ modelData.description }}</p>
-		<div *ngIf="modelData.showRedirectLink">
-			<a [routerLink]="[modelData.redirectUrl]">{{ modelData.redirectLabel }}</a>
+		<div
+			*ngIf="modelData.showRedirectLink">
+			<a
+				[routerLink]="[modelData.redirectUrl]">{{ modelData.redirectLabel }}</a>
 		</div>
-		<div *ngIf="modelData.showCloseButton">
-			<button type="button" (click)="closeModel()">Close</button>
+		<div
+			*ngIf="modelData.showCloseButton">
+			<button
+				(click)="closeModel()"
+				type="button">Close</button>
 		</div>
 	</div>
 </div>

@@ -23,6 +23,7 @@ export class CorrectFile {
   isModelOpen: any;
   loggedIn: boolean;
   latestFileNumber: number;
+  llpCloseDate: any;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
     this.fileData = [];
     this.initialData = {
@@ -48,6 +49,7 @@ export class CorrectFile {
     this.displayFileNumber = this.latestFileNumber;
     this.latestFile = this.files[this.latestFileNumber];
     this.fileData = this.latestFile.fileData;
+    this.llpCloseDate = this.latestFile.llpCloseDate;
     if (!this.fileData || !this.fileData.length) {
       this.fileData.push(this.initialData);
     }
@@ -55,6 +57,7 @@ export class CorrectFile {
 
   displayPage() {
       this.fileData = this.files[this.displayFileNumber].fileData;
+      this.llpCloseDate = this.files[this.displayFileNumber].llpCloseDate;
   }
 
    loadFineList() {

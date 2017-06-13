@@ -121,3 +121,7 @@ div {
 		outline-color: mediumvioletred;
 	}
 }
+
+.top-margin-20 {
+	margin-top: 20px;
+}

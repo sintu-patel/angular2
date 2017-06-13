@@ -745,6 +745,9 @@ div {
     border: 2px solid mediumvioletred;
     outline-color: mediumvioletred;
 }
+.top-margin-20 {
+    margin-top: 20px;
+}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -772,8 +775,20 @@ table tr[data-deleted="deleted"] {
 table input {
     width: 100%;
 }
+table .total-due {
+    background: #ca3030;
+    color: #fff;
+    text-align: center;
+    font-size: 40px;
+}
+.llp-form .today {
+    width: 250px;
+    background: #580558;
+}
 .llp-form .today textarea {
-    background: aliceblue;
+    background: mediumvioletred;
+    color: #fff;
+    box-shadow: none;
 }
 @media all and (max-width: 767px) {
     .llp-form tr {
