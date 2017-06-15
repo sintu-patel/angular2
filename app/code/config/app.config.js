@@ -1,10 +1,10 @@
-System.register([], function(exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var serverURL, hostUrl, host, apiConfig;
     return {
-        setters:[],
-        execute: function() {
+        setters: [],
+        execute: function () {
             // Host Configuration
             serverURL = window.location;
             hostUrl = serverURL.hostname;
@@ -36,6 +36,6 @@ System.register([], function(exports_1, context_1) {
                 validToken: '9910712381'
             });
         }
-    }
+    };
 });
 //# sourceMappingURL=app.config.js.map
