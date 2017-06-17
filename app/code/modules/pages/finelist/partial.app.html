@@ -35,7 +35,7 @@
 							<td>{{ item.fine }}</td>
 							<td>{{ item.currency }}</td>
 							<td>{{ item.collectedfine }}</td>
-							<td>{{ item.fine - item.collectedfine }}</td>
+							<td><div [class]="(item.fine - item.collectedfine)  > 0 ? 'fine-col' : 'fine-col fine-green'">{{ item.fine - item.collectedfine }}</div></td>
 							<td class="total-due">{{ processHistoryData(item.empid) }}</td>
 						<tr>
 						<tr class="total-row">
@@ -44,7 +44,7 @@
 							<td>INR</td>
 							<td>{{ totalCollection }}</td>
 							<td>{{ totalFine - totalCollection }}</td>
-							<td class="total-due">P1+P2....</td>
+							<td class="total-due">{{ totalDue }}</td>
 						</tr>
 					</tbody>
 				</table>

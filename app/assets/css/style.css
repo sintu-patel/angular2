@@ -785,6 +785,18 @@ table .total-row td {
     background: #333;
     color: #fff;
 }
+table .fine-col {
+    background: #ca3030;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 1px 5px 5px #b10c0c;
+}
+table .fine-col.fine-green {
+    background: green;
+    box-shadow: 1px 5px 5px #29d839;
+}
 .llp-form .today {
     width: 250px;
     background: #580558;
