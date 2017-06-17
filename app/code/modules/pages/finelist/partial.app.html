@@ -38,6 +38,14 @@
 							<td>{{ item.fine - item.collectedfine }}</td>
 							<td class="total-due">{{ processHistoryData(item.empid) }}</td>
 						<tr>
+						<tr class="total-row">
+							<td>Total</td>
+							<td>{{ totalFine }}</td>
+							<td>INR</td>
+							<td>{{ totalCollection }}</td>
+							<td>{{ totalFine - totalCollection }}</td>
+							<td class="total-due">P1+P2....</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>

@@ -29,6 +29,8 @@ System.register(["@angular/core", "../../app.service", "@angular/router"], funct
                 constructor(route, dataService) {
                     this.route = route;
                     this.dataService = dataService;
+                    this.totalFine = 0;
+                    this.totalCollection = 0;
                     this.fileData = [];
                     this.files = [];
                     this.latestFile = [];
@@ -42,10 +44,12 @@ System.register(["@angular/core", "../../app.service", "@angular/router"], funct
                     this.latestFile = this.files[this.latestFileNumber];
                     this.fileData = this.latestFile.fileData;
                     this.llpCloseDate = this.latestFile.llpCloseDate;
+                    this.totalFineAmount();
                 }
                 displayPage() {
                     this.fileData = this.files[this.displayFileNumber].fileData;
                     this.llpCloseDate = this.files[this.displayFileNumber].llpCloseDate;
+                    this.totalFineAmount();
                 }
                 loadFineList() {
                     this.dataService.getFineData().subscribe(data => {
@@ -94,6 +98,25 @@ System.register(["@angular/core", "../../app.service", "@angular/router"], funct
                         }
                     }
                     return totalDue;
+                }
+                totalFineAmount() {
+                    const fileData = this.fileData;
+                    let totalFine = 0;
+                    let totalCollection = 0;
+                    for (let i = 0; i < fileData.length; i++) {
+                        let fine = fileData[i].fine;
+                        if (fine) {
+                            fine = parseInt(fine, 10);
+                            totalFine += fine;
+                        }
+                        let collection = fileData[i].collectedfine;
+                        if (collection) {
+                            collection = parseInt(collection, 10);
+                            totalCollection += collection;
+                        }
+                    }
+                    this.totalFine = totalFine;
+                    this.totalCollection = totalCollection;
                 }
                 currentFine() {
                     this.displayFileNumber = this.latestFileNumber;

@@ -781,6 +781,10 @@ table .total-due {
     text-align: center;
     font-size: 40px;
 }
+table .total-row td {
+    background: #333;
+    color: #fff;
+}
 .llp-form .today {
     width: 250px;
     background: #580558;

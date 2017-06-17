@@ -38,6 +38,11 @@ table {
 		text-align: center;
 		font-size: 40px;
 	}
+
+	.total-row td {
+		background: #333;
+		color: #fff;
+	}
 }
 
 .llp-form {

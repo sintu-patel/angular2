@@ -17,7 +17,11 @@ export class FineList {
     latestFileNumber: number;
     displayFileNumber: number;
     llpCloseDate: any;
+    totalFine: number;
+    totalCollection: number;
 	constructor(private route:ActivatedRoute, private dataService: DataService) {
+        this.totalFine = 0;
+        this.totalCollection = 0;
         this.fileData = [];
         this.files = [];
         this.latestFile = [];
@@ -32,11 +36,13 @@ export class FineList {
 		this.latestFile = this.files[this.latestFileNumber];
         this.fileData = this.latestFile.fileData;
         this.llpCloseDate = this.latestFile.llpCloseDate;
+        this.totalFineAmount();
 	}
 
     displayPage() {
         this.fileData = this.files[this.displayFileNumber].fileData;
         this.llpCloseDate = this.files[this.displayFileNumber].llpCloseDate;
+        this.totalFineAmount();
     }
 
     loadFineList() {
@@ -89,6 +95,26 @@ export class FineList {
             }
         }
         return totalDue;
+    }
+
+    totalFineAmount() {
+        const fileData = this.fileData;
+        let totalFine = 0;
+        let totalCollection = 0;
+        for(let i = 0; i< fileData.length; i++) {
+            let fine = fileData[i].fine;
+            if (fine) {
+                fine = parseInt(fine, 10);
+                totalFine += fine;
+            }
+            let collection = fileData[i].collectedfine;
+            if(collection) {
+                collection = parseInt(collection, 10);
+                totalCollection += collection;
+            }
+        }
+        this.totalFine = totalFine;
+        this.totalCollection = totalCollection;
     }
 
     currentFine() {
