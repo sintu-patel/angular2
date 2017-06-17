@@ -35,6 +35,10 @@ System.register([], function (exports_1, context_1) {
                         url: '/llp'
                     },
                     {
+                        label: 'Issue, Risk, Next Steps',
+                        url: '/issuerisknextsteps'
+                    },
+                    {
                         label: 'Token',
                         url: '/token'
                     }

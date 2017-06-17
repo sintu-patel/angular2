@@ -70,7 +70,7 @@ System.register(["@angular/core", "../../app.service", "../../../config/app.labe
                         redirectUrl: app_labels_1.labelConfig.navigation[0].url,
                         redirectLabel: app_labels_1.labelConfig.navigation[0].label,
                         heading: 'You are logged in as' + sessionStorage['token'],
-                        description: 'Click close to continue'
+                        description: 'Click home to continue'
                     };
                     this.openModel(modelData);
                 }
@@ -86,7 +86,7 @@ System.register(["@angular/core", "../../app.service", "../../../config/app.labe
                         redirectUrl: app_labels_1.labelConfig.navigation[0].url,
                         redirectLabel: app_labels_1.labelConfig.navigation[0].label,
                         heading: 'You are logged out.',
-                        description: 'Click close to continue'
+                        description: 'Click home to continue'
                     };
                     this.openModel(modelData);
                 }

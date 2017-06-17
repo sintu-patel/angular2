@@ -1,7 +1,7 @@
-System.register(["@angular/router", "./pages/home/home.component", "./pages/detailpage/detailpage.component", "./pages/upload/upload.component", "./pages/finelist/finelist.component", "./pages/correctfile/correctfile.component", "./pages/llp/updatellp.component", "./pages/token/token.component"], function (exports_1, context_1) {
+System.register(["@angular/router", "./pages/home/home.component", "./pages/detailpage/detailpage.component", "./pages/upload/upload.component", "./pages/finelist/finelist.component", "./pages/correctfile/correctfile.component", "./pages/llp/updatellp.component", "./pages/token/token.component", "./pages/issuerisknextsteps/issuerisknextsteps.component"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var router_1, home_component_1, detailpage_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1, token_component_1, routes, routing;
+    var router_1, home_component_1, detailpage_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1, token_component_1, issuerisknextsteps_component_1, routes, routing;
     return {
         setters: [
             function (router_1_1) {
@@ -27,6 +27,9 @@ System.register(["@angular/router", "./pages/home/home.component", "./pages/deta
             },
             function (token_component_1_1) {
                 token_component_1 = token_component_1_1;
+            },
+            function (issuerisknextsteps_component_1_1) {
+                issuerisknextsteps_component_1 = issuerisknextsteps_component_1_1;
             }
         ],
         execute: function () {
@@ -39,7 +42,8 @@ System.register(["@angular/router", "./pages/home/home.component", "./pages/deta
                 { path: 'finelist', component: finelist_component_1.FineList },
                 { path: 'correctfile', component: correctfile_component_1.CorrectFile },
                 { path: 'llp', component: updatellp_component_1.UpdateLLP },
-                { path: 'token', component: token_component_1.Token }
+                { path: 'token', component: token_component_1.Token },
+                { path: 'issuerisknextsteps', component: issuerisknextsteps_component_1.IssueRiskNextSteps }
             ]);
             exports_1("routing", routing = router_1.RouterModule.forRoot(routes));
         }

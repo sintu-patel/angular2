@@ -13,6 +13,7 @@ import { FineList } from './pages/finelist/finelist.component';
 import { CorrectFile } from './pages/correctfile/correctfile.component';
 import { UpdateLLP } from './pages/llp/updatellp.component';
 import { Token } from './pages/token/token.component';
+import { IssueRiskNextSteps } from './pages/issuerisknextsteps/issuerisknextsteps.component';
 import { routing } from './app.routes';
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { routing } from './app.routes';
     FineList,
     CorrectFile,
     UpdateLLP,
-    Token
+    Token,
+    IssueRiskNextSteps
   ],
   bootstrap: [
     AppComponent

@@ -74,4 +74,16 @@ export class DataService {
     return this.http.get(apiConfig.apiServer.getllpdataUrl)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
+
+  getIssuesData() : Observable<Comment[]> {
+    return this.http.get(apiConfig.apiServer.getissuedataUrl)
+    .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
+  saveIssuesData(dataJSON) : Observable<Comment[]> {
+   var url = apiConfig.apiServer.saveissuedataUrl;
+   let headers = new Headers(apiConfig.contentTypeJson);
+   let options = new RequestOptions({ headers: headers });
+    return this.http.post(url, dataJSON, options)
+    .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
 }

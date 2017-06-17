@@ -7,6 +7,7 @@ import { FineList } from './pages/finelist/finelist.component';
 import { CorrectFile } from './pages/correctfile/correctfile.component';
 import { UpdateLLP } from './pages/llp/updatellp.component';
 import { Token } from './pages/token/token.component';
+import { IssueRiskNextSteps } from './pages/issuerisknextsteps/issuerisknextsteps.component';
 
 // Route Configuration
 export const routes: Routes = [
@@ -17,7 +18,8 @@ export const routes: Routes = [
   { path: 'finelist', component: FineList},
   { path: 'correctfile', component: CorrectFile},
   { path: 'llp', component: UpdateLLP},
-  { path: 'token', component: Token}
+  { path: 'token', component: Token},
+  { path: 'issuerisknextsteps', component: IssueRiskNextSteps}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

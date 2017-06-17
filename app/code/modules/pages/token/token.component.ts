@@ -55,7 +55,7 @@ export class Token {
         redirectUrl: labelConfig.navigation[0].url,
         redirectLabel: labelConfig.navigation[0].label,
         heading: 'You are logged in as' + sessionStorage['token'],
-        description: 'Click close to continue'
+        description: 'Click home to continue'
       };
       this.openModel(modelData);
     }
@@ -71,7 +71,7 @@ export class Token {
         redirectUrl: labelConfig.navigation[0].url,
         redirectLabel: labelConfig.navigation[0].label,
         heading: 'You are logged out.',
-        description: 'Click close to continue'
+        description: 'Click home to continue'
       };
       this.openModel(modelData);
     }

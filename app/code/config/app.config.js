@@ -18,7 +18,10 @@ System.register([], function (exports_1, context_1) {
                     savefiledataUrl: host + 'savefiledata',
                     savellpdataUrl: host + 'savellp',
                     getllpdataUrl: host + 'getllpdata',
-                    uploadcmsUrl: host + 'uploadcms'
+                    uploadcmsUrl: host + 'uploadcms',
+                    getissuedataUrl: host + 'getissuesdata',
+                    saveissuedataUrl: host + 'saveissuesdata',
+                    updateissuedataUrl: host + 'updateissuesdata'
                 },
                 contentTypeJson: {
                     'Content-Type': 'application/json'

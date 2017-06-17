@@ -11,7 +11,10 @@ export const apiConfig = {
     savefiledataUrl: host + 'savefiledata',
     savellpdataUrl: host + 'savellp',
     getllpdataUrl: host + 'getllpdata',
-    uploadcmsUrl: host + 'uploadcms'
+    uploadcmsUrl: host + 'uploadcms',
+    getissuedataUrl: host + 'getissuesdata',
+    saveissuedataUrl: host + 'saveissuesdata',
+    updateissuedataUrl: host + 'updateissuesdata'
   },
   contentTypeJson: {
     'Content-Type': 'application/json'

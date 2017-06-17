@@ -892,6 +892,9 @@ textarea {
     background: green;
     color: #fff;
 }
+.issue-content {
+    overflow: hidden;
+}
 .navigation nav {
     display: block;
 }

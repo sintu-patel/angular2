@@ -94,6 +94,17 @@ System.register(["@angular/core", "@angular/http", "rxjs/Rx", "rxjs/add/operator
                     return this.http.get(app_config_1.apiConfig.apiServer.getllpdataUrl)
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
+                getIssuesData() {
+                    return this.http.get(app_config_1.apiConfig.apiServer.getissuedataUrl)
+                        .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
+                }
+                saveIssuesData(dataJSON) {
+                    var url = app_config_1.apiConfig.apiServer.saveissuedataUrl;
+                    let headers = new http_1.Headers(app_config_1.apiConfig.contentTypeJson);
+                    let options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.post(url, dataJSON, options)
+                        .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
+                }
             };
             DataService = __decorate([
                 core_1.Injectable(),

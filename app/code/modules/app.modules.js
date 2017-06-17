@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/platform-browser", "@angular/forms", "@angular/http", "./components/component.app", "./components/pipe.app", "./components/search.app", "./pages/home/home.component", "./pages/detailpage/detailpage.component", "./pages/upload/upload.component", "./pages/finelist/finelist.component", "./pages/correctfile/correctfile.component", "./pages/llp/updatellp.component", "./pages/token/token.component", "./app.routes"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/platform-browser", "@angular/forms", "@angular/http", "./components/component.app", "./components/pipe.app", "./components/search.app", "./pages/home/home.component", "./pages/detailpage/detailpage.component", "./pages/upload/upload.component", "./pages/finelist/finelist.component", "./pages/correctfile/correctfile.component", "./pages/llp/updatellp.component", "./pages/token/token.component", "./pages/issuerisknextsteps/issuerisknextsteps.component", "./app.routes"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/forms",
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, platform_browser_1, forms_1, http_1, component_app_1, pipe_app_1, search_app_1, home_component_1, detailpage_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1, token_component_1, app_routes_1, AppModule;
+    var core_1, platform_browser_1, forms_1, http_1, component_app_1, pipe_app_1, search_app_1, home_component_1, detailpage_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1, token_component_1, issuerisknextsteps_component_1, app_routes_1, AppModule;
     return {
         setters: [
             function (core_1_1) {
@@ -52,6 +52,9 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/forms",
             function (token_component_1_1) {
                 token_component_1 = token_component_1_1;
             },
+            function (issuerisknextsteps_component_1_1) {
+                issuerisknextsteps_component_1 = issuerisknextsteps_component_1_1;
+            },
             function (app_routes_1_1) {
                 app_routes_1 = app_routes_1_1;
             }
@@ -77,7 +80,8 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/forms",
                         finelist_component_1.FineList,
                         correctfile_component_1.CorrectFile,
                         updatellp_component_1.UpdateLLP,
-                        token_component_1.Token
+                        token_component_1.Token,
+                        issuerisknextsteps_component_1.IssueRiskNextSteps
                     ],
                     bootstrap: [
                         component_app_1.AppComponent
