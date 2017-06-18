@@ -59,6 +59,16 @@ table {
 	}
 }
 
+.issue-table {
+	td div {
+		padding: 10px;
+
+		&:focus {
+			outline-color: mediumvioletred;
+		}
+	}
+}
+
 .llp-form {
 	.today {
 		width: 250px;

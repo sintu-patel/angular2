@@ -4,51 +4,52 @@
 		<div class="main-panel">
 			<div class="main-panel-content issue-content">
 				<div class="col-12">
-					<h2>Issues / Risk</h2>
+					<h2>Issue / Risk / Next Step</h2>
 					<div class="issues-risk">
-						<table>
+						<table class="issue-table">
 							<thead>
 								<tr>
-									<th>Issue / Risk</th>
+									<th>Issue / Risk / Next Step</th>
+									<th>Type</th>
 									<th>Due Date</th>
 									<th>Owner</th>
+									<th>Status</th>
 									<th>Resolve</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr
-									*ngFor="let item of issuesData;let i = index" [attr.data-index]="i">
+									*ngFor="let item of pageData;let i = index" [attr.data-rowindex]="i">
 									<td>
-										<textarea
-											(change)="updateData($event)"
-											[attr.data-rowno]="i"
-											[disabled]="!loggedIn"
-											class="name-input"
-											type="text"
-											name="name">{{ item.name }}</textarea>
+										<div
+											data-name="name"
+											contenteditable="true">{{ item.name }}</div>
 									</td>
 									<td>
-										<textarea
-											(change)="updateData($event)"
-											[attr.data-rowno]="i"
-											[disabled]="!loggedIn"
-											class="date-input"
-											type="text"
-											name="dueDate">{{ item.dueDate }}</textarea>
+										<div
+											data-name="issueType"
+											contenteditable="true">{{ item.issueType }}</div>
 									</td>
 									<td>
-										<textarea
-											(change)="updateData($event)"
-											[attr.data-rowno]="i"
-											[disabled]="!loggedIn"
-											class="owner-input"
-											type="text"
-											name="owner">{{ item.owner }}</textarea>
+										<div
+											data-name="dueDate"
+											contenteditable="true">{{ item.dueDate }}</div>
+									</td>
+									<td>
+										<div
+											data-name="owner"
+											contenteditable="true">{{ item.owner }}</div>
+									</td>
+									<td>
+										<div
+											data-name="status"
+											contenteditable="true">{{ item.isResolved }}</div>
 									</td>
 									<td>
 										<button
-											(click)="resolveIssue()"
-											type="button">Resolve</button>
+											[attr.data-index]="i"
+											(click)="saveData($event)"
+											type="button">Save</button>
 									</td>
 								</tr>
 							</tbody>
@@ -56,60 +57,8 @@
 					</div>
 					<div class="add-data-form">
 						<button
-						(click)="saveData()"
-						type="button">Save</button>
-					</div>
-				</div>
-				<div class="col-12">
-					<h2>Next Steps</h2>
-					<div class="issues-risk">
-						<table>
-							<thead>
-								<tr>
-									<th>Issue / Risk</th>
-									<th>Due Date</th>
-									<th>Owner</th>
-									<th>Resolve</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr
-									*ngFor="let item of nextStepsData;let i = index" [attr.data-index]="i">
-									<td>
-										<textarea
-											(change)="updateData($event)"
-											[attr.data-rowno]="i"
-											[disabled]="!loggedIn"
-											class="name-input"
-											type="text"
-											name="name">{{ item.name }}</textarea>
-									</td>
-									<td>
-										<textarea
-											(change)="updateData($event)"
-											[attr.data-rowno]="i"
-											[disabled]="!loggedIn"
-											class="name-input"
-											type="text"
-											name="name">{{ item.dueDate }}</textarea>
-									</td>
-									<td>
-										<textarea
-											(change)="updateData($event)"
-											[attr.data-rowno]="i"
-											[disabled]="!loggedIn"
-											class="name-input"
-											type="text"
-											name="name">{{ item.owner }}</textarea>
-									</td>
-									<td>
-										<button
-											(click)="resolveNextStep()"
-											type="button">Resolve</button>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+						(click)="addData()"
+						type="button">Add</button>
 					</div>
 				</div>
 			</div>

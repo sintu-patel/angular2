@@ -797,6 +797,12 @@ table .fine-col.fine-green {
     background: green;
     box-shadow: 1px 5px 5px #29d839;
 }
+.issue-table td div {
+    padding: 10px;
+}
+.issue-table td div:focus {
+    outline-color: mediumvioletred;
+}
 .llp-form .today {
     width: 250px;
     background: #580558;
