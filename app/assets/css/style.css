@@ -803,6 +803,20 @@ table .fine-col.fine-green {
 .issue-table td div:focus {
     outline-color: mediumvioletred;
 }
+.issue-table input[type="date"] {
+    padding: 10px;
+    border: 1px solid mediumvioletred;
+}
+.issue-table input[type="date"]:focus {
+    outline-color: mediumvioletred;
+}
+.issue-table [contenteditable="true"] {
+    padding: 10px;
+    border: 1px solid mediumvioletred;
+}
+.issue-table [contenteditable="true"]:focus {
+    outline-color: mediumvioletred;
+}
 .llp-form .today {
     width: 250px;
     background: #580558;
@@ -857,6 +871,13 @@ textarea {
 }
 .input[type="file"] {
     width: 300px;
+}
+select {
+    padding: 10px;
+    border: 1px solid mediumvioletred;
+}
+select:focus {
+    outline-color: mediumvioletred;
 }
 .issue-box label {
     display: block;

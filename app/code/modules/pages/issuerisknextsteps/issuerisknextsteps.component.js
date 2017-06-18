@@ -45,10 +45,10 @@ System.register(["@angular/core", "../../app.service"], function (exports_1, con
                     dataIndex = parseInt(dataIndex, 10);
                     const selectedRow = document.querySelector('[data-rowindex=\"' + dataIndex + '\"]');
                     const name = selectedRow.querySelector('[data-name="name"]').innerHTML;
-                    const issueType = selectedRow.querySelector('[data-name="issueType"]').innerHTML;
-                    const dueDate = selectedRow.querySelector('[data-name="dueDate"]').innerHTML;
+                    const issueType = selectedRow.querySelector('[data-name="issueType"]').value;
+                    const dueDate = selectedRow.querySelector('[data-name="dueDate"]').value;
                     const owner = selectedRow.querySelector('[data-name="owner"]').innerHTML;
-                    const resolution = selectedRow.querySelector('[data-name="status"]').innerHTML;
+                    const resolution = selectedRow.querySelector('[data-name="status"]').value;
                     const rowId = this.pageData[dataIndex]._id;
                     if (!rowId) {
                         const updateData = {

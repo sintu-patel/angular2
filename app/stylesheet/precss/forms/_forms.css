@@ -40,6 +40,15 @@ textarea {
     width: 300px;
 }
 
+select {
+    padding: 10px;
+    border: 1px solid mediumvioletred;
+
+    &:focus {
+        outline-color: mediumvioletred;
+    }
+}
+
 .issue-box {
     label {
         display: block;

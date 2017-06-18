@@ -67,6 +67,24 @@ table {
 			outline-color: mediumvioletred;
 		}
 	}
+
+	input[type="date"] {
+		padding: 10px;
+		border: 1px solid mediumvioletred;
+
+		&:focus {
+			outline-color: mediumvioletred;
+		}
+	}
+
+	[contenteditable="true"] {
+		padding: 10px;
+		border: 1px solid mediumvioletred;
+
+		&:focus {
+			outline-color: mediumvioletred;
+		}
+	}
 }
 
 .llp-form {

@@ -4,17 +4,17 @@
 		<div class="main-panel">
 			<div class="main-panel-content issue-content">
 				<div class="col-12">
-					<h2>Issue / Risk / Next Step</h2>
+					<h2>Issues / Risk / Next Step</h2>
 					<div class="issues-risk">
 						<table class="issue-table">
 							<thead>
 								<tr>
-									<th>Issue / Risk / Next Step</th>
+									<th>Issues / Risk / Next Step</th>
 									<th>Type</th>
 									<th>Due Date</th>
 									<th>Owner</th>
 									<th>Status</th>
-									<th>Resolve</th>
+									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -26,14 +26,19 @@
 											contenteditable="true">{{ item.name }}</div>
 									</td>
 									<td>
-										<div
-											data-name="issueType"
-											contenteditable="true">{{ item.issueType }}</div>
+										<select
+											[value]="item.issueType"
+											data-name="issueType">
+											<option>issues-risk</option>
+											<option>next-step</option>
+										</select>
 									</td>
 									<td>
-										<div
-											data-name="dueDate"
-											contenteditable="true">{{ item.dueDate }}</div>
+										<input
+											[value]="item.dueDate"
+											type="date"
+											name="dueDate"
+											data-name="dueDate" />
 									</td>
 									<td>
 										<div
@@ -41,9 +46,12 @@
 											contenteditable="true">{{ item.owner }}</div>
 									</td>
 									<td>
-										<div
-											data-name="status"
-											contenteditable="true">{{ item.isResolved }}</div>
+										<select
+											[value]="item.isResolved"
+											data-name="status">
+											<option>not-resolved</option>
+											<option>resolved</option>
+										</select>
 									</td>
 									<td>
 										<button
