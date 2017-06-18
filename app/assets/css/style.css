@@ -975,6 +975,13 @@ select:focus {
     display: table;
     clear: both;
 }
+.loader {
+    color: mediumvioletred;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 15%;
+}
 /* Create model */
 .issue-form-container {
     border-left: 1px solid mediumvioletred;

@@ -17,3 +17,11 @@
         text-align: center;
     }
 }
+
+.loader {
+    color: mediumvioletred;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 15%;
+}
