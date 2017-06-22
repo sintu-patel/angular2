@@ -1,10 +1,10 @@
-System.register([], function (exports_1, context_1) {
+System.register([], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var labelConfig;
     return {
-        setters: [],
-        execute: function () {
+        setters:[],
+        execute: function() {
             exports_1("labelConfig", labelConfig = {
                 common: {
                     title: 'Digital LLP',
@@ -45,6 +45,6 @@ System.register([], function (exports_1, context_1) {
                 ]
             });
         }
-    };
+    }
 });
 //# sourceMappingURL=app.labels.js.map

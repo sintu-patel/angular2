@@ -11,7 +11,7 @@ import { IssueRiskNextSteps } from './pages/issuerisknextsteps/issuerisknextstep
 
 // Route Configuration
 export const routes: Routes = [
-  { path: '', component: Home },
+  { path: '', component: UpdateLLP },
   { path: 'home', component: Home },
   { path: 'detailpage', component: DetailPage},
   { path: 'upload', component: Upload},
