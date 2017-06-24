@@ -13,7 +13,9 @@ Features:
 
 Technology used
 Angular2 for front end
+
 Nodejs, Express for api (Api repo path is https://github.com/sintu-patel/web-api)
+
 Mongodb for data strorage
 
 How to start Angular App
