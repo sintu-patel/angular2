@@ -1,10 +1,14 @@
 # web-xt
 
-Name: Digital LLP
-Objective: This project is developed to record Low Level Planning (LLP) of Agile Projects. The team members can update their daily LLP task
-on the LLP board so that anyone can see your daily task from anywhere. This app is very good for teams that works from multiple locations.
+Name: Digital LLP:
 
-Features: 1. Update the daily task in LLP board, 2. Add issues, risks, and next steps, 3. Add fine to team members for any LLP violation,
+Objective: This project is developed to record Low Level Planning (LLP) of Agile Projects. The team members can update their daily LLP task on the LLP board so that anyone can see your daily task from anywhere. This app is very good for teams that works from multiple locations.
+
+Features:
+
+1. Update the daily task in LLP board,
+2. Add issues, risks, and next steps,
+3. Add fine to team members for any LLP violation,
 4. Team can add any important information.
 
 Technology used
