@@ -838,6 +838,9 @@ table .fine-col.fine-green {
         display: none;
     }
 }
+.llp-close-date {
+    color: navy;
+}
 .input {
     width: 100%;
     padding: 10px;

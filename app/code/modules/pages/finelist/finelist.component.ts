@@ -30,6 +30,16 @@ export class FineList {
 		this.loadFineList();
 	}
 
+    formateDate(unformattedDate) {
+        let monthArray = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        let date = new Date(unformattedDate);
+        let day = date.getDate();
+        let month = date.getMonth();
+        let year = date.getFullYear();
+        let dateString = day + '/' + monthArray[month] + '/' + year;
+        return dateString;
+    }
+
 	setData(data) {
         this.files = data.files;
         this.totalFiles = this.files && this.files.length;
@@ -37,14 +47,14 @@ export class FineList {
         this.displayFileNumber = this.latestFileNumber;
 		this.latestFile = this.files[this.latestFileNumber];
         this.fileData = this.latestFile.fileData;
-        this.llpCloseDate = this.latestFile.llpCloseDate;
+        this.llpCloseDate = this.formateDate(this.latestFile.llpCloseDate);
         this.totalFineAmount();
         this.getTotalDue();
 	}
 
     displayPage() {
         this.fileData = this.files[this.displayFileNumber].fileData;
-        this.llpCloseDate = this.files[this.displayFileNumber].llpCloseDate;
+        this.llpCloseDate = this.formateDate(this.files[this.displayFileNumber].llpCloseDate);
         this.totalFineAmount();
         this.getTotalDue();
     }
