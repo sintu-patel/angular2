@@ -22,7 +22,7 @@
 				<div class="issues" *ngFor="let item of DATA;let i = index" [attr.data-index]="i">
 					<h2 class="issue">{{ item.issue }}</h2>
 					<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>
-					<a [routerLink]="['/detailpage']" [queryParams]="{ p: i }" [attr.class]="item.resolution.length > 500 ? '' : 'hidden'">View more</a>
+					<a [routerLink]="['/detailpage']" [queryParams]="{ p: DATA.length - i - 1 }" [attr.class]="item.resolution.length > 500 ? '' : 'hidden'">View more</a>
 				</div>
 			</div>
 		</div>
