@@ -2,7 +2,7 @@
 table {
 	width: 100%;
 	border-collapse: collapse;
-	border-left: 4px solid darkmagenta;
+	border-left: 4px solid #0e6969;
 	box-shadow: 3px 2px 2px #ccc;
 
 	th, td {
@@ -13,7 +13,7 @@ table {
 	}
 
 	th {
-		background: darkmagenta;
+		background: #0e6969;
 		color: white;
 		text-transform: capitalize;
 	}
@@ -64,25 +64,25 @@ table {
 		padding: 10px;
 
 		&:focus {
-			outline-color: mediumvioletred;
+			outline-color: darkcyan;
 		}
 	}
 
 	input[type="date"] {
 		padding: 10px;
-		border: 1px solid mediumvioletred;
+		border: 1px solid darkcyan;
 
 		&:focus {
-			outline-color: mediumvioletred;
+			outline-color: darkcyan;
 		}
 	}
 
 	[contenteditable="true"] {
 		padding: 10px;
-		border: 1px solid mediumvioletred;
+		border: 1px solid darkcyan;
 
 		&:focus {
-			outline-color: mediumvioletred;
+			outline-color: darkcyan;
 		}
 	}
 }
@@ -90,10 +90,10 @@ table {
 .llp-form {
 	.today {
 		width: 250px;
-		background: #580558;
+		background: #073a3a;
 	}
 	.today textarea {
-		background: mediumvioletred;
+		background: #042525;
 		color: #fff;
 		box-shadow: none;
 	}

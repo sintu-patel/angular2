@@ -17,6 +17,7 @@
 							[attr.class]="getTodayClass('thursday')">thursday</th>
 						<th
 							[attr.class]="getTodayClass('friday')">friday</th>
+						<th *ngIf="loggedIn">action</th>
 						<th>action</th>
 					</thead>
 					<tbody>
