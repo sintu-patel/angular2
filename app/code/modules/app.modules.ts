@@ -12,7 +12,7 @@ import { Upload } from './pages/upload/upload.component';
 import { FineList } from './pages/finelist/finelist.component';
 import { CorrectFile } from './pages/correctfile/correctfile.component';
 import { UpdateLLP } from './pages/llp/updatellp.component';
-import { Token } from './pages/token/token.component';
+import { Login } from './pages/login/login.component';
 import { IssueRiskNextSteps } from './pages/issuerisknextsteps/issuerisknextsteps.component';
 import { routing } from './app.routes';
 @NgModule({
@@ -32,7 +32,7 @@ import { routing } from './app.routes';
     FineList,
     CorrectFile,
     UpdateLLP,
-    Token,
+    Login,
     IssueRiskNextSteps
   ],
   bootstrap: [

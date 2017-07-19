@@ -101,6 +101,10 @@ table {
 
 @media all and (max-width: 767px) {
 	.llp-form {
+		.today {
+			width: auto;
+		}
+
 		tr {
 			position: relative;
 			display: block;
@@ -114,6 +118,11 @@ table {
 		.not-today{
 			display: none;
 		}
+	}
+
+	.currency-col,
+	.current-due-col {
+		display: none;
 	}
 }
 

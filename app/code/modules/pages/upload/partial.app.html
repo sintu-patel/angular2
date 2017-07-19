@@ -3,16 +3,16 @@
 	<div class="col-12">
 		<div class="main-panel main-dp-panel form-panel">
 			<div class="issue-form-container">
-				<h2>Enter the issues and resolutions</h2>
+				<h2>Enter the announcement</h2>
 				<p class="red">Note: Your data is public. Upload your content responsively</p>
 				<p *ngIf="!loggedIn">Note: Only available for loggedin users</p>
 				<form>
 					<div class="input-container issue-box">
-						<label>Please enter the issue</label>
+						<label>Please enter the title</label>
 						<textarea [disabled]="!loggedIn" class="textarea" name="issue" [(ngModel)]="issue"></textarea>
 					</div>
 					<div class="input-container resolutin-box">
-						<label>Please enter the resolution</label>
+						<label>Please enter the announcement</label>
 						<textarea [disabled]="!loggedIn" class="textarea" name="resolution" [(ngModel)]="resolution"></textarea>
 					</div>
 					<div class="input-container">

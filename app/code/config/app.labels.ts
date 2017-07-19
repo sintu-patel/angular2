@@ -28,12 +28,12 @@ export const labelConfig = {
       url: '/llp'
     },
     {
-      label: 'Issue, Risk, Next Steps',
+      label: 'Issues, Next Steps',
       url: '/issuerisknextsteps'
     },
     {
-      label: 'Token',
-      url: '/token'
+      label: 'Manage LLP',
+      url: '/login'
     }
   ]
 };

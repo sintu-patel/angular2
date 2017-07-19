@@ -22,6 +22,10 @@
                     padding: 10px;
                     font-weight: 800;
                     text-transform: uppercase;
+
+                    @media all and (max-width: 767px) {
+                        display: inline-block;
+                    }
                 }
             }
         }

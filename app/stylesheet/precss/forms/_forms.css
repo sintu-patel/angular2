@@ -37,7 +37,9 @@ textarea {
 }
 
 .input[type="file"] {
-    width: 300px;
+    @media all and (min-width: 768px) {
+        width: 300px;
+    }
 }
 
 select {
@@ -61,7 +63,7 @@ select {
         border-radius: 3px;
         resize: none;
         width: 50%;
-        height: 150px;
+        height: 50px;
         border-left: 5px solid mediumvioletred;
         box-shadow: 3px 2px 2px #ccc;
     }
@@ -101,5 +103,13 @@ select {
     .updated-box {
         background: green;
         color: #fff;
+    }
+}
+
+.login-box {
+    margin: 0 auto;
+
+    @media all and (min-width: 768px) {
+        width: 40%;
     }
 }

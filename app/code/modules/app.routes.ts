@@ -6,7 +6,7 @@ import { Upload } from './pages/upload/upload.component';
 import { FineList } from './pages/finelist/finelist.component';
 import { CorrectFile } from './pages/correctfile/correctfile.component';
 import { UpdateLLP } from './pages/llp/updatellp.component';
-import { Token } from './pages/token/token.component';
+import { Login } from './pages/login/login.component';
 import { IssueRiskNextSteps } from './pages/issuerisknextsteps/issuerisknextsteps.component';
 
 // Route Configuration
@@ -18,7 +18,7 @@ export const routes: Routes = [
   { path: 'finelist', component: FineList},
   { path: 'correctfile', component: CorrectFile},
   { path: 'llp', component: UpdateLLP},
-  { path: 'token', component: Token},
+  { path: 'login', component: Login},
   { path: 'issuerisknextsteps', component: IssueRiskNextSteps}
 ];
 

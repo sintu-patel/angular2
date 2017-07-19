@@ -23,9 +23,9 @@
 					<thead>
 						<th>name</th>
 						<th>fine</th>
-						<th>currency</th>
+						<th class="currency-col">currency</th>
 						<th>collection</th>
-						<th>LLP Due</th>
+						<th class="current-due-col">LLP Due</th>
 						<th class="total-due">Total Due</th>
 					</thead>
 					<tbody>
@@ -33,17 +33,17 @@
 							*ngFor="let item of fileData;">
 							<td>{{ item.name }}</td>
 							<td>{{ item.fine }}</td>
-							<td>{{ item.currency }}</td>
+							<td class="currency-col">{{ item.currency }}</td>
 							<td>{{ item.collectedfine }}</td>
-							<td><div [class]="(item.fine - item.collectedfine)  > 0 ? 'fine-col' : 'fine-col fine-green'">{{ item.fine - item.collectedfine }}</div></td>
+							<td class="current-due-col"><div [class]="(item.fine - item.collectedfine)  > 0 ? 'fine-col' : 'fine-col fine-green'">{{ item.fine - item.collectedfine }}</div></td>
 							<td class="total-due">{{ processHistoryData(item.empid) }}</td>
 						<tr>
 						<tr class="total-row">
 							<td>Total</td>
 							<td>{{ totalFine }}</td>
-							<td>INR</td>
+							<td class="currency-col">INR</td>
 							<td>{{ totalCollection }}</td>
-							<td>{{ totalFine - totalCollection }}</td>
+							<td class="current-due-col">{{ totalFine - totalCollection }}</td>
 							<td class="total-due">{{ totalDue }}</td>
 						</tr>
 					</tbody>

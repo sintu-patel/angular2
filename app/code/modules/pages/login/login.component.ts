@@ -6,12 +6,12 @@ import { labelConfig } from '../../../config/app.labels';
 import { apiConfig } from '../../../config/app.config';
 
 @Component({
-  templateUrl: './app/code/modules/pages/token/partial.app.html',
+  templateUrl: './app/code/modules/pages/login/partial.app.html',
   providers: [DataService]
 })
 
 // Component class
-export class Token {
+export class Login {
     token: String;
     modelData: any;
     isModelOpen: boolean;
@@ -54,7 +54,7 @@ export class Token {
         showRedirectLink: true,
         redirectUrl: labelConfig.navigation[0].url,
         redirectLabel: labelConfig.navigation[0].label,
-        heading: 'You are logged in as' + sessionStorage['token'],
+        heading: 'You are logged in as ' + sessionStorage['token'],
         description: 'Click home to continue'
       };
       this.openModel(modelData);
