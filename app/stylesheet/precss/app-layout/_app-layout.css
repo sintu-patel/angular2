@@ -7,6 +7,10 @@ div {
 	font-family: 'Open Sans';
 }
 
+.hidden {
+	display: none;
+}
+
 .header {
 	color: white;
 	font-size: 20px;
