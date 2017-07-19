@@ -12,12 +12,6 @@
 						<a [routerLink]="['/detailpage']" [queryParams]="{ p: i }">{{ item.issue }}</a>
 					</li>
 				</ul>
-				<h2>All issues</h2>
-				<ul>
-					<li class="issues" *ngFor="let item of DATA; let i = index" [attr.data-index]="i">
-						<a [routerLink]="['/detailpage']" [queryParams]="{ p: i }">{{ item.issue }}</a>
-					</li>
-				</ul>
 			</div>
 		</div>
 	</div>
@@ -28,7 +22,7 @@
 				<div class="issues" *ngFor="let item of DATA;let i = index" [attr.data-index]="i">
 					<h2 class="issue">{{ item.issue }}</h2>
 					<p class="resolution">{{ item.resolution | trimstring: item.resolution }}</p>
-					<a [routerLink]="['/detailpage']" [queryParams]="{ p: i }">View more</a>
+					<a [routerLink]="['/detailpage']" [queryParams]="{ p: i }" *ngIf="item.resolution.length > 500">View more</a>
 				</div>
 			</div>
 		</div>

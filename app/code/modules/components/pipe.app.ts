@@ -9,6 +9,10 @@ export class TrimString {
         if (!pipeData) {
             return 'No data';
         }
-		return pipeData.substring(0, 50) + '...';
+        if (pipeData.length > 500) {
+			return pipeData.substring(0, 500) + '...';
+		} else {
+			return pipeData;
+		}
 	}
 }
