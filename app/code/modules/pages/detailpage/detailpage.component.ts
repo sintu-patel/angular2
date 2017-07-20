@@ -22,10 +22,16 @@ export class DetailPage {
 	}
 
 	setData(data) {
-		this.list = data.data[this.id];
-		this.heading = data.heading;
-		this.question = this.list.issue;
-		this.answer = this.list.resolution;
+		let $this = this;
+		data.data.filter(function(item) {
+			if ($this.id === item._id) {
+				$this.list = item;
+				$this.heading = data.heading;
+				$this.question = $this.list.issue;
+				$this.answer = $this.list.resolution;
+				console.log($this.list);
+			}
+		});
 	}
 
 	ngOnInit() {

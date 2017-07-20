@@ -16,7 +16,7 @@ export class Home {
 		this.loadUser();
 	}
 	setData(data) {
-		this.DATA = data.data.reverse();
+		this.DATA = data.data;
 	}
 	loadUser() {
 		this.dataService.getData().subscribe(data => {
