@@ -945,6 +945,12 @@ select:focus {
 .issue-content {
     overflow: hidden;
 }
+.paytm-qr-code {
+    width: 300px;
+}
+.paytm-qr-code img {
+    max-width: 100%;
+}
 .navigation nav {
     display: block;
 }
