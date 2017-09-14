@@ -4,7 +4,8 @@
   "description": "Sintu Singh",
   "main": "This project captures the issues which developer face in their daily excercises and how they solves them",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" "
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "server": "tsc && concurrently \"tsc -w\" \"lite-server\" "
   },
   "repository": {
     "type": "git",
