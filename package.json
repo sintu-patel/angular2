@@ -5,7 +5,7 @@
   "main": "This project captures the issues which developer face in their daily excercises and how they solves them",
   "scripts": {
     "build": "tsc",
-    "server": "nodemon server.js"
+    "server": "tsc && concurrently \"tsc -w\" \"lite-server\""
   },
   "repository": {
     "type": "git",
