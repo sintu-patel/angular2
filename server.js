@@ -1,6 +1,7 @@
 var express = require('express'),
   app = express(),
   port = process.env.PORT || 3100,
+  path = require('path'),
   bodyParser = require('body-parser');
 
 app.use(function(req, res, next) {
@@ -13,8 +14,11 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/index.html', express.static('index.html'))
-app.use('/app/assets/css/style.css', express.static('app/assets/css/style.css'))
+app.use('/index.html', express.static('index.html'));
+app.use('/app/assets/css/style.css', express.static('app/assets/css/style.css'));
+app.use('/systemjs.config.js', express.static('systemjs.config.js'))
+app.use('/node_modules', express.static('node_modules'));
+app.use('/app', express.static('app'));
  
 var routes = require('./api/routes/cmsRoute');
 routes(app);
