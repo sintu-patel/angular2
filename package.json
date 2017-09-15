@@ -5,7 +5,8 @@
   "main": "This project captures the issues which developer face in their daily excercises and how they solves them",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-    "build": "tsc"
+    "build": "tsc",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,10 @@
     "reflect-metadata": "0.1.3",
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.27",
-    "zone.js": "0.6.23"
+    "zone.js": "0.6.23",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.34",
@@ -60,6 +64,7 @@
     "postcss-simple-vars": "^3.0.0",
     "precss": "^1.4.0",
     "rimraf": "2.5.4",
-    "typescript": "2.0.2"
+    "typescript": "2.0.2",
+    "nodemon": "^1.11.0"
   }
 }
