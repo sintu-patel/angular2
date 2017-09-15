@@ -1,14 +1,19 @@
-System.register([], function(exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var serverURL, hostUrl, host, apiConfig;
+    var serverURL, hostUrl, pattern, isDEV, host, apiConfig;
     return {
-        setters:[],
-        execute: function() {
+        setters: [],
+        execute: function () {
             // Host Configuration
             serverURL = window.location;
             hostUrl = serverURL.hostname;
+            pattern = /localhost/;
+            isDEV = pattern.test(hostUrl);
             host = 'http://' + hostUrl + ':3100/';
+            if (!isDEV) {
+                host = 'https://pipeline-x2.mybluemix.net/';
+            }
             exports_1("apiConfig", apiConfig = {
                 apiServer: {
                     cmsUrl: host + 'cms',
@@ -39,6 +44,6 @@ System.register([], function(exports_1, context_1) {
                 validToken: '9910712381'
             });
         }
-    }
+    };
 });
 //# sourceMappingURL=app.config.js.map
