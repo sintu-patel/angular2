@@ -1,7 +1,12 @@
 // Host Configuration
 const serverURL = window.location;
 const hostUrl = serverURL.hostname;
-const host = 'http://' + hostUrl + ':3100/';
+const pattern = /localhost/;
+const isDEV = pattern.test(hostUrl);
+let host = 'http://' + hostUrl + ':3100/';
+if (!isDEV) {
+  host = 'https://pipeline-x2.mybluemix.net/';
+}
 export const apiConfig = {
   apiServer: {
     cmsUrl: host + 'cms',
