@@ -24,4 +24,3 @@ How to start Angular App
 3. click on start.bat file to start the app
 
 ## test webhook ##
-test message
