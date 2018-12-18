@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './components/component.app', './components/pipe.app', './components/search.app', './pages/home/home.component', './pages/detailpage/detailpage.component', './pages/upload/upload.component', './pages/finelist/finelist.component', './pages/correctfile/correctfile.component', './pages/llp/updatellp.component', './pages/login/login.component', './pages/issuerisknextsteps/issuerisknextsteps.component', './app.routes'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './components/component.app', './components/pipe.app', './components/search.app', './pages/home/home.component', './pages/detailpage/detailpage.component', './pages/upload/upload.component', './pages/finelist/finelist.component', './pages/correctfile/correctfile.component', './pages/llp/updatellp.component', './pages/login/login.component', './pages/issuerisknextsteps/issuerisknextsteps.component', './pages/webhook/webhookdata.component', './app.routes'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, http_1, component_app_1, pipe_app_1, search_app_1, home_component_1, detailpage_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1, login_component_1, issuerisknextsteps_component_1, app_routes_1;
+    var core_1, platform_browser_1, forms_1, http_1, component_app_1, pipe_app_1, search_app_1, home_component_1, detailpage_component_1, upload_component_1, finelist_component_1, correctfile_component_1, updatellp_component_1, login_component_1, issuerisknextsteps_component_1, webhookdata_component_1, app_routes_1;
     var AppModule;
     return {
         setters:[
@@ -59,6 +59,9 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             function (issuerisknextsteps_component_1_1) {
                 issuerisknextsteps_component_1 = issuerisknextsteps_component_1_1;
             },
+            function (webhookdata_component_1_1) {
+                webhookdata_component_1 = webhookdata_component_1_1;
+            },
             function (app_routes_1_1) {
                 app_routes_1 = app_routes_1_1;
             }],
@@ -84,7 +87,8 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                         correctfile_component_1.CorrectFile,
                         updatellp_component_1.UpdateLLP,
                         login_component_1.Login,
-                        issuerisknextsteps_component_1.IssueRiskNextSteps
+                        issuerisknextsteps_component_1.IssueRiskNextSteps,
+                        webhookdata_component_1.WebHookData
                     ],
                     bootstrap: [
                         component_app_1.AppComponent

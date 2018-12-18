@@ -93,4 +93,9 @@ export class DataService {
     return this.http.post(url, dataJSON, options)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
+
+  getWebhookData() : Observable<Comment[]> {
+    return this.http.get(apiConfig.apiServer.getwebhookdataUrl)
+    .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }
 }

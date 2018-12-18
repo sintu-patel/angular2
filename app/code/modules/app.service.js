@@ -110,6 +110,10 @@ System.register(['@angular/core', '@angular/http', 'rxjs/Rx', 'rxjs/add/operator
                     return this.http.post(url, dataJSON, options)
                         .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
                 }
+                getWebhookData() {
+                    return this.http.get(app_config_1.apiConfig.apiServer.getwebhookdataUrl)
+                        .map((res) => res.json()).catch((error) => Rx_1.Observable.throw(error.json().error || 'Server error'));
+                }
             };
             DataService = __decorate([
                 core_1.Injectable(), 

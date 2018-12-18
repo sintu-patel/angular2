@@ -1,0 +1,53 @@
+
+<div class="container">
+	<div class="col-12">
+		<div class="main-panel">
+			<div class="main-panel-content issue-content">
+				<div class="col-12">
+					<h2>Webhook data fro web-xt</h2>
+					<div class="issues-risk">
+						<table class="issue-table">
+							<thead>
+								<tr>
+									<th>Commit Message</th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr
+									*ngFor="let item of pageData;let i = index" [attr.data-rowindex]="i">
+									<td>
+										<div
+											data-name="message"
+											contenteditable="true">{{ item.message }}</div>
+									</td>
+
+									<td>
+										<div
+											data-name="name"
+											contenteditable="true">{{ item.name }}</div>
+									</td>
+
+									<td>
+										<div
+											data-name="email"
+											contenteditable="true">{{ item.email }}</div>
+									</td>
+
+									<td>
+										<div
+											data-name="date"
+											contenteditable="true">{{ item.date }}</div>
+									</td>
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

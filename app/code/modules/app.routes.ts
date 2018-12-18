@@ -8,6 +8,7 @@ import { CorrectFile } from './pages/correctfile/correctfile.component';
 import { UpdateLLP } from './pages/llp/updatellp.component';
 import { Login } from './pages/login/login.component';
 import { IssueRiskNextSteps } from './pages/issuerisknextsteps/issuerisknextsteps.component';
+import { WebHookData } from './pages/webhook/webhookdata.component';
 
 // Route Configuration
 export const routes: Routes = [
@@ -19,7 +20,8 @@ export const routes: Routes = [
   { path: 'correctfile', component: CorrectFile},
   { path: 'llp', component: UpdateLLP},
   { path: 'login', component: Login},
-  { path: 'issuerisknextsteps', component: IssueRiskNextSteps}
+  { path: 'issuerisknextsteps', component: IssueRiskNextSteps},
+  { path: 'webhookdata', component: WebHookData}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

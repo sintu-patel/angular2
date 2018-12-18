@@ -27,7 +27,8 @@ System.register([], function(exports_1, context_1) {
                     uploadcmsUrl: host + 'uploadcms',
                     getissuedataUrl: host + 'getissuesdata',
                     saveissuedataUrl: host + 'saveissuesdata',
-                    updateissuedataUrl: host + 'updateissuesdata'
+                    updateissuedataUrl: host + 'updateissuesdata',
+                    getwebhookdataUrl: host + 'getwebhookdata'
                 },
                 contentTypeJson: {
                     'Content-Type': 'application/json'

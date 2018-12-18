@@ -34,6 +34,10 @@ export const labelConfig = {
     {
       label: 'Manage LLP',
       url: '/login'
+    },
+    {
+      label: 'Webhook data',
+      url: '/webhookdata'
     }
   ]
 };

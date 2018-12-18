@@ -41,6 +41,10 @@ System.register([], function(exports_1, context_1) {
                     {
                         label: 'Manage LLP',
                         url: '/login'
+                    },
+                    {
+                        label: 'Webhook data',
+                        url: '/webhookdata'
                     }
                 ]
             });
