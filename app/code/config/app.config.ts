@@ -5,8 +5,9 @@ const pattern = /localhost/;
 const isDEV = pattern.test(hostUrl);
 let host = 'http://' + hostUrl + ':3100/';
 if (!isDEV) {
-  host = 'https://pipeline-x2.mybluemix.net/';
+  host = 'http://c77eff3f.ngrok.io/';
 }
+host = 'http://c77eff3f.ngrok.io/';
 export const apiConfig = {
   apiServer: {
     cmsUrl: host + 'cms',
