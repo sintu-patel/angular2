@@ -5,9 +5,9 @@ const pattern = /localhost/;
 const isDEV = pattern.test(hostUrl);
 let host = 'http://' + hostUrl + ':3100/';
 if (!isDEV) {
-  host = 'http://c77eff3f.ngrok.io/';
+  host = 'http://eb71b2a9.ngrok.io/';
 }
-host = 'http://c77eff3f.ngrok.io/';
+host = 'http://498c74aa.ngrok.io/';
 export const apiConfig = {
   apiServer: {
     cmsUrl: host + 'cms',

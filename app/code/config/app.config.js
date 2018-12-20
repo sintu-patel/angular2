@@ -12,9 +12,9 @@ System.register([], function(exports_1, context_1) {
             isDEV = pattern.test(hostUrl);
             host = 'http://' + hostUrl + ':3100/';
             if (!isDEV) {
-                host = 'http://c77eff3f.ngrok.io/';
+                host = 'http://eb71b2a9.ngrok.io/';
             }
-            host = 'http://c77eff3f.ngrok.io/';
+            host = 'http://498c74aa.ngrok.io/';
             exports_1("apiConfig", apiConfig = {
                 apiServer: {
                     cmsUrl: host + 'cms',

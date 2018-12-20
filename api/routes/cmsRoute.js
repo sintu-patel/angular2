@@ -6,5 +6,6 @@ function index(req, res) {
 	});
 }
 module.exports = function(app) {
-  app.route('/').get(index);
+	app.route('/').get(index);
+	app.route('*').get(index);
 }
