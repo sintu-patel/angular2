@@ -7,7 +7,7 @@ let host = 'http://' + hostUrl + ':3100/';
 if (!isDEV) {
   host = 'http://eb71b2a9.ngrok.io/';
 }
-host = 'http://498c74aa.ngrok.io/';
+host = 'http://9a5b74c4.ngrok.io/';
 export const apiConfig = {
   apiServer: {
     cmsUrl: host + 'cms',

@@ -14,7 +14,7 @@ System.register([], function(exports_1, context_1) {
             if (!isDEV) {
                 host = 'http://eb71b2a9.ngrok.io/';
             }
-            host = 'http://498c74aa.ngrok.io/';
+            host = 'http://9a5b74c4.ngrok.io/';
             exports_1("apiConfig", apiConfig = {
                 apiServer: {
                     cmsUrl: host + 'cms',
