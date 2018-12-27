@@ -37,7 +37,7 @@ export class Login {
       const token = this.token;
       this.setSession(token);
     }
-    invalidData(headingText) {
+    invalidData(headingText:any) {
       let modelData = {
         showCloseButton: true,
         heading: headingText,
@@ -45,7 +45,7 @@ export class Login {
       };
       this.openModel(modelData);
     }
-    openModel(data) {
+    openModel(data:any) {
       this.modelData = data;
       this.isModelOpen = true;
     }
@@ -59,7 +59,7 @@ export class Login {
       };
       this.openModel(modelData);
     }
-    setSession(token) {
+    setSession(token:any) {
       if (typeof(Storage) !== "undefined") {
         sessionStorage['token'] = token;
         this.makeloggedIn();

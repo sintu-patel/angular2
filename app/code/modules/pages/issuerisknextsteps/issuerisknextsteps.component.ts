@@ -14,7 +14,7 @@ export class IssueRiskNextSteps {
 		this.loadData();
 		this.loggedIn = sessionStorage['token'] && sessionStorage['token'] === '9910712381';
 	}
-	setData(data) {
+	setData(data:any) {
 		this.pageData = data.pageData;
 	}
 	loadData() {
@@ -25,7 +25,7 @@ export class IssueRiskNextSteps {
 	dataSaved() {
 		alert('data-saved');
 	}
-	saveData(event) {
+	saveData(event:any) {
 		const target = event.target;
 		let dataIndex = target.getAttribute('data-index');
 		dataIndex = parseInt(dataIndex, 10);

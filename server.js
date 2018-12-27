@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/index.html', express.static('index.html'));
 app.use('/app/assets/css/style.css', express.static('app/assets/css/style.css'));
-app.use('/systemjs.config.js', express.static('systemjs.config.js'))
 app.use('/node_modules', express.static('node_modules'));
+app.use('/dist', express.static('dist'));
 app.use('/app', express.static('app'));
  
 var routes = require('./api/routes/cmsRoute');

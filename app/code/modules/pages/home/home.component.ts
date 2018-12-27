@@ -12,10 +12,10 @@ export class Home {
 		this.DATA = [];
 		this.loadUser();
 	}
-	onClick(e) {
+	onClick(e:any) {
 		this.loadUser();
 	}
-	setData(data) {
+	setData(data:any) {
 		this.DATA = data.data;
 	}
 	loadUser() {

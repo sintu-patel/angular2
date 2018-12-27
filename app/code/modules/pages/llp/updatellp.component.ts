@@ -40,7 +40,7 @@ export class UpdateLLP {
 		this.loadLLP();
 	}
 
-	setData(data) {
+	setData(data:any) {
     if (data.fileData && data.fileData.length) {
       this.fileData = data.fileData;
     }
@@ -55,7 +55,7 @@ export class UpdateLLP {
 		});
 	}
 
-  updateData(event) {
+  updateData(event:any) {
     let $input = event.target;
     let $inputValue = $input.value;
     let $colName = $input.name;
@@ -86,8 +86,8 @@ export class UpdateLLP {
     this.saveDataForOneRow(this.fileData[$rowNo]);
   }
 
-  saveDataForOneRow(fileData) {
-    var fileArray = [];
+  saveDataForOneRow(fileData:any) {
+    var fileArray:any = [];
     fileArray.push(fileData);
     this.dataService.saveLLPData(fileArray).subscribe(data => {
         this.fileSaved();
@@ -95,7 +95,7 @@ export class UpdateLLP {
     });
   }
 
-  deleteRow(event) {
+  deleteRow(event:any) {
     let $button = event.target;
     let $rowNo = $button.getAttribute('data-rowno');
     $rowNo = parseInt($rowNo, 10);
@@ -139,7 +139,7 @@ export class UpdateLLP {
     };
     this.openModel(modelData);
   }
-  openModel(data) {
+  openModel(data:any) {
     this.modelData = data;
     this.isModelOpen = true;
   }
@@ -147,14 +147,14 @@ export class UpdateLLP {
     this.modelData = null;
     this.isModelOpen = false;
   }
-  getTodayClass(dayName) {
+  getTodayClass(dayName:any) {
     if (this.dayArray[this.today] === dayName) {
       return 'today';
     } else {
       return 'not-today';
     }
   }
-  disableLLPInput(dayName) {
+  disableLLPInput(dayName:any) {
     const columnDayNumber = this.dayArray.indexOf(dayName);
     if (columnDayNumber >= this.today) {
       return false;

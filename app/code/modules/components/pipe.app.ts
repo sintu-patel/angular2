@@ -5,7 +5,7 @@ import { Pipe } from '@angular/core';
 })
 
 export class TrimString {
-	transform(pipeData) {
+	transform(pipeData:any) {
         if (!pipeData) {
             return 'No data';
         }

@@ -30,7 +30,7 @@ export class FineList {
 		this.loadFineList();
 	}
 
-    formateDate(unformattedDate) {
+    formateDate(unformattedDate:any) {
         let monthArray = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         let date = new Date(unformattedDate);
         let day = date.getDate();
@@ -40,7 +40,7 @@ export class FineList {
         return dateString;
     }
 
-	setData(data) {
+	setData(data:any) {
         this.files = data.files;
         this.totalFiles = this.files && this.files.length;
         this.latestFileNumber = this.totalFiles - 1;
@@ -79,12 +79,12 @@ export class FineList {
         }
     }
 
-    processHistoryData(empid) {
-        let individualUserHistory = [];
+    processHistoryData(empid:any) {
+        let individualUserHistory:any = [];
         let files = this.files;
-        let fileData;
+        let fileData:any;
         let totalDue = 0;
-        let dueArray = [];
+        let dueArray:any = [];
         for(let i = 0; i < files.length; i++) {
             fileData = files[i].fileData;
                 for(let j = 0; j < fileData.length; j++) {
@@ -133,7 +133,7 @@ export class FineList {
 
     getTotalDue() {
         const files = this.files;
-        let fileData;
+        let fileData:any;
         let totalDue = 0;
         for (let i = 0; i < files.length; i++) {
             fileData = files[i].fileData;

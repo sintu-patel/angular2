@@ -14,7 +14,7 @@ export class WebHookData {
 		this.loadData();
 		this.loggedIn = sessionStorage['token'] && sessionStorage['token'] === '9910712381';
 	}
-	setData(data) {
+	setData(data:any) {
 		this.pageData = data.pageData;
 	}
 	loadData() {

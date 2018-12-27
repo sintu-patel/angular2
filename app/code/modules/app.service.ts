@@ -24,7 +24,7 @@ export class DataService {
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
-  saveData(dataJSON) : Observable<Comment[]> {
+  saveData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.savecmsUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
    let options = new RequestOptions({ headers: headers });
@@ -32,7 +32,7 @@ export class DataService {
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
-  saveFileData(dataJSON) : Observable<Comment[]> {
+  saveFileData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.savefiledataUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
    let options = new RequestOptions({ headers: headers });
@@ -62,7 +62,7 @@ export class DataService {
     });
   }
 
-  saveLLPData(dataJSON) : Observable<Comment[]> {
+  saveLLPData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.savellpdataUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
    let options = new RequestOptions({ headers: headers });
@@ -79,14 +79,14 @@ export class DataService {
     return this.http.get(apiConfig.apiServer.getissuedataUrl)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
-  saveIssuesData(dataJSON) : Observable<Comment[]> {
+  saveIssuesData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.saveissuedataUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
    let options = new RequestOptions({ headers: headers });
     return this.http.post(url, dataJSON, options)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
-  updateIssuesData(dataJSON) : Observable<Comment[]> {
+  updateIssuesData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.updateissuedataUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
    let options = new RequestOptions({ headers: headers });

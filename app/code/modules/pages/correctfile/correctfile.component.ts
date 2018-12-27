@@ -42,7 +42,7 @@ export class CorrectFile {
 		this.loadFineList();
 	}
 
-	setData(data) {
+	setData(data:any) {
     this.files = data.files;
     this.totalFiles = this.files && this.files.length;
     this.latestFileNumber = this.totalFiles - 1;
@@ -66,7 +66,7 @@ export class CorrectFile {
 		});
 	}
 
-  updateData(event) {
+  updateData(event:any) {
     let $input = event.target;
     let $inputValue = $input.value;
     let $colName = $input.name;
@@ -102,13 +102,13 @@ export class CorrectFile {
     this.saveDataForOneRow(singleRowUpdateinFile);
   }
 
-  saveDataForOneRow(singleRowUpdateinFile) {
+  saveDataForOneRow(singleRowUpdateinFile:any) {
     this.dataService.saveFileData(singleRowUpdateinFile).subscribe(data => {
         this.fileSaved();
     });
   }
 
-  deleteRow(event) {
+  deleteRow(event:any) {
     let $button = event.target;
     let $rowNo = $button.getAttribute('data-rowno');
     $rowNo = parseInt($rowNo, 10);
@@ -144,7 +144,7 @@ export class CorrectFile {
       this.openModel(modelData);
     }
   }
-  openModel(data) {
+  openModel(data:any) {
     this.modelData = data;
     this.isModelOpen = true;
   }
@@ -166,7 +166,7 @@ export class CorrectFile {
       }
   }
 
-  isFieldInputDisabled(isDeleted) {
+  isFieldInputDisabled(isDeleted:any) {
     if(!this.loggedIn) {
       return true;
     }

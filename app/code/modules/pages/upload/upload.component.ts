@@ -51,7 +51,7 @@ export class Upload {
       };
       this.openModel(modelData);
     }
-    sendData(dataJSON) {
+    sendData(dataJSON:any) {
       this.dataService.saveData(dataJSON).subscribe(data => {
         this.saveCompleted();
       });
@@ -74,7 +74,7 @@ export class Upload {
       };
       this.openModel(modelData);
     }
-    openModel(data) {
+    openModel(data:any) {
       this.modelData = data;
       this.isModelOpen = true;
     }
@@ -82,7 +82,7 @@ export class Upload {
       this.modelData = null;
       this.isModelOpen = false;
     }
-    uploadFile(event) {
+    uploadFile(event:any) {
       const files = event.target.files;
       const allowedFileTypes = ['application/vnd.ms-excel'];
       const fileType = files[0].type;

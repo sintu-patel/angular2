@@ -21,9 +21,9 @@ export class DetailPage {
 		}
 	}
 
-	setData(data) {
+	setData(data:any) {
 		let $this = this;
-		data.data.filter(function(item) {
+		data.data.filter(function(item:any) {
 			if ($this.id === item._id) {
 				$this.list = item;
 				$this.heading = data.heading;
