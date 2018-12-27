@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router'; // to get route params
 import { apiConfig } from '../../../config/app.config';
 
 @Component({
-  templateUrl: './app/code/modules/pages/llp/partial.app.html',
+  templateUrl: './partial.app.html',
   providers: [DataService]
 })
 

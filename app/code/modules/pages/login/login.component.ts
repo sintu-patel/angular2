@@ -6,7 +6,7 @@ import { labelConfig } from '../../../config/app.labels';
 import { apiConfig } from '../../../config/app.config';
 
 @Component({
-  templateUrl: './app/code/modules/pages/login/partial.app.html',
+  templateUrl: './partial.app.html',
   providers: [DataService]
 })
 

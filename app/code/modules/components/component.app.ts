@@ -3,7 +3,7 @@ import { labelConfig } from '../../config/app.labels';
 
 @Component({
   selector: 'app',
-  templateUrl: './app/code/modules/components/partial.app.html',
+  templateUrl: './partial.app.html',
 })
 
 export class AppComponent {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../../app.service';
 
 @Component({
-  templateUrl: './app/code/modules/pages/webhook/partial.app.html',
+  templateUrl: './partial.app.html',
   providers: [DataService]
 })
 

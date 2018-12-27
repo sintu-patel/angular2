@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-// var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
@@ -20,26 +20,27 @@ module.exports = {
         test: /\.ts$/,
         loaders: [
           {
-            loader: 'ts-loader'
+            loader: 'awesome-typescript-loader',
+            options: { configFileName: helpers.root('', 'tsconfig.json') }
           } , 'angular2-template-loader'
         ]
       },
-      // {
-      //   test: /\.html$/,
-      //   loader: 'html-loader'
-      // },
-      // {
-      //   test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-      //   loader: 'file-loader?name=assets/[name].[hash].[ext]'
-      // },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+        loader: 'file-loader?name=assets/[name].[hash].[ext]'
+      },
       // {
       //   test: /\.css$/,
-      //   exclude: helpers.root('app', 'app'), // first parameter is code directory
+      //   exclude: helpers.root('app', 'app'), // first param is source code dir
       //   loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
       // },
       // {
       //   test: /\.css$/,
-      //   include: helpers.root('app', 'app'), // first parameter is code directory
+      //   include: helpers.root('app', 'app'), // first param is source code dir
       //   loader: 'raw-loader'
       // }
     ]
@@ -49,41 +50,17 @@ module.exports = {
     // Workaround for angular/angular#11580
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)@angular/,
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
       helpers.root('./app'), // location of your src
       {} // a map of your routes
     ),
 
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: ['app', 'vendor', 'polyfills']
-    // }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['app', 'vendor', 'polyfills']
+    }),
 
-    // new HtmlWebpackPlugin({
-    //   template: 'app/index.html'
-    // })
-  ],
-  optimization: {
-    splitChunks: {
-      chunks: 'async',
-      minSize: 30000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true
-        }
-      }
-    }
-  }
+    new HtmlWebpackPlugin({
+      template: 'app/index.html'
+    })
+  ]
 };
-
