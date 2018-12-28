@@ -44,7 +44,7 @@ textarea {
 
 select {
     padding: 10px;
-    border: 1px solid darkcyan;
+    border: 1px solid #ccc;
 
     &:focus {
         outline-color: darkcyan;

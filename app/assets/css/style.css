@@ -763,6 +763,9 @@ table th, table td {
     border-collapse: collapse;
     border: 1px solid #ccc;
 }
+table td {
+    font-size: 12px;
+}
 table th {
     background: #0e6969;
     color: white;
@@ -801,21 +804,21 @@ table .fine-col.fine-green {
     box-shadow: 1px 5px 5px #29d839;
 }
 .issue-table td div {
-    padding: 10px;
+    padding: 5px;
 }
 .issue-table td div:focus {
     outline-color: darkcyan;
 }
 .issue-table input[type="date"] {
-    padding: 10px;
-    border: 1px solid darkcyan;
+    padding: 5px;
+    border: 1px solid #ccc;
 }
 .issue-table input[type="date"]:focus {
     outline-color: darkcyan;
 }
 .issue-table [contenteditable="true"] {
-    padding: 10px;
-    border: 1px solid darkcyan;
+    padding: 5px;
+    border: 1px solid #ccc;
 }
 .issue-table [contenteditable="true"]:focus {
     outline-color: darkcyan;
@@ -889,7 +892,7 @@ textarea {
 }
 select {
     padding: 10px;
-    border: 1px solid darkcyan;
+    border: 1px solid #ccc;
 }
 select:focus {
     outline-color: darkcyan;

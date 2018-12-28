@@ -12,6 +12,10 @@ table {
 		border: 1px solid #ccc;
 	}
 
+	td {
+		font-size: 12px;
+	}
+
 	th {
 		background: #0e6969;
 		color: white;
@@ -61,7 +65,7 @@ table {
 
 .issue-table {
 	td div {
-		padding: 10px;
+		padding: 5px;
 
 		&:focus {
 			outline-color: darkcyan;
@@ -69,8 +73,8 @@ table {
 	}
 
 	input[type="date"] {
-		padding: 10px;
-		border: 1px solid darkcyan;
+		padding: 5px;
+		border: 1px solid #ccc;
 
 		&:focus {
 			outline-color: darkcyan;
@@ -78,8 +82,8 @@ table {
 	}
 
 	[contenteditable="true"] {
-		padding: 10px;
-		border: 1px solid darkcyan;
+		padding: 5px;
+		border: 1px solid #ccc;
 
 		&:focus {
 			outline-color: darkcyan;
