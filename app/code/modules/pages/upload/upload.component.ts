@@ -84,9 +84,10 @@ export class Upload {
     }
     uploadFile(event:any) {
       const files = event.target.files;
-      const allowedFileTypes = ['application/vnd.ms-excel'];
+      const allowedFileTypes = 'xls';
       const fileType = files[0].type;
-      if (allowedFileTypes.indexOf(fileType) !== -1) {
+      const fileName = files[0].name;
+      if (fileName.indexOf(allowedFileTypes) !== -1) {
         this.filesToUpload = <Array<File>> files;
       } else {
         let modelData = {
