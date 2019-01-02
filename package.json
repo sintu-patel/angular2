@@ -5,7 +5,7 @@
   "main": "This project captures the issues which developer face in their daily excercises and how they solves them",
   "scripts": {
     "build": "tsc",
-    "server": "nodemon server.js",
+    "start": "npm run build-app && nodemon server.js",
     "build-app": "rimraf dist && cross-env ENV=production webpack --config config/webpack.prod.js --progress --profile --bail"
   },
   "repository": {
