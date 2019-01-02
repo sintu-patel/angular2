@@ -5,7 +5,7 @@
   "main": "This project captures the issues which developer face in their daily excercises and how they solves them",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build-app && nodemon server.js",
+    "start": "nodemon server.js",
     "build-app": "rimraf dist && cross-env ENV=production webpack --config config/webpack.prod.js --progress --profile --bail"
   },
   "repository": {
@@ -73,7 +73,7 @@
     "postcss-simple-vars": "^3.0.0",
     "precss": "^1.4.0",
     "raw-loader": "^0.5.1",
-    "rimraf": "2.5.4",
+    "rimraf": "^2.5.4",
     "typescript": "~2.0.10",
     "webpack": "2.2.1",
     "webpack-merge": "^3.0.0"
