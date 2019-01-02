@@ -1,6 +1,6 @@
 export const labelConfig = {
   common: {
-    title: 'Digital LLP',
+    title: 'Dev Online',
     searchResultHeading: 'Search Results',
     navHeading: 'All issues',
     searchPlaceHolder: 'Search the issues',
