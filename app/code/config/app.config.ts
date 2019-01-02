@@ -1,5 +1,5 @@
 // Host Configuration
-const host = process.env.API_URL;
+const host = process.env['API_URL'];
 export const apiConfig = {
   apiServer: {
     cmsUrl: host + 'cms',
