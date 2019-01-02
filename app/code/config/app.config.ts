@@ -1,5 +1,5 @@
 // Host Configuration
-const host = process.env['API_URL'];
+const host = 'https://api-dot-research-226216.appspot.com';
 export const apiConfig = {
   apiServer: {
     cmsUrl: host + 'cms',
