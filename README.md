@@ -24,3 +24,7 @@ How to start Angular App
 3. click on start.bat file to start the app
 
 ## test webhook ##abcd
+
+## Specify api url 
+Run the below command in terminal with api url
+export API_URL=http://localhost:3100
