@@ -4,9 +4,8 @@
   "description": "Sintu Singh",
   "main": "This project captures the issues which developer face in their daily excercises and how they solves them",
   "scripts": {
-    "build": "tsc",
     "start": "nodemon server.js",
-    "build-app": "rimraf dist && cross-env ENV=production webpack --config config/webpack.prod.js --progress --profile --bail"
+    "build-app": "node set-env-config.js && rimraf dist && cross-env ENV=production webpack --config config/webpack.prod.js --progress --profile --bail"
   },
   "repository": {
     "type": "git",
@@ -37,6 +36,7 @@
     "cssnano": "^3.10.0",
     "cssnext": "^1.8.4",
     "express": "^4.15.3",
+    "fs": "0.0.1-security",
     "nodemon": "^1.11.0",
     "normalize.css": "^7.0.0",
     "path": "^0.12.7",
@@ -53,7 +53,9 @@
     "autoprefixer": "^6.6.1",
     "awesome-typescript-loader": "^3.0.4",
     "concurrently": "2.2.0",
+    "copy-webpack-plugin": "^4.6.0",
     "cross-env": "^5.2.0",
+    "dotenv": "^6.2.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^3.0.1",
     "gulp": "^3.9.1",

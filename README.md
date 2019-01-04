@@ -27,4 +27,5 @@ How to start Angular App
 
 ## Specify api url 
 Run the below command in terminal with api url
-export API_URL=http://localhost:3100
+export API_HOST=http://localhost:3100
+

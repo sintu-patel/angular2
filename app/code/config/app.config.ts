@@ -1,19 +1,20 @@
+import { apiServerConfig } from './app.main.config';
 // Host Configuration
-const host = 'https://api-dot-research-226216.appspot.com/';
+const host = apiServerConfig.apiHost;
 export const apiConfig = {
   apiServer: {
-    cmsUrl: host + 'cms',
-    cmsfinelistUrl: host + 'cmsfinelist',
-    cmscorrectfinelistUrl: host + 'cmscorrectfinelist',
-    savecmsUrl: host + 'savecms',
-    savefiledataUrl: host + 'savefiledata',
-    savellpdataUrl: host + 'savellp',
-    getllpdataUrl: host + 'getllpdata',
-    uploadcmsUrl: host + 'uploadcms',
-    getissuedataUrl: host + 'getissuesdata',
-    saveissuedataUrl: host + 'saveissuesdata',
-    updateissuedataUrl: host + 'updateissuesdata',
-    getwebhookdataUrl: host + 'getwebhookdata'
+    cmsUrl: host + '/cms',
+    cmsfinelistUrl: host + '/cmsfinelist',
+    cmscorrectfinelistUrl: host + '/cmscorrectfinelist',
+    savecmsUrl: host + '/savecms',
+    savefiledataUrl: host + '/savefiledata',
+    savellpdataUrl: host + '/savellp',
+    getllpdataUrl: host + '/getllpdata',
+    uploadcmsUrl: host + '/uploadcms',
+    getissuedataUrl: host + '/getissuesdata',
+    saveissuedataUrl: host + '/saveissuesdata',
+    updateissuedataUrl: host + '/updateissuesdata',
+    getwebhookdataUrl: host + '/getwebhookdata'
   },
   contentTypeJson: {
     'Content-Type': 'application/json'
