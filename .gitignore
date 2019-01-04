@@ -6,3 +6,4 @@ app/**/*.js
 app/**/**/*.js
 dist
 package-lock.json
+app/code/config/app.main.config.ts
