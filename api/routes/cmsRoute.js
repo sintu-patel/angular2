@@ -14,9 +14,7 @@ module.exports = function(app) {
 }
 
 function sendApiPayload(req, res) {
-	var data = req.body;
-  	var payload = data.payload;
-  	payload = JSON.parse(payload);
+	var payload = req.body;
 
 	const options = {
 		url: `${apiServerConfig.apiHost}/payload`,
