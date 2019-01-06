@@ -19,6 +19,7 @@ app.use('/app/assets/css/style.css', express.static('app/assets/css/style.css'))
 app.use('/node_modules', express.static('node_modules'));
 app.use('/dist', express.static('dist'));
 app.use('/app', express.static('app'));
+app.use('/pwa', express.static('pwa'));
  
 var routes = require('./api/routes/cmsRoute');
 routes(app);
