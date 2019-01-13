@@ -23,6 +23,34 @@ export class Login {
      this.modelData = null;
      this.isModelOpen = false;
      this.loggedIn = false;
+     this.checkLogin();
+    }
+    checkLogin() {
+      const accessToken = this.getCookieByName(apiConfig.accessToken);
+      if (accessToken) {
+        this.dataService.checkLogin(accessToken).subscribe((data:any) => {
+          if (data && data.auth) {
+            this.loggedIn = true;
+          }
+        });
+      }
+    }
+    getCookieByName (name: string) {
+      var rc = document.cookie;
+      var list = {};
+      rc && rc.split(';').forEach((cookie) => {
+        const parts = cookie.split('=');
+        // @ts-ignore
+        list[parts.shift().trim()] = decodeURI(parts.join('='));
+      });
+
+      // @ts-ignore
+      if (list && list[name]) {
+        // @ts-ignore
+        return list[name];
+      }
+      return null;
+
     }
     closeModel() {
       this.modelData = null;
@@ -52,6 +80,7 @@ export class Login {
       this.isModelOpen = true;
     }
     makeloggedIn(userData: any) {
+      this.saveInCookies(apiConfig.accessToken , userData[apiConfig.accessToken]);
       this.loggedIn = true;
       let modelData = {
         showRedirectLink: true,
@@ -61,6 +90,15 @@ export class Login {
         description: 'Click home to continue'
       };
       this.openModel(modelData);
+    }
+
+    saveInCookies(name: string, value: string) {
+      var d = new Date();
+      var expiryTime = 15 * 60000;
+      var cookieValue = value;
+      d.setTime(d.getTime() + expiryTime);
+      var expires = "expires=" + d.toUTCString();
+      document.cookie = name + "=" + cookieValue + ";" + expires + ";path=/";    
     }
 
     loginAction(loginObj:any) {

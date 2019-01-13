@@ -16,7 +16,8 @@ export const apiConfig = {
     updateissuedataUrl: host + '/updateissuesdata',
     getwebhookdataUrl: host + '/getwebhookdata',
     loginUrl: host + '/api/auth/login',
-    registerationUrl: host + '/api/auth/register'
+    registerationUrl: host + '/api/auth/register',
+    checkLoginUrl: host + '/api/auth/check-login'
   },
   contentTypeJson: {
     'Content-Type': 'application/json'
@@ -31,5 +32,6 @@ export const apiConfig = {
     dataFetchFromdbError: 'unable-to-get-data-from-db',
     serverStarted: 'server-started'
   },
-  validToken: '9910712381'
+  validToken: '9910712381',
+  accessToken: 'x-access-token'
 };
