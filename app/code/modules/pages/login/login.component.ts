@@ -12,36 +12,38 @@ import { apiConfig } from '../../../config/app.config';
 
 // Component class
 export class Login {
-    token: String;
+    username: String;
+    password: String;
     modelData: any;
     isModelOpen: boolean;
     loggedIn: boolean;
     constructor(private dataService: DataService) {
-	   this.token = null;
+     this.username = null;
+     this.password = null;
      this.modelData = null;
      this.isModelOpen = false;
-     this.loggedIn = sessionStorage['token'] && sessionStorage['token'] === '9910712381';
+     this.loggedIn = false;
     }
     closeModel() {
       this.modelData = null;
       this.isModelOpen = false;
     }
     login() {
-      if (!this.token) {
+      if (!this.username) {
         this.invalidData('Empty input');
         return;
-      } else if (this.token !== apiConfig.validToken) {
-         this.invalidData('Invalid Token');
-         return;
       }
-      const token = this.token;
-      this.setSession(token);
+      const loginObj = {
+        email: this.username,
+        password: this.password
+      };
+      this.loginAction(loginObj);
     }
     invalidData(headingText:any) {
       let modelData = {
         showCloseButton: true,
         heading: headingText,
-        description: 'You can not login without valid token'
+        description: 'Not a valid username/password'
       };
       this.openModel(modelData);
     }
@@ -49,36 +51,26 @@ export class Login {
       this.modelData = data;
       this.isModelOpen = true;
     }
-    makeloggedIn() {
+    makeloggedIn(userData: any) {
+      this.loggedIn = true;
       let modelData = {
         showRedirectLink: true,
         redirectUrl: labelConfig.navigation[0].url,
         redirectLabel: labelConfig.navigation[0].label,
-        heading: 'You are logged in as ' + sessionStorage['token'],
+        heading: 'You are logged in as ' + userData.username,
         description: 'Click home to continue'
       };
       this.openModel(modelData);
     }
-    setSession(token:any) {
-      if (typeof(Storage) !== "undefined") {
-        sessionStorage['token'] = token;
-        this.makeloggedIn();
-      }
-    }
-    loggedOut() {
-      let modelData = {
-        showRedirectLink: true,
-        redirectUrl: labelConfig.navigation[0].url,
-        redirectLabel: labelConfig.navigation[0].label,
-        heading: 'You are logged out.',
-        description: 'Click home to continue'
-      };
-      this.openModel(modelData);
-    }
-    logout() {
-      if (typeof(Storage) !== "undefined" && sessionStorage['token']) {
-        sessionStorage['token'] = null;
-        this.loggedOut();
-      }
+
+    loginAction(loginObj:any) {
+      this.dataService.login(loginObj).subscribe((data:any) => {
+        if (data.auth) {
+          // Login success
+          this.makeloggedIn(data);
+        } else {
+          this.invalidData('Failed login');
+        }
+      });
     }
 }

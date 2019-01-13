@@ -3,10 +3,15 @@
 	<div class="col-12">
 		<div class="main-panel main-dp-panel form-panel">
 			<div class="issue-form-container login-box">
-				<h2 *ngIf="!loggedIn">Enter the login token</h2>
+				<h2 *ngIf="!loggedIn">Login</h2>
 				<form>
 					<div *ngIf="!loggedIn" class="input-container issue-box">
-						<input type="text" class="input" name="issue" [(ngModel)]="token" />
+						<label for="username" >Username</label>
+						<input type="text" class="input" id="username" name="username" [(ngModel)]="username" />
+					</div>
+					<div *ngIf="!loggedIn" class="input-container issue-box">
+						<label for="password" >Password</label>
+						<input type="password" id ="password" class="input" name="password" [(ngModel)]="password" />
 					</div>
 					<div class="input-container">
 						<button *ngIf="!loggedIn" (click)="login()" type="button">Login</button>

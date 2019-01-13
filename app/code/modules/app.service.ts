@@ -98,4 +98,12 @@ export class DataService {
     return this.http.get(apiConfig.apiServer.getwebhookdataUrl)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
+
+  login(dataJSON:any) : Observable<Comment[]> {
+    var url = apiConfig.apiServer.loginUrl;
+    let headers = new Headers(apiConfig.contentTypeJson);
+    let options = new RequestOptions({ headers: headers });
+     return this.http.post(url, dataJSON, options)
+     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+   }
 }

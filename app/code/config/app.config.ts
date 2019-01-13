@@ -14,7 +14,9 @@ export const apiConfig = {
     getissuedataUrl: host + '/getissuesdata',
     saveissuedataUrl: host + '/saveissuesdata',
     updateissuedataUrl: host + '/updateissuesdata',
-    getwebhookdataUrl: host + '/getwebhookdata'
+    getwebhookdataUrl: host + '/getwebhookdata',
+    loginUrl: host + '/api/auth/login',
+    registerationUrl: host + '/api/auth/register'
   },
   contentTypeJson: {
     'Content-Type': 'application/json'
