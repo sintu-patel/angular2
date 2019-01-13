@@ -27,6 +27,8 @@ export class DataService {
   saveData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.savecmsUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
+   const accessToken = getCookieByName(apiConfig.accessToken);
+    headers.set(apiConfig.accessToken, accessToken);
    let options = new RequestOptions({ headers: headers });
     return this.http.post(url, dataJSON, options)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -35,6 +37,8 @@ export class DataService {
   saveFileData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.savefiledataUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
+   const accessToken = getCookieByName(apiConfig.accessToken);
+    headers.set(apiConfig.accessToken, accessToken);
    let options = new RequestOptions({ headers: headers });
     return this.http.post(url, dataJSON, options)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -65,6 +69,8 @@ export class DataService {
   saveLLPData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.savellpdataUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
+   const accessToken = getCookieByName(apiConfig.accessToken);
+    headers.set(apiConfig.accessToken, accessToken);
    let options = new RequestOptions({ headers: headers });
     return this.http.post(url, dataJSON, options)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -82,6 +88,8 @@ export class DataService {
   saveIssuesData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.saveissuedataUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
+   const accessToken = getCookieByName(apiConfig.accessToken);
+    headers.set(apiConfig.accessToken, accessToken);
    let options = new RequestOptions({ headers: headers });
     return this.http.post(url, dataJSON, options)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -89,6 +97,8 @@ export class DataService {
   updateIssuesData(dataJSON:any) : Observable<Comment[]> {
    var url = apiConfig.apiServer.updateissuedataUrl;
    let headers = new Headers(apiConfig.contentTypeJson);
+   const accessToken = getCookieByName(apiConfig.accessToken);
+    headers.set(apiConfig.accessToken, accessToken);
    let options = new RequestOptions({ headers: headers });
     return this.http.post(url, dataJSON, options)
     .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
@@ -110,9 +120,27 @@ export class DataService {
    checkLogin(accessToken:string) : Observable<Comment[]> {
     var url = apiConfig.apiServer.checkLoginUrl;
     let headers = new Headers(apiConfig.contentTypeJson);
-    headers.set('x-access-token', accessToken);
+    headers.set(apiConfig.accessToken, accessToken);
     let options = new RequestOptions({ headers: headers });
      return this.http.post(url, {}, options)
      .map((res:Response) => res.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
    }
+}
+
+const getCookieByName = (name: string) => {
+  var rc = document.cookie;
+  var list = {};
+  rc && rc.split(';').forEach((cookie) => {
+    const parts = cookie.split('=');
+    // @ts-ignore
+    list[parts.shift().trim()] = decodeURI(parts.join('='));
+  });
+
+  // @ts-ignore
+  if (list && list[name]) {
+    // @ts-ignore
+    return list[name];
+  }
+  return null;
+
 }

@@ -34,7 +34,7 @@ export class UpdateLLP {
     // error model
     this.modelData =  null;
     this.isModelOpen = false;
-    this.loggedIn = sessionStorage['token'] && sessionStorage['token'] === '9910712381';
+    this.loggedIn = true; // TBD
     const date = new Date();
     this.today = date.getDay();
 		this.loadLLP();

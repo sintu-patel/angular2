@@ -38,7 +38,7 @@ export class CorrectFile {
     this.isModelOpen = false;
     this.files = [];
     this.latestFile = [];
-    this.loggedIn = sessionStorage['token'] && sessionStorage['token'] === '9910712381';
+    this.loggedIn = true; // TBD
 		this.loadFineList();
 	}
 
