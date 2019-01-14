@@ -11,9 +11,10 @@ import { apiConfig } from '../../../config/app.config';
 })
 
 // Component class
-export class Login {
+export class Register {
     username: String;
     password: String;
+    name: String;
     modelData: any;
     isModelOpen: boolean;
     loggedIn: boolean;
@@ -56,26 +57,17 @@ export class Login {
       this.modelData = null;
       this.isModelOpen = false;
     }
-    login() {
-      if (!this.username) {
+    register() {
+      if (!this.username || !this.password || !this.name) {
         this.invalidData('Empty input');
         return;
       }
       const loginObj = {
         email: this.username,
-        password: this.password
+        password: this.password,
+        name: this.name
       };
-      this.loginAction(loginObj);
-    }
-    logout() {
-      this.dataService.logout().subscribe((data:any) => {
-        this.makeLogout(data);
-      });
-    }
-    makeLogout(data: any) {
-      this.saveInCookies(apiConfig.accessToken , data[apiConfig.accessToken]);
-      this.loggedIn = false;
-      this.isModelOpen = false;
+      this.registerAction(loginObj);
     }
     invalidData(headingText:any) {
       let modelData = {
@@ -111,8 +103,8 @@ export class Login {
       document.cookie = name + "=" + cookieValue + ";" + expires + ";path=/";    
     }
 
-    loginAction(loginObj:any) {
-      this.dataService.login(loginObj).subscribe((data:any) => {
+    registerAction(obj:any) {
+      this.dataService.register(obj).subscribe((data:any) => {
         if (data.auth) {
           // Login success
           this.makeloggedIn(data);

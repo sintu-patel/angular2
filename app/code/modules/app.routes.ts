@@ -7,6 +7,7 @@ import { FineList } from './pages/finelist/finelist.component';
 import { CorrectFile } from './pages/correctfile/correctfile.component';
 import { UpdateLLP } from './pages/llp/updatellp.component';
 import { Login } from './pages/login/login.component';
+import { Register } from './pages/register/register.component';
 import { IssueRiskNextSteps } from './pages/issuerisknextsteps/issuerisknextsteps.component';
 import { WebHookData } from './pages/webhook/webhookdata.component';
 
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'correctfile', component: CorrectFile},
   { path: 'llp', component: UpdateLLP},
   { path: 'login', component: Login},
+  { path: 'register', component: Register},
   { path: 'issuerisknextsteps', component: IssueRiskNextSteps},
   { path: 'webhookdata', component: WebHookData}
 ];

@@ -13,6 +13,7 @@ import { FineList } from './pages/finelist/finelist.component';
 import { CorrectFile } from './pages/correctfile/correctfile.component';
 import { UpdateLLP } from './pages/llp/updatellp.component';
 import { Login } from './pages/login/login.component';
+import { Register } from './pages/register/register.component';
 import { IssueRiskNextSteps } from './pages/issuerisknextsteps/issuerisknextsteps.component';
 import { WebHookData } from './pages/webhook/webhookdata.component';
 import { routing } from './app.routes';
@@ -34,6 +35,7 @@ import { routing } from './app.routes';
     CorrectFile,
     UpdateLLP,
     Login,
+    Register,
     IssueRiskNextSteps,
     WebHookData
   ],

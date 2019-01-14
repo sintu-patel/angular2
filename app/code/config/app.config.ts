@@ -16,6 +16,7 @@ export const apiConfig = {
     updateissuedataUrl: host + '/updateissuesdata',
     getwebhookdataUrl: host + '/getwebhookdata',
     loginUrl: host + '/api/auth/login',
+    logout: host + '/api/auth/logout',
     registerationUrl: host + '/api/auth/register',
     checkLoginUrl: host + '/api/auth/check-login'
   },

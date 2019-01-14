@@ -1,22 +1,23 @@
-
 <div class="container">
 	<div class="col-12">
 		<div class="main-panel main-dp-panel form-panel">
 			<div class="issue-form-container login-box">
-				<h2 *ngIf="!loggedIn">Login</h2>
+				<h2 *ngIf="!loggedIn">Sign up</h2>
 				<form>
-					<div *ngIf="!loggedIn" class="input-container issue-box">
-						<label for="username" >Username</label>
+					<div class="input-container issue-box">
+						<label for="name">Name</label>
+						<input type="text" class="input" id="name" name="name" [(ngModel)]="name" />
+					</div>
+					<div class="input-container issue-box">
+						<label for="username">Username</label>
 						<input type="text" class="input" id="username" name="username" [(ngModel)]="username" />
 					</div>
-					<div *ngIf="!loggedIn" class="input-container issue-box">
-						<label for="password" >Password</label>
-						<input type="password" id ="password" class="input" name="password" [(ngModel)]="password" />
+					<div class="input-container issue-box">
+						<label for="password">Password</label>
+						<input type="password" id="password" class="input" name="password" [(ngModel)]="password" />
 					</div>
 					<div class="input-container">
-						<button *ngIf="!loggedIn" (click)="login()" type="button">Login</button>
-						<a *ngIf="!loggedIn" href="/register" >Sign up</a>
-						<button *ngIf="loggedIn" (click)="logout()" type="button">Logout</button>
+						<button (click)="register()" type="button">Sign up</button>
 					</div>
 				</form>
 			</div>
